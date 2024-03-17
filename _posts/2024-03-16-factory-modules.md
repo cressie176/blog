@@ -15,8 +15,8 @@ For a logging library these conventions might be:
 - Support [async context tracking](https://nodejs.org/api/async_context.html)
 - Report the source of empty log messages
 - Relocate the context to a subdocument to avoid name clashes (level, time, etc)
-- Test errors are serialised correctly (https://github.com/pinojs/pino/issues/862, https://github.com/winstonjs/winston/issues/1338, https://github.com/trentm/node-bunyan/issues/514)
-- Test for circular references (https://github.com/pinojs/pino/issues/990, https://github.com/winstonjs/winston/issues/1946, https://github.com/trentm/node-bunyan/issues/427)
+- Test errors are serialised correctly ([pino#862](https://github.com/pinojs/pino/issues/862), [winston#1338](https://github.com/winstonjs/winston/issues/1338), [bunyan#514](https://github.com/trentm/node-bunyan/issues/514))
+- Test for circular references ([pino#990](https://github.com/pinojs/pino/issues/990), [winston#1946](https://github.com/winstonjs/winston/issues/1946),  [bunyan#427](https://github.com/trentm/node-bunyan/issues/427))
 - Test for unserialisable context objects
 
 I've created a example factory module for Pino implementing these conventions. You can find it [here](https://github.com/cressie176/module-acme-logging).
