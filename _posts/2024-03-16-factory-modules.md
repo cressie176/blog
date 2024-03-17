@@ -21,5 +21,5 @@ For a logging library sensible conventions, safeguards and features might be:
 - Testing circular references ([pino#990](https://github.com/pinojs/pino/issues/990), [winston#1946](https://github.com/winstonjs/winston/issues/1946),  [bunyan#427](https://github.com/trentm/node-bunyan/issues/427))
 - Testing unserialisable context objects
 
-I've created a example factory module for Pino implementing these conventions. You can find it [here](https://github.com/acuminous/module-acme-logging).
+I've created a example factory module for [pino](https://github.com/pinojs/pino) implementing these conventions. You can find it [here](https://github.com/acuminous/module-acme-logging).
 
