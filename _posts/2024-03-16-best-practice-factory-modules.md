@@ -18,7 +18,7 @@ For a logging library, a good set of best practices are:
 - Reporting the source of empty log messages
 - Relocating the context to a subdocument to avoid name clashes (level, time, etc)
 - Ensuring errors are serialised correctly ([pino#862](https://github.com/pinojs/pino/issues/862), [winston#1338](https://github.com/winstonjs/winston/issues/1338), [bunyan#514](https://github.com/trentm/node-bunyan/issues/514))
-- Ensuring circular references ([pino#990](https://github.com/pinojs/pino/issues/990), [winston#1946](https://github.com/winstonjs/winston/issues/1946),  [bunyan#427](https://github.com/trentm/node-bunyan/issues/427))
+- Ensuring circular references ([pino#990](https://github.com/pinojs/pino/issues/990), [winston#1946](https://github.com/winstonjs/winston/issues/1946),  [bunyan#427](https://github.com/trentm/node-bunyan/issues/427)) are tolerated
 - Ensuring unserialisable context objects are tolerated
 
 You can find an example factory module implementing these best practices [here](https://github.com/acuminous/module-acme-logging).
