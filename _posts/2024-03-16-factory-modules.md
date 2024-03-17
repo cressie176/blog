@@ -16,3 +16,7 @@ A key benefit of microservice architectures is that multiple teams can work diff
 - Test for unserialisable context objects
 
 I've created a example factory module for Pino implementing these conventions. You can find it [here](https://github.com/cressie176/module-acme-logging).
+
+{% for tag in page.tags %}
+  {{ tag }}
+{% endfor %}
