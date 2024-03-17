@@ -17,9 +17,9 @@ For a logging library sensible conventions, safeguards and features might be:
 - Reporting the source of empty log messages
 - Allowing logging to be suppressed in tests
 - Relocation of the context to a subdocument to avoid name clashes (level, time, etc)
-- Testing errors are serialised correctly ([pino#862](https://github.com/pinojs/pino/issues/862), [winston#1338](https://github.com/winstonjs/winston/issues/1338), [bunyan#514](https://github.com/trentm/node-bunyan/issues/514))
-- Testing circular references ([pino#990](https://github.com/pinojs/pino/issues/990), [winston#1946](https://github.com/winstonjs/winston/issues/1946),  [bunyan#427](https://github.com/trentm/node-bunyan/issues/427))
-- Testing unserialisable context objects
+- Ensuring errors are serialised correctly ([pino#862](https://github.com/pinojs/pino/issues/862), [winston#1338](https://github.com/winstonjs/winston/issues/1338), [bunyan#514](https://github.com/trentm/node-bunyan/issues/514))
+- Ensuring circular references ([pino#990](https://github.com/pinojs/pino/issues/990), [winston#1946](https://github.com/winstonjs/winston/issues/1946),  [bunyan#427](https://github.com/trentm/node-bunyan/issues/427))
+- Ensuring unserialisable context objects are tolerated
 
 I've created a example factory module for [pino](https://github.com/pinojs/pino) implementing these conventions. You can find it [here](https://github.com/acuminous/module-acme-logging).
 
