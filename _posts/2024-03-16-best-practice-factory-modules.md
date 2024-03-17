@@ -21,5 +21,5 @@ For a logging library, a good set of best practices are:
 - Ensuring circular references ([pino#990](https://github.com/pinojs/pino/issues/990), [winston#1946](https://github.com/winstonjs/winston/issues/1946),  [bunyan#427](https://github.com/trentm/node-bunyan/issues/427))
 - Ensuring unserialisable context objects are tolerated
 
-You can find an example factory module that implements these conventions [here](https://github.com/acuminous/module-acme-logging).
+You can find an example factory module implementing these best practices [here](https://github.com/acuminous/module-acme-logging).
 
