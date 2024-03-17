@@ -9,14 +9,14 @@ A better approach is to wrap 3rd party libraries like [pino](https://github.com/
 
 For a logging library, a good set of best practices are:
 
-- Support redaction of sensitive content
+- A conventional API
 - Support for machine friendly logging
 - Support for human friendly logging
-- Support for emitting log records as events
+- Support for test friendly logging
 - Support for async context tracking
+- Support for redaction of sensitive content
 - Reporting the source of empty log messages
-- Allowing logging to be suppressed in tests
-- Relocation of the context to a subdocument to avoid name clashes (level, time, etc)
+- Relocating the context to a subdocument to avoid name clashes (level, time, etc)
 - Ensuring errors are serialised correctly ([pino#862](https://github.com/pinojs/pino/issues/862), [winston#1338](https://github.com/winstonjs/winston/issues/1338), [bunyan#514](https://github.com/trentm/node-bunyan/issues/514))
 - Ensuring circular references ([pino#990](https://github.com/pinojs/pino/issues/990), [winston#1946](https://github.com/winstonjs/winston/issues/1946),  [bunyan#427](https://github.com/trentm/node-bunyan/issues/427))
 - Ensuring unserialisable context objects are tolerated
