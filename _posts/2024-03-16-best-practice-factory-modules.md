@@ -21,4 +21,4 @@ A better approach is to wrap 3rd party libraries like pino in custom factory mod
 
 You can find an example factory module implementing the above best practices [here](https://github.com/acuminous/module-acme-logging).
 
-Factory modules will not only reduce the effort required to adopt a new best practice, but are the most effective way of leveraging all the hard won lessons, you and your colleagues have accumulated over their careers. Quality truly is [the knife-edge of experience](https://en.wikipedia.org/wiki/Pirsig%27s_Metaphysics_of_Quality).
+While the above can be achieved using most popular logging libraries, they will all require significant customisation. Duplicating this work in each one of your services would be impractical to say the least. Factory modules not only reduce the effort required to adopt a new best practice, but are the most effective way of leveraging all the hard won lessons, you and your colleagues have accumulated over their careers. Quality truly is [the knife-edge of experience](https://en.wikipedia.org/wiki/Pirsig%27s_Metaphysics_of_Quality).
