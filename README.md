@@ -1,1 +1,1 @@
-Go to https://cressie176.github.io/blog/
+See https://cressie176.github.io/blog/
