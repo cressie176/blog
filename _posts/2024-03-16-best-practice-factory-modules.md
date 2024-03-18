@@ -16,7 +16,7 @@ A better approach is to wrap 3rd party libraries like pino in custom factory mod
 - Reporting the source of empty log messages
 - Relocating the context to a subdocument to avoid name clashes (level, time, etc)
 - Ensuring errors are serialised correctly ([pino#862](https://github.com/pinojs/pino/issues/862), [winston#1338](https://github.com/winstonjs/winston/issues/1338), [bunyan#514](https://github.com/trentm/node-bunyan/issues/514))
-- Ensuring circular references ([pino#990](https://github.com/pinojs/pino/issues/990), [winston#1946](https://github.com/winstonjs/winston/issues/1946),  [bunyan#427](https://github.com/trentm/node-bunyan/issues/427)) are tolerated
+- Ensuring circular references are tolerated ([pino#990](https://github.com/pinojs/pino/issues/990), [winston#1946](https://github.com/winstonjs/winston/issues/1946),  [bunyan#427](https://github.com/trentm/node-bunyan/issues/427))
 - Ensuring unserialisable context objects are tolerated
 
 While the above can be achieved using most popular logging libraries, they will all require significant customisation. Duplicating this work in each one of your services would be impractical to say the least. Factory modules not only reduce the effort required to adopt a new best practice, but are the most effective way of leveraging all the hard won lessons, you and your colleagues have accumulated over their careers. Quality truly is [the knife-edge of experience](https://en.wikipedia.org/wiki/Pirsig%27s_Metaphysics_of_Quality).
