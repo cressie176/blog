@@ -7,7 +7,7 @@ Microservice architectures offer the advantage of allowing multiple teams to wor
 
 A better approach is to wrap 3rd party libraries like pino in custom factory module that applies a set of tested, sensible conventions, safeguards and features, thus creating a [pit of success](https://learn.microsoft.com/en-us/archive/blogs/brada/the-pit-of-success). For a logging library, a good set of best practices are:
 
-- A conventional API, i.e. logger.&lt;level&gt;(&lt;message&gt;, [&lt;context&gt;]);
+- A conventional API, i.e. `logger.&lt;level&gt;(&lt;message&gt;, [&lt;context&gt;])`
 - Support for machine friendly logging
 - Support for human friendly logging
 - Support for test friendly logging
