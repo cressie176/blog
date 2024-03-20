@@ -1,6 +1,12 @@
 ---
 title: "Best Practice Factory Modules"
 date: 2024-03-16
+tags:
+- Microservices
+- Architecture
+- Best Practice
+- Factory Module
+- Logging
 ---
 
 Microservice architectures offer the advantage of allowing multiple teams to work on different parts of a system simultaneously, thus reducing conflicts. However, this model presents its own set of challenges. A common issue is the proliferation of third-party libraries for tasks such as logging, HTTP requests, messaging and persistence. While standardising on a single library for each function is an important step, it is insufficient to address all concerns. Consider logging: Imagine if you standardised on [pino](https://github.com/pinojs/pino), installing it directly in over 100 services, only then to find your logs include sensitive HTTP headers; to fix the problem at source you would have to add the redaction code to each one of those repositories.
