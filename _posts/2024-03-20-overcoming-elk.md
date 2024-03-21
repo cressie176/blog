@@ -26,5 +26,30 @@ In this case the second record is dropped.
 
 Some might argue the both problems can be resolved if only engineers would be more diligent - and they would be right! However, any system which relies on human infalibility is doomed to fail. Another approach is to enforce a centrally controlled schema, not only fixing mapping explosion and type conflicts but also benefiting from data consistency. Unfortunately this solution would not only create a huge bottleneck, but introduce a change/version management and domain modelling nightmare, akin to using a shared database for every one of your applications!
 
-A more practical approach is to disable dynamic mapping except for properties under a specially named file like '@indexed', then 
+A more practical approach is to solve Mapping Explosion by restricting dynamic mapping to a single key, and to copy select paths from the logged context to this sub-document beneath this key, e.g.
 
+```
+const indexes = [ "crew.id", "crew.username" ];
+const logger = new Logger({ indexes });
+```
+
+```json
+{
+  "crew": {
+    "id": 123,
+    "username": "drsmith",
+    "job": "science officer",
+    "personality": "untrustworthy"
+  },
+  "@indexed": {
+    "crew": {
+      "id": 123,
+      "username: "drsmith"
+    }
+  }
+}
+```
+
+There is a further restriction in that the paths must resolve to a restricted set of types (string, number, boolean, date, etc), rather than an object or array otherwise we recreate the opportunity for Mapping Explosion all over again. By maintaining a common list of paths, and allowing the application developers to supplement this from their applications, we solve the problem of Mapping Explosion and encourage a consistent schema.
+
+To sovle 
