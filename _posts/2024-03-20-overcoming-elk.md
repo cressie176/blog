@@ -26,5 +26,5 @@ In this case the second record is dropped.
 
 Some might argue the both problems can be resolved if only engineers would be more diligent - and they would be right! However, any system which relies on human infalibility is doomed to fail. Another approach is to enforce a centrally controlled schema, not only fixing mapping explosion and type conflicts but also benefiting from data consistency. Unfortunately this solution would not only create a huge bottleneck, but introduce a change/version management and domain modelling nightmare, akin to using a shared database for every one of your applications!
 
-
+A more practical approach is to disable dynamic mapping except for properties under a specially named file like '@indexed', then 
 
