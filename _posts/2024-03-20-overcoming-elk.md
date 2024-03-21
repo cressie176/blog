@@ -8,7 +8,11 @@ tags:
 - Schema conflict
 ---
 
-Following on from my last blog post about Factory Modules and logging, I thought it worth sharing a few tips for working with the Elasticsearch, Logstash and Kibana (ELK) stack. My first tip is contentious - if you can afford to, don't use ELK. I say this because of two almost fatal flaws - [Mapping Explosion](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-explosion.html) and [Type Conflict](https://opster.com/guides/elasticsearch/glossary/elasticsearch-conflicting-field). Mapping Explosion occurs when Elasticsearch is unable to keep pace creating indexes for the documents being logged. The initial symptom is that logs increasing lag behind reality, until you eventually start losing shards or the entire cluster. The gotcha is that by default Elastic is configured to index every attribute of every document you send it, and engineering teams will inadvertantly log a wide variety of large documents. The second problem, Type Conflict, occurs when an attribute is logged with a different type than previously indexed attribute with the same name, e.g.
+Following on from my last post demonstrating the benefits of Factory Modules for concerns such as logging, I wanted to share some tips for working with the Elasticsearch, Logstash and Kibana (ELK) stack. My first tip is contentious - if you can afford to, don't use ELK. I say this because of two near fatal flaws - [Mapping Explosion](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-explosion.html) and [Type Conflict](https://opster.com/guides/elasticsearch/glossary/elasticsearch-conflicting-field). 
+
+**Mapping Explosion** occurs when Elasticsearch fails to keep pace indexing the documents being logged. The initial symptom is the logs will increasingly lag, making them useless for monitoring and live issue resolution. Eventually you will start losing shards or the entire cluster. Mapping Explosion is common because the default behaviour is to index every attribute of every document, and engineering teams will inadvertantly log a wide variety of large documents. 
+
+**Type Conflict** occurs when an attribute is logged with a different type than before, e.g.
 
 ```json
 { "error": "Danger Will Robinson!" }
@@ -20,5 +24,7 @@ Following on from my last blog post about Factory Modules and logging, I thought
 
 In this case the second record is dropped.
 
-One naive way of resolve these issues is for engineers to log more carefully. Good luck with that! Another is to enforce a tightly controlled shared schema. 
+Some might argue the both problems can be resolved if only engineers would be more diligent - and they would be right! However, any system which relies on human infalibility is doomed to fail. Another approach is to enforce a centrally controlled schema, not only fixing mapping explosion and type conflicts but also benefiting from data consistency. Unfortunately this solution would not only create a huge bottleneck, but introduce a change/version management and domain modelling nightmare, akin to using a shared database for every one of your applications!
+
+
 
