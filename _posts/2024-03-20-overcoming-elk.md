@@ -3,14 +3,15 @@ title: "Overcoming ELK"
 date: 2024-03-20.md
 tags:
 - Elasticsearch
+- ELK
 - Logging
-- Mapping explosion
-- Schema conflict
+- Mapping Explosion
+- Type Conflict
 ---
 
-Following on from my last post demonstrating the benefits of Factory Modules for concerns such as logging, I wanted to share some tips for working with the Elasticsearch, Logstash and Kibana (ELK) stack. My first tip is contentious - if you can afford to, don't use ELK. I say this because of two near fatal flaws - [Mapping Explosion](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-explosion.html) and [Type Conflict](https://opster.com/guides/elasticsearch/glossary/elasticsearch-conflicting-field). 
+Following on from [my previous post](https://cressie176.github.io/blog/2024/03/16/best-practice-factory-modules.html) demonstrating the benefits of Factory Modules for concerns such as logging, I wanted to share some tips for working with the Elasticsearch, Logstash and Kibana (ELK) stack, which suffers from two near fatal flaws - [Mapping Explosion](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-explosion.html) and [Type Conflict](https://opster.com/guides/elasticsearch/glossary/elasticsearch-conflicting-field). 
 
-**Mapping Explosion** occurs when Elasticsearch fails to keep pace with indexing. Logs will increasingly lag, making them useless for monitoring and live issue resolution. You will start losing shards and eventually the entire cluster. Mapping Explosion occurs because Elasticsearch's default behaviour is to index every attribute of every document you log, and your engineering teams will inadvertantly log a wide variety of large documents. 
+**Mapping Explosion** occurs when Elasticsearch fails to keep pace with indexing. Logs will increasingly lag, making them useless for monitoring and live issue resolution. You will start losing shards and eventually the entire cluster. Mapping Explosion occurs because Elasticsearch's default behaviour is to index every attribute of every document you log, and your engineering team will inevitably log a wide variety of large documents. 
 
 **Type Conflict** occurs when an attribute is logged with a different type than before, e.g.
 
@@ -24,25 +25,25 @@ Following on from my last post demonstrating the benefits of Factory Modules for
 
 In this case the second record is dropped.
 
-There is an arguement that both problems will self resolve with improved diligence. In practice however, any system which relies on human infalibility is doomed to fail. Another approach is to enforce a centrally managed schema. Unfortunately, this solution would create a developmental bottleneck and introduce a change management and domain modelling nightmare akin to sharing a single database between all of your applications.
+There is an argument that both problems will self resolve with improved diligence. In practice however, any system which relies on human infalibility is doomed to fail. Another approach is to enforce a centrally managed schema. Unfortunately, this would create a developmental bottleneck and introduce a version management and domain modelling nightmare akin to sharing a single database between all of your applications.
 
-A more practical approach is to solve Mapping Explosion by restricting Elasticsearch's indexes to a single root path (say "@indexes", and to copy select paths from the logged context to a sub-document beneath this path, e.g.
+A more practical approach is to solve Mapping Explosion by restricting Elasticsearch's indexes to a single root attribute (say "@indexes", and to copy select paths from the logged context to a sub-document beneath this attribute, e.g.
 
-```
-const indexes = [ "crew.id", "crew.username" ];
+```js
+const indexes = [ "staff.id", "staff.username" ];
 const logger = new Logger({ indexes });
 ```
 
 ```json
 {
-  "crew": {
+  "staff": {
     "id": 123,
     "username": "drsmith",
     "job": "science officer",
     "personality": "untrustworthy"
   },
   "@indexes": {
-    "crew": {
+    "staff": {
       "id": 123,
       "username": "drsmith"
     }
@@ -50,6 +51,33 @@ const logger = new Logger({ indexes });
 }
 ```
 
-The paths must resolve to a restricted set of types (string, number, boolean, date, etc), rather than an object or array to avoid recreating the opportunity for Mapping Explosion all over again. By maintaining a common list of paths, and allowing the application developers to supplement this them from the applications, we solve the problem of Mapping Explosion and encourage a consistent schema.
+The paths must resolve to a restricted set of types (string, number, boolean, date, etc), rather than an object or array to avoid recreating the opportunity for Mapping Explosion all over again. By maintaining a common list of paths, and allowing the developers to extend it from application code, we solve the problem of Mapping Explosion and encourage a more consistent schema.
 
-To sovle 
+This solution partially solves the Type Conflict problem too. Elasticsearch will convert numbers to strings (excluding NaN and Infinity if using JavaScript), but obviously cannot always convert strings to numbers. Furthremore, converting numbers to strings may affect sort order and prevents aggregation. An improvement then is to differentiate between differently typed values with the same path by append a type suffix, eradicating any potential for confict, e.g.
+
+```json
+{
+  "staff": {
+    "id": 123,
+    "username": "drsmith",
+    "job": "science officer",
+    "personality": "untrustworthy"
+  },
+  "@indexes": {
+    "staff": {
+      "id": {
+        "numberValue": 123
+      },
+      {
+        "username": {
+          "stringValue": "drsmith"
+        }
+      }
+    }
+  }
+}
+```
+
+As per [my previous post](https://cressie176.github.io/blog/2024/03/16/best-practice-factory-modules.html), the logger configuration for creating the indexes should be added to a Factory Module to avoid duplication.
+
+My final tip is contentious - if you can afford to, avoid using ELK for logging. The above solution will alter the shape of the logged documents, breaking the [Principle of Least Astonishment](https://en.wikipedia.org/wiki/Principle_of_least_astonishment) for anyone querying the logs.
