@@ -105,6 +105,7 @@ module.exports = function(options) {
         if (['Date', 'BigInt', 'String'].includes(type)) set(indexes, `${path}.stringValue`, value)
         else if (type === 'Boolean') set(indexes, `${path}.booleanValue`, value)
         else if (type === 'Number') set(indexes, `${path}.numberValue`, value)
+        else if (value === null) set(indexes, `${path}.nullValue`, true)
         else invalid.push(path);
       }, {});
       const indexError = invalid.length > 0 ? Object.assign(new Error('Indexes must be of type string, number, boolean, bigint or date'), { invalid }) : undefined;
