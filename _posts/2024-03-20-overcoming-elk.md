@@ -158,7 +158,7 @@ logger.info({
       "id": {
         "numberValue": 123
       },
-      "id": {
+      "username": {
         "stringValue": "drzsmith"
       },
       "startDate": {
