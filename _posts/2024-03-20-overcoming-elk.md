@@ -84,6 +84,7 @@ const pino = require('pino');
 const has = require('has-value');
 const get = require('get-value');
 const set = require('set-value');
+const typeOf = require('which-builtin-type');
 
 const DEFAULT_INDEXES = [
   'staff.id'
@@ -98,17 +99,14 @@ module.exports = function(options) {
       DEFAULT_INDEXES.concat(options?.indexes).forEach((path) => {
         if (!has(input, path)) return;
         const value = get(input, path);
-        if (value instanceof Date) set(indexes, `${path}.stringValue`, value)
-        else if (typeof value === 'bigint') set(indexes, `${path}.stringValue`, value)
-        else if (typeof value === 'boolean') set(indexes, `${path}.booleanValue`, value)
-        else if (typeof value === 'number') set(indexes, `${path}.numberValue`, value)
-        else if (typeof value === 'string') set(indexes, `${path}.stringValue`, value)
-        else invalid.push(path)
+        const type = typeOf(value);
+        if (['Date', 'BigInt', 'String'].includes(type)) set(indexes, `${path}.stringValue`, value)
+        else if (type === 'Boolean') set(indexes, `${path}.booleanValue`, value)
+        else if (type === 'Number') set(indexes, `${path}.numberValue`, value)
+        else invalid.push(path);
       }, {});
-      const indexError = invalid.length > 0
-        ? Object.assign(new Error('Indexes must be of type string, number, boolean, bigint or date'), { invalid })
-        : undefined;
-      return { '@indexes': indexes, '@indexError': indexError, ...input };
+      const indexError = invalid.length > 0 ? Object.assign(new Error('Indexes must be of type string, number, boolean, bigint or date'), { invalid }) : undefined;
+      return { '@indexes': indexes, '@indexesErr': indexError, ...input };
     }
   }
 
