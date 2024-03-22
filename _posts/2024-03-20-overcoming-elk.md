@@ -16,14 +16,14 @@ Following on from [my previous post](https://cressie176.github.io/blog/2024/03/1
 **Type Conflict** occurs when an attribute is logged with a different type than before, e.g.
 
 ```json
-{ "error": "Danger Will Robinson!" }
+{ "error": { "message": "Danger Will Robinson!" } }
 ```
 
 ```json
-{ "error": { "message": "Danger Will Robinson!" }
+{ "error": "Danger Will Robinson!" }
 ```
 
-In this case the second record is dropped.
+In this above example, Elasticsearch's dynamic mapping feature will create an index for the first error attribute with as type Object, but cannot subsequently insert a string value into the index for the second error attribute.
 
 There is an argument that both problems will self resolve with improved diligence. In practice however, any system which relies on human infallibility is doomed to fail. Another approach is to enforce a centrally managed schema. Unfortunately, this would create a developmental bottleneck and introduce a version management and domain modelling nightmare akin to sharing a single database between all of your applications.
 
