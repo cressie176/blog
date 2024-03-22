@@ -45,7 +45,7 @@ const logger = new Logger({ indexes });
   "@indexes": {
     "staff": {
       "id": 123,
-      "username": "drsmith"
+      "username": "drzsmith"
     }
   }
 }
@@ -61,6 +61,7 @@ This solution partially solves the Type Conflict problem too. Elasticsearch will
     "id": 123,
     "username": "drzsmith",
     "position": "Staff Psychologist",
+    "startDate": "1965-10-02T00:00:00.000Z",
     "notes": ["untrustworthy","cowardly", "sabotage"]
   },
   "@indexes": {
@@ -70,7 +71,7 @@ This solution partially solves the Type Conflict problem too. Elasticsearch will
       },
       {
         "username": {
-          "stringValue": "drsmith"
+          "stringValue": "drzsmith"
         }
       }
     }
@@ -87,8 +88,9 @@ const set = require('set-value');
 const typeOf = require('which-builtin-type');
 
 const DEFAULT_INDEXES = [
-  'staff.id'
-]
+  'staff.id',
+  'staff.username',
+];
 
 module.exports = function(options) {
 
@@ -136,6 +138,7 @@ const logger = require('./logger-factory')({
 logger.info({
   staff: {
     id: 123,
+    username: 'drzsmith',
     startDate: new Date('1965-10-02'),
     position: 'Staff Psychologist',
     personality: 'Untrustworthy',
@@ -155,6 +158,9 @@ logger.info({
       "id": {
         "numberValue": 123
       },
+      "id": {
+        "stringValue": "drzsmith"
+      },
       "startDate": {
         "stringValue": "1965-10-02T00:00:00.000Z"
       }
@@ -170,6 +176,7 @@ logger.info({
   },
   "staff": {
     "id": 123,
+    "username": "drzsmith",
     "startDate": "1965-10-02T00:00:00.000Z",
     "position": "Staff Psychologist",
     "personality": "Untrustworthy",
