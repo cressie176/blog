@@ -109,7 +109,7 @@ module.exports = function(options) {
         else invalid.push(path);
       }, {});
       const indexError = invalid.length > 0
-        ? Object.assign(new Error('Indexes must be of type string, number, boolean, bigint or date'), { invalid })
+        ? Object.assign(new Error('Indexes must be of type String, Number, Boolean, BigInt, Date or null'), { invalid })
         : undefined;
       return { '@indexes': indexes, '@indexesErr': indexError, ...input };
     }
