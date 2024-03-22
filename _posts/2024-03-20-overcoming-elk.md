@@ -95,12 +95,12 @@ const DEFAULT_INDEXES = [
 module.exports = function(options) {
 
   const formatters = {
-    log(input) {
+    log(context) {
       const indexes = {};
       const invalid = [];
       DEFAULT_INDEXES.concat(options?.indexes).forEach((path) => {
-        if (!has(input, path)) return;
-        const value = get(input, path);
+        if (!has(context, path)) return;
+        const value = get(context, path);
         const type = typeOf(value);
         if (['Date', 'BigInt', 'String'].includes(type)) set(indexes, `${path}.stringValue`, value)
         else if (type === 'Boolean') set(indexes, `${path}.booleanValue`, value)
@@ -111,7 +111,7 @@ module.exports = function(options) {
       const indexError = invalid.length > 0
         ? Object.assign(new Error('Indexes must be of type String, Number, Boolean, BigInt, Date or null'), { invalid })
         : undefined;
-      return { '@indexes': indexes, '@indexesErr': indexError, ...input };
+      return { '@indexes': indexes, '@indexesErr': indexError, ...context };
     }
   }
 
