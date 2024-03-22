@@ -27,7 +27,7 @@ In this above example, Elasticsearch's dynamic mapping feature will create an in
 
 Theoretically, both problems will self resolve with increased diligence. In practice, any system which relies on human infallibility is doomed to fail. Another approach is to enforce a centrally managed schema. Unfortunately, this would create a developmental bottleneck and introduce a version management and domain modelling nightmare akin to sharing a single database between all of your applications. 
 
-A more practical approach is to solve Mapping Explosion by restricting Elasticsearch's indexes to a single root attribute (say "@indexes", and to copy select paths from the logged context to a sub-document beneath this attribute, e.g.
+A more practical approach is to solve Mapping Explosion by restricting Elasticsearch's indexes to a single root attribute (say '@indexes', and to copy select paths from the logged context to a sub-document beneath this attribute, e.g.
 
 ```js
 const indexes = [ "staff.id", "staff.username" ];
