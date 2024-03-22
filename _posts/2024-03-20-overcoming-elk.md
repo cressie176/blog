@@ -30,7 +30,7 @@ Theoretically, both problems will self resolve with increased diligence. In prac
 A more practical approach is to solve Mapping Explosion by restricting Elasticsearch's indexes to a single root attribute (say "@indexes"), and to copy select paths from the logged context to a sub-document beneath this attribute, e.g.
 
 ```js
-const indexes = [ "staff.id", "staff.username" ];
+const indexes = [ "staff.id", "staff.startDate" ];
 const logger = new Logger({ indexes });
 ```
 
@@ -38,9 +38,9 @@ const logger = new Logger({ indexes });
 {
   "staff": {
     "id": 123,
-    "username": "drsmith",
-    "job": "science officer",
-    "personality": "untrustworthy"
+    "username": "drzsmith",
+    "position": "Staff Psychologist",
+    "notes": ["untrustworthy","cowardly", "sabotage"]
   },
   "@indexes": {
     "staff": {
@@ -59,9 +59,9 @@ This solution partially solves the Type Conflict problem too. Elasticsearch will
 {
   "staff": {
     "id": 123,
-    "username": "drsmith",
-    "job": "science officer",
-    "personality": "untrustworthy"
+    "username": "drzsmith",
+    "position": "Staff Psychologist",
+    "notes": ["untrustworthy","cowardly", "sabotage"]
   },
   "@indexes": {
     "staff": {
@@ -74,6 +74,112 @@ This solution partially solves the Type Conflict problem too. Elasticsearch will
         }
       }
     }
+  }
+}
+```
+The above solution can be implemented in [pino](https://github.com/pinojs/pino) as follows...
+
+```js
+const pino = require('pino');
+const has = require('has-value');
+const get = require('get-value');
+const set = require('set-value');
+
+const DEFAULT_INDEXES = [
+  'staff.id'
+]
+
+module.exports = function(options) {
+
+  const formatters = {
+    log(input) {
+      const indexes = {};
+      const invalid = [];
+      DEFAULT_INDEXES.concat(options?.indexes).forEach((path) => {
+        if (!has(input, path)) return;
+        const value = get(input, path);
+        if (value instanceof Date) set(indexes, `${path}.stringValue`, value)
+        else if (typeof value === 'bigint') set(indexes, `${path}.stringValue`, value)
+        else if (typeof value === 'boolean') set(indexes, `${path}.booleanValue`, value)
+        else if (typeof value === 'number') set(indexes, `${path}.numberValue`, value)
+        else if (typeof value === 'string') set(indexes, `${path}.stringValue`, value)
+        else invalid.push(path)
+      }, {});
+      const indexError = invalid.length > 0
+        ? Object.assign(new Error('Indexes must be of type string, number, boolean, bigint or date'), { invalid })
+        : undefined;
+      return { '@indexes': indexes, '@indexError': indexError, ...input };
+    }
+  }
+
+  return pino({
+    base: null,
+    formatters,
+    serializers: {
+      "@indexError": pino.stdSerializers.err
+    },
+    transport: {
+      target: 'pino/file',
+      options: {
+        destination: 1,
+      }
+    },
+  });
+}
+```
+
+```js
+const logger = require('./logger-factory')({
+  indexes: [
+    'staff.startDate',
+    'staff.notes',
+  ]
+});
+logger.info({
+  staff: {
+    id: 123,
+    startDate: new Date('1965-10-02'),
+    position: 'Staff Psychologist',
+    personality: 'Untrustworthy',
+    notes: [
+      'Mutiny', 'Treachery', 'Sabotage'
+    ]
+  }
+});
+```
+
+```json
+{
+  "level": 30,
+  "time": 1711117540332,
+  "@indexes": {
+    "staff": {
+      "id": {
+        "numberValue": 123
+      },
+      "startDate": {
+        "stringValue": "1965-10-02T00:00:00.000Z"
+      }
+    }
+  },
+  "@indexesErr": {
+    "type": "Error",
+    "message": "Indexes must be of type string, number, boolean, bigint or date",
+    "stack": "Error: Indexes must be of type string, number, boolean, bigint or date\n...",
+    "invalid": [
+      "staff.notes"
+    ]
+  },
+  "staff": {
+    "id": 123,
+    "startDate": "1965-10-02T00:00:00.000Z",
+    "position": "Staff Psychologist",
+    "personality": "Untrustworthy",
+    "notes": [
+      "Mutiny",
+      "Treachery",
+      "Sabotage"
+    ]
   }
 }
 ```
