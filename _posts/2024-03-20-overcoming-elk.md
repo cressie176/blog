@@ -51,7 +51,7 @@ const logger = new Logger({ indexes });
 }
 ```
 
-The paths must resolve to a restricted set of types (String, Number, Boolean, Date, etc), rather than an Object or Array to avoid recreating the opportunity for Mapping Explosion all over again. By maintaining a common list of paths, and allowing the developers to extend it from application code, we solve the problem of Mapping Explosion and encourage a more consistent schema.
+The paths must resolve to a restricted set of types (String, Number, Boolean, Date and null), but not an Object or Array to avoid recreating the opportunity for Mapping Explosion all over again. By maintaining a common list of paths, and allowing the developers to extend it from application code, we solve the problem of Mapping Explosion and encourage a more consistent schema.
 
 This solution partially solves the Type Conflict problem too. Elasticsearch will convert numbers to strings (excluding NaN and Infinity if using JavaScript), but obviously cannot always convert strings to numbers. Furthermore, converting numbers to strings may affect sort order and prevents aggregation. An improvement is to differentiate between differently typed values with the same path by append a type suffix, eradicating potential conflict, e.g.
 
