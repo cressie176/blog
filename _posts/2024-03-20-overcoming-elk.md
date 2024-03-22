@@ -23,7 +23,7 @@ Following on from [my previous post](https://cressie176.github.io/blog/2024/03/1
 { "error": "Danger Will Robinson!" }
 ```
 
-In this above example, Elasticsearch's dynamic mapping feature will create an index for the first error attribute with as type Object, but cannot subsequently insert a string value into the index for the second error attribute.
+In this above example, Elasticsearch's dynamic mapping feature will create an index for the first error attribute as type 'Object', but cannot subsequently insert a String value into the index for the second error attribute.
 
 There is an argument that both problems will self resolve with improved diligence. In practice however, any system which relies on human infallibility is doomed to fail. Another approach is to enforce a centrally managed schema. Unfortunately, this would create a developmental bottleneck and introduce a version management and domain modelling nightmare akin to sharing a single database between all of your applications.
 
@@ -51,7 +51,7 @@ const logger = new Logger({ indexes });
 }
 ```
 
-The paths must resolve to a restricted set of types (string, number, boolean, date, etc), rather than an object or array to avoid recreating the opportunity for Mapping Explosion all over again. By maintaining a common list of paths, and allowing the developers to extend it from application code, we solve the problem of Mapping Explosion and encourage a more consistent schema.
+The paths must resolve to a restricted set of types (String, Number, Boolean, Date, etc), rather than an object or array to avoid recreating the opportunity for Mapping Explosion all over again. By maintaining a common list of paths, and allowing the developers to extend it from application code, we solve the problem of Mapping Explosion and encourage a more consistent schema.
 
 This solution partially solves the Type Conflict problem too. Elasticsearch will convert numbers to strings (excluding NaN and Infinity if using JavaScript), but obviously cannot always convert strings to numbers. Furthermore, converting numbers to strings may affect sort order and prevents aggregation. An improvement is to differentiate between differently typed values with the same path by append a type suffix, eradicating potential conflict, e.g.
 
