@@ -9,7 +9,7 @@ tags:
 - Type Conflict
 ---
 
-Following on from [my previous post](https://cressie176.github.io/blog/2024/03/16/best-practice-factory-modules.html) demonstrating the benefits of Factory Modules for concerns such as logging, I wanted to share some tips for working with the Elasticsearch, Logstash and Kibana (ELK) stack, which suffers from two near fatal flaws - [Mapping Explosion](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-explosion.html) and [Type Conflict](https://opster.com/guides/elasticsearch/glossary/elasticsearch-conflicting-field). 
+Following on from [my previous post](https://cressie176.github.io/blog/2024/03/16/best-practice-factory-modules.html) demonstrating the benefits of Factory Modules for concerns such as logging, I wanted to share some tips for working with the Elasticsearch, Logstash and Kibana (ELK) stack, which suffers from two, near fatal flaws - [Mapping Explosion](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-explosion.html) and [Type Conflict](https://opster.com/guides/elasticsearch/glossary/elasticsearch-conflicting-field). 
 
 **Mapping Explosion** occurs when Elasticsearch fails to keep pace with indexing. Logs will increasingly lag, making them useless for monitoring and live issue resolution. You will start losing shards and eventually the entire cluster. Mapping Explosion occurs because Elasticsearch's default behaviour is to index every attribute of every document you log, and your engineering team will inevitably log a wide variety of large documents. 
 
@@ -80,4 +80,4 @@ This solution partially solves the Type Conflict problem too. Elasticsearch will
 
 As per [my previous post](https://cressie176.github.io/blog/2024/03/16/best-practice-factory-modules.html), the logger configuration for creating the indexes should be added to a Factory Module to avoid duplication.
 
-My final tip is contentious - if you can afford to, avoid using ELK for logging. The above solution will alter the shape of the logged documents, breaking the [Principle of Least Astonishment](https://en.wikipedia.org/wiki/Principle_of_least_astonishment) for anyone querying the logs.
+My final tip is contentious - if you can afford to, avoid using ELK for logging. It is the proverbial square peg in a round hole. The above solution shaves ELK's sharpest corners, but alters the shape of the logged documents, breaking the [Principle of Least Astonishment](https://en.wikipedia.org/wiki/Principle_of_least_astonishment) for those querying them. If however, you are  too far down the ELK route to easily backtrack, or only have budget for a self-hosted logging platform, the above solution is an effective way to overcome ELK's two greatest flaws.
