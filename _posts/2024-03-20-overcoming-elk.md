@@ -108,7 +108,9 @@ module.exports = function(options) {
         else if (value === null) set(indexes, `${path}.nullValue`, true)
         else invalid.push(path);
       }, {});
-      const indexError = invalid.length > 0 ? Object.assign(new Error('Indexes must be of type string, number, boolean, bigint or date'), { invalid }) : undefined;
+      const indexError = invalid.length > 0
+        ? Object.assign(new Error('Indexes must be of type string, number, boolean, bigint or date'), { invalid })
+        : undefined;
       return { '@indexes': indexes, '@indexesErr': indexError, ...input };
     }
   }
