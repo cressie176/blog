@@ -114,7 +114,7 @@ module.exports = function(options) {
     base: null,
     formatters,
     serializers: {
-      "@indexError": pino.stdSerializers.err
+      "@indexErr": pino.stdSerializers.err
     },
     transport: {
       target: 'pino/file',
