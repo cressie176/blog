@@ -44,7 +44,7 @@ const logger = new Logger({ indexes });
   "@indexed": {
     "crew": {
       "id": 123,
-      "username: "drsmith"
+      "username": "drsmith"
     }
   }
 }
