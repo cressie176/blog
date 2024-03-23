@@ -23,7 +23,7 @@ Following on from [my previous post](https://cressie176.github.io/blog/2024/03/1
 { "error": "Danger Will Robinson!" }
 ```
 
-In this above example, Elasticsearch's dynamic mapping feature will create an index for the first error attribute with type Object, ant therefore cannot insert a String value into the index for the second error attribute.
+In this above example, Elasticsearch's dynamic mapping feature will create an index for the first error attribute with type Object. Since the type is now fixed, it cannot insert a String value into the index for the second error attribute.
 
 Theoretically, both problems will self resolve with increased diligence. In practice, any system which relies on human infallibility is doomed to fail. Another approach is to enforce a centrally managed schema. Unfortunately, this would create a developmental bottleneck and introduce a version management and domain modelling nightmare akin to sharing a single database between all of your applications. 
 
