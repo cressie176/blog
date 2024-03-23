@@ -27,15 +27,17 @@ In this above example, Elasticsearch's dynamic mapping feature will create an in
 
 Theoretically, both problems will self resolve with increased diligence. In practice, any system which relies on human infallibility is doomed to fail. Another approach is to enforce a centrally managed schema. Unfortunately, this would create a developmental bottleneck and introduce a version management and domain modelling nightmare akin to sharing a single database between all of your applications. 
 
-A more practical way to prevent Mapping Explosion is by restricting Elasticsearch's dynamic mapping behabiour to a single root attribute (say "@indexes"), and to copy select paths from the logged context to a sub-document beneath this attribute, e.g.
+A more practical way to prevent Mapping Explosion is by restricting Elasticsearch"s dynamic mapping behabiour to a single root attribute (say "@indexes"), and to copy select paths from the logged context to a sub-document beneath this attribute, e.g.
 
 ```js
 const indexes = [ "staff.id", "staff.startDate" ];
 const logger = new Logger({ indexes });
+logger.info("Never fear, Smith is here", { staff });
 ```
 
 ```json
 {
+  "message": "Never fear, Smith is here",
   "staff": {
     "id": 123,
     "username": "drzsmith",
@@ -81,15 +83,15 @@ This solution partially solves the Type Conflict problem too. Elasticsearch will
 The above solution can be implemented in [pino](https://github.com/pinojs/pino) as follows...
 
 ```js
-const pino = require('pino');
-const has = require('has-value');
-const get = require('get-value');
-const set = require('set-value');
-const typeOf = require('which-builtin-type');
+const pino = require("pino");
+const has = require("has-value");
+const get = require("get-value");
+const set = require("set-value");
+const typeOf = require("which-builtin-type");
 
 const DEFAULT_INDEXES = [
-  'staff.id',
-  'staff.username',
+  "staff.id",
+  "staff.username",
 ];
 
 module.exports = function(options) {
@@ -102,16 +104,16 @@ module.exports = function(options) {
         if (!has(context, path)) return;
         const value = get(context, path);
         const type = typeOf(value);
-        if (['Date', 'BigInt', 'String'].includes(type)) set(indexes, `${path}.stringValue`, value)
-        else if (type === 'Boolean') set(indexes, `${path}.booleanValue`, value)
-        else if (type === 'Number') set(indexes, `${path}.numberValue`, value)
+        if (["Date", "BigInt", "String"].includes(type)) set(indexes, `${path}.stringValue`, value)
+        else if (type === "Boolean") set(indexes, `${path}.booleanValue`, value)
+        else if (type === "Number") set(indexes, `${path}.numberValue`, value)
         else if (value === null) set(indexes, `${path}.nullValue`, true)
         else invalid.push(path);
       }, {});
       const indexError = invalid.length > 0
-        ? Object.assign(new Error('Indexes must be of type String, Number, Boolean, BigInt, Date or null'), { invalid })
+        ? Object.assign(new Error("Indexes must be of type String, Number, Boolean, BigInt, Date or null"), { invalid })
         : undefined;
-      return { '@indexes': indexes, '@indexesErr': indexError, ...context };
+      return { "@indexes": indexes, "@indexesErr": indexError, ...context };
     }
   }
 
@@ -122,7 +124,7 @@ module.exports = function(options) {
       "@indexErr": pino.stdSerializers.err
     },
     transport: {
-      target: 'pino/file',
+      target: "pino/file",
       options: {
         destination: 1,
       }
@@ -132,21 +134,21 @@ module.exports = function(options) {
 ```
 
 ```js
-const logger = require('./logger-factory')({
+const logger = require("./logger-factory")({
   indexes: [
-    'staff.startDate',
-    'staff.notes',
+    "staff.startDate",
+    "staff.notes",
   ]
 });
 logger.info({
   staff: {
     id: 123,
-    username: 'drzsmith',
-    startDate: new Date('1965-10-02'),
-    position: 'Staff Psychologist',
-    personality: 'Untrustworthy',
+    username: "drzsmith",
+    startDate: new Date("1965-10-02"),
+    position: "Staff Psychologist",
+    personality: "Untrustworthy",
     notes: [
-      'Mutiny', 'Treachery', 'Sabotage'
+      "Mutiny", "Treachery", "Sabotage"
     ]
   }
 });
@@ -194,4 +196,4 @@ logger.info({
 
 As per [my previous post](https://cressie176.github.io/blog/2024/03/16/best-practice-factory-modules.html), the logger configuration for safely copying the paths to the "@indexes" sub-document should be added to a Factory Module to avoid duplication.
 
-My final tip is contentious - if you can afford to, avoid using ELK for logging. It is the proverbial square peg in a round hole. While the above solution shaves ELK's sharpest corners, it alters the shape of the logged documents, breaking the [Principle of Least Astonishment](https://en.wikipedia.org/wiki/Principle_of_least_astonishment) for those querying them. If however, you are too far gone to easily backtrack, or only have budget for a self-hosted logging platform, the above solution is an effective way to overcome ELK's two greatest flaws.
+My final tip is contentious - if you can afford to, avoid using ELK for logging. It is the proverbial square peg in a round hole. While the above solution shaves ELK"s sharpest corners, it alters the shape of the logged documents, breaking the [Principle of Least Astonishment](https://en.wikipedia.org/wiki/Principle_of_least_astonishment) for those querying them. If however, you are too far gone to easily backtrack, or only have budget for a self-hosted logging platform, the above solution is an effective way to overcome ELK's two greatest flaws.
