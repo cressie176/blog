@@ -171,7 +171,6 @@ logger.info({ staff }, "Never fear, Smith is here");
     "username": "drzsmith",
     "startDate": "1965-10-02T00:00:00.000Z",
     "position": "Staff Psychologist",
-    "personality": "Untrustworthy",
     "notes": [
       "Mutiny",
       "Treachery",
