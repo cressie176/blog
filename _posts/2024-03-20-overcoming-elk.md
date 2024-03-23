@@ -30,7 +30,7 @@ Theoretically, both problems will self resolve with increased diligence. In prac
 A more practical way to prevent Mapping Explosion is by restricting Elasticsearch"s dynamic mapping behabiour to a single root attribute (say "@indexes"), and to copy select paths from the logged context to a sub-document beneath this attribute, e.g.
 
 ```js
-const indexes = [ "staff.id", "staff.startDate" ];
+const indexes = [ "staff.id", "staff.username" ];
 const logger = new Logger({ indexes });
 logger.info("Never fear, Smith is here", { staff });
 ```
