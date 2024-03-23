@@ -180,6 +180,6 @@ logger.info({ staff }, "Never fear, Smith is here");
 }
 ```
 
-As per [my previous post](https://cressie176.github.io/blog/2024/03/16/best-practice-factory-modules.html), the logger configuration for safely copying the paths to the "@indexes" sub-document should be added to a Factory Module to avoid duplication.
+As per [my previous post](https://cressie176.github.io/blog/2024/03/16/best-practice-factory-modules.html), the logger configuration for safely copying the paths to the "@indexes" sub-document should be added to a Factory Module to encourage adoption and avoid duplication.
 
 My final tip is contentious - if you can afford to, avoid using ELK for logging. It is the proverbial square peg in a round hole. While the above solution shaves ELK"s sharpest corners, it alters the shape of the logged documents, breaking the [Principle of Least Astonishment](https://en.wikipedia.org/wiki/Principle_of_least_astonishment) for those querying them. If however, you are too far gone to easily backtrack, or only have budget for a self-hosted logging platform, the above solution is an effective way to overcome ELK's two greatest flaws.
