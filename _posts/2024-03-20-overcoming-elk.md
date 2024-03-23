@@ -138,7 +138,7 @@ module.exports = function(options) {
 
 ```js
 const factory = require("./logger-factory");
-const indexes = [ "staff.id", "staff.username" ];
+const indexes = [ "staff.startDate", "staff.notes" ];
 const logger = factory({ indexes });
 logger.info({ staff }, "Never fear, Smith is here");
 ```
