@@ -30,8 +30,9 @@ Theoretically, both problems will self resolve with increased diligence. In prac
 A more practical way to prevent Mapping Explosion is by restricting Elasticsearch"s dynamic mapping behabiour to a single root attribute (say "@indexes"), and to copy select paths from the logged context to a sub-document beneath this attribute, e.g.
 
 ```js
+const factory = require("./logger-factory");
 const indexes = [ "staff.id", "staff.username" ];
-const logger = new Logger({ indexes });
+const logger = factory({ indexes });
 logger.info("Never fear, Smith is here", { staff });
 ```
 
@@ -42,6 +43,7 @@ logger.info("Never fear, Smith is here", { staff });
     "id": 123,
     "username": "drzsmith",
     "position": "Staff Psychologist",
+    "startDate": "1965-10-02T00:00:00.000Z",
     "notes": ["untrustworthy","cowardly", "sabotage"]
   },
   "@indexes": {
@@ -59,6 +61,7 @@ This solution partially solves the Type Conflict problem too. Elasticsearch will
 
 ```json
 {
+  "message": "Never fear, Smith is here",
   "staff": {
     "id": 123,
     "username": "drzsmith",
@@ -134,24 +137,10 @@ module.exports = function(options) {
 ```
 
 ```js
-const logger = require("./logger-factory")({
-  indexes: [
-    "staff.startDate",
-    "staff.notes",
-  ]
-});
-logger.info({
-  staff: {
-    id: 123,
-    username: "drzsmith",
-    startDate: new Date("1965-10-02"),
-    position: "Staff Psychologist",
-    personality: "Untrustworthy",
-    notes: [
-      "Mutiny", "Treachery", "Sabotage"
-    ]
-  }
-});
+const factory = require("./logger-factory");
+const indexes = [ "staff.id", "staff.username" ];
+const logger = factory({ indexes });
+logger.info({ staff }, "Never fear, Smith is here");
 ```
 
 ```json
@@ -179,6 +168,7 @@ logger.info({
       "staff.notes"
     ]
   },
+  "msg": "Never fear, Smith is here",
   "staff": {
     "id": 123,
     "username": "drzsmith",
