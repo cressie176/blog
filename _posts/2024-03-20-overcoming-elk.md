@@ -92,10 +92,7 @@ const get = require("get-value");
 const set = require("set-value");
 const typeOf = require("which-builtin-type");
 
-const DEFAULT_INDEXES = [
-  "staff.id",
-  "staff.username",
-];
+const DEFAULT_INDEXES = ["staff.id", "staff.username"];
 
 module.exports = function(options) {
 
