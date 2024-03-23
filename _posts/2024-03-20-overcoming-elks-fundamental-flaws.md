@@ -25,7 +25,7 @@ Following on from my previous post highlighting the benefits of [Best Practice F
 
 In this above example, Elasticsearch's dynamic mapping feature will create an index for the first error attribute with type Object. Since the type is now fixed, it cannot insert a String value into the index for the second error attribute.
 
-Theoretically, both problems will self resolve with increased diligence. In practice, any system which relies on human infallibility is doomed to fail. Another approach is to enforce a centrally managed schema. Unfortunately, this would create a developmental bottleneck and introduce a version management and domain modelling nightmare akin to sharing a single database between all of your applications. 
+Theoretically, both problems will self resolve with increased diligence. In practice, any system which relies on human infallibility is doomed to fail. Another approach is to enforce a centrally managed schema, potentially using [dynamic templates](https://www.elastic.co/guide/en/elasticsearch/reference/current/dynamic-templates.html). Unfortunately, this would create a developmental bottleneck and introduce a version management and domain modelling nightmare akin to sharing a single database between all of your applications. 
 
 A more practical way to prevent Mapping Explosion is by restricting Elasticsearch"s dynamic mapping behabiour to a single root attribute (say "@indexes"), and to copy select paths from the logged context to a sub-document beneath this attribute, e.g.
 
