@@ -126,9 +126,9 @@ module.exports = function(options) {
     transport: {
       target: "pino/file",
       options: {
-        destination: 1,
+        destination: 1
       }
-    },
+    }
   });
 }
 ```
