@@ -9,7 +9,7 @@ tags:
 - Type Conflict
 ---
 
-Following on from [my previous post](https://cressie176.github.io/blog/2024/03/16/best-practice-factory-modules.html) highlighting the benefits of Factory Modules for concerns such as logging, I wanted to share some tips for working with the Elasticsearch, Logstash and Kibana (ELK) stack, which suffers from two fundamental flaws - [Mapping Explosion](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-explosion.html) and [Type Conflict](https://opster.com/guides/elasticsearch/glossary/elasticsearch-conflicting-field). 
+Following on from my previous post highlighting the benefits of [Best Practice Factory Modules](https://cressie176.github.io/blog/2024/03/16/best-practice-factory-modules.html) for concerns such as logging, I wanted to share some tips for working with the Elasticsearch, Logstash and Kibana (ELK) stack, which suffers from two fundamental flaws - [Mapping Explosion](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-explosion.html) and [Type Conflict](https://opster.com/guides/elasticsearch/glossary/elasticsearch-conflicting-field). 
 
 **Mapping Explosion** occurs when Elasticsearch fails to keep pace with indexing. Logs will increasingly lag, making them useless for monitoring and live issue resolution. Eventually you will start to lose shards, and maybe even the cluster. Mapping Explosion is most often a consequence of Elasticsearch's default behaviour, which is to index every attribute of every document you log. Since engineers may inadvertently log a variety of large documents, Mapping Explosion is almost inevitable for large teams if nothing is done.
 
