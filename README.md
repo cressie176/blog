@@ -1,1 +1,1 @@
-See https://cressie176.github.io/blog/
+See https://stephen-cresswell.com
