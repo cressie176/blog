@@ -3,7 +3,7 @@ title: "Best Practice Factory Modules"
 date: 2024-03-16
 tags:
 - Microservices
-- Architecture
+- Software Architecture
 - Best Practice
 - Factory Module
 - Logging
