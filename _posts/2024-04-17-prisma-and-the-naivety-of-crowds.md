@@ -22,7 +22,7 @@ In summary, Prisma has a history of surprising, limiting and sometimes dangerous
 
 Prisma's popularity, combined with its claims of simplicity and a great developer experience, will ensure those in the second and third categories will keep choosing it, putting them and their customers at risk of massive data loss. The problem is not restricted to Prisma. While we in the software industry continue to trust the misguided wisdom of uninformed crowds, the software we produce will continue to depend on libraries that are unfit for purpose.
 
-Instead of selecting a library on popularism alone, I recommend writing a checklist of key criteria, then evaluating the library against them. For an ORM the list might be...
+Instead of selecting a library on popularism alone, I recommend writing a list of key criteria, then evaluating the library against them. For an ORM the list might be...
 
 - Model Definition
   - Columns
