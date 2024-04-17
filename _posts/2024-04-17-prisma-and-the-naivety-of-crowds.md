@@ -22,38 +22,6 @@ In summary, Prisma has a history of surprising, limiting and sometimes dangerous
 
 Prisma's popularity, combined with its claims of simplicity and a great developer experience, will ensure those in the second and third categories keep choosing it, putting them and their customers at risk of massive data loss. The problem is not restricted to Prisma. While we in the software industry continue to trust the misguided wisdom of uninformed crowds, the software we produce will continue to depend on libraries that are unfit for purpose.
 
-Instead of selecting a library on popularism alone, I recommend writing a list of key criteria, then evaluating the library against them. For an ORM the list might be...
-
-- Model Definition
-  - Columns
-  - Relationships
-  - Type Mapping
-- Schema Definition
-  - Objects (Tables, Views, Functions, etc)
-  - Indexes / Constraints
-  - Cascades
-  - SQL Case
-- Query API
-  - CRUD
-  - Upsert
-  - Bulk
-  - Where clause
-  - Joins
-  - Aggregation
-  - Functions
-- Raw Query Support
-  - Execution
-  - Binding
-  - Result mapping
-- Transaction API
-  - Explict Transactions
-  - Transparent Transactions
-  - Custom Isolation Levels
-- Generated SQL
-  - Correctness
-  - Performance
-  - Debuggable
-- TypeScript
-- Migrations
+Instead of selecting a library on popularism alone, I recommend identifing the screening and ranking criteria, then evaluating the library against them. Screening criteria are the must have features, examples of which might be "Explicit transaction management" or "Controllable isolation levels". If a library fails screening criteria it should be rejected immediately. In contract, ranking criteria is not essential, but helps you find the best choice from a shortlist acceptable candidates. Examples might be "Transparent transaction management" or "Upserts". It is a good idea to review the documentation of popular alternative libraries to identify the salient screening and ranking criteria.
 
 I also suggest reviewing open and closed GitHub issues, paying particular attention to any that cause surprise. Finally, I suggest actively looking for articles that are objectively critical of the library, as well as those that advocate for it. If during your evaluation, you encounter bizarre or reckless design decisions, such as an ORM that doesn't support transactions, or worse, takes a laissez-faire attitude to protecting your data, then I recommend abandoning the evaluation and looking elsewhere.
