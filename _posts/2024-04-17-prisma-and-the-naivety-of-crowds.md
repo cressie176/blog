@@ -54,6 +54,4 @@ Prisma's popularity, combined with its inflated marketing claims, will ensure th
 - TypeScript
 - Migrations
 
-I also suggest reviewing open and closed GitHub issues, paying particular attention to any that cause surprise. Finally, I suggest actively looking for articles that are objectively critical of the library, as well as those that advocate for it.
-
-If during your evaluation, you encounter bizarre or reckless design decisions, such as an ORM that doesn't support transactions, or worse, takes a laissez-faire attitude to protecting your data, then I recommend abandoning the evaluation and looking elsewhere.
+I also suggest reviewing open and closed GitHub issues, paying particular attention to any that cause surprise. Finally, I suggest actively looking for articles that are objectively critical of the library, as well as those that advocate for it. If during your evaluation, you encounter bizarre or reckless design decisions, such as an ORM that doesn't support transactions, or worse, takes a laissez-faire attitude to protecting your data, then I recommend abandoning the evaluation and looking elsewhere.
