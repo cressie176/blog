@@ -32,7 +32,7 @@ Prisma's popularity, combined with its inflated marketing claims, will ensure th
   - Cascades
   - SQL Case
 - Query API
-  - CRUD,
+  - CRUD
   - Upsert
   - Bulk
   - Where clause
