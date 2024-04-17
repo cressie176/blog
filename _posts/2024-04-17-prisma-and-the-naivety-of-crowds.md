@@ -1,4 +1,4 @@
-A friend recently drew my attention to [this](https://github.com/prisma/prisma/issues/20169) issue with [Prisma](https://www.prisma.io/). For the unfamiliar, Prisma is a popular Node.js Object Relational Mapper (ORM) library with excellent TypeScript support and great documentation. The issue, which the Prisma developers [state](https://github.com/prisma/prisma/issues/20169#issuecomment-1631989456) is by design, is that Prisma will delete all rows in a table if you specify a where clause attribute with an undefined value, e.g.
+A friend recently drew my attention to a [dangerous issue](https://github.com/prisma/prisma/issues/20169) with [Prisma](https://www.prisma.io/). For the unfamiliar, Prisma is a popular Node.js Object Relational Mapper (ORM) library with excellent TypeScript support and great documentation. The issue, which the Prisma developers [state](https://github.com/prisma/prisma/issues/20169#issuecomment-1631989456) is by design, is that Prisma will delete all rows in a table if you specify a where clause attribute with an undefined value, e.g.
 
 ```js
 await prisma.theme.deleteMany({
