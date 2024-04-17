@@ -51,7 +51,7 @@ Prisma's popularity, combined with its inflated marketing claims, will ensure th
   - Correctness
   - Performance
   - Debuggable
-- TypeScript Support
+- TypeScript
 - Migrations
 
 I also suggest reviewing open and closed GitHub issues, paying particular attention to any that cause surprise. Finally, search for articles that are objectively critical of the library, as well as those that advocate for it.
