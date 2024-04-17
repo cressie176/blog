@@ -20,9 +20,7 @@ In summary, Prisma has a history of surprising, limiting and sometimes dangerous
 (ii) don't understand what features are most important for such applications, or<br>
 (iii) don't check whether Prisma adequately supports these features<br>
 
-Prisma's popularity, combined with its inflated marketing claims, will ensure those in the second and third categories will continue to adopt it, putting them and their customers at risk of massive data loss. The problem is not restricted to Prisma. While we continue to trust the naivety of uninformed crowds, the software we produce will continue to depend on libraries that are unfit for purpose.
-
-Instead of selecting a library on popularism alone, I recommend writing a checklist of key criteria, then evaluating the library against them. For an ORM the list might be...
+Prisma's popularity, combined with its inflated marketing claims, will ensure those in the second and third categories will continue to adopt it, putting them and their customers at risk of massive data loss. The problem is not restricted to Prisma. While we continue to trust the naivety of uninformed crowds, the software we produce will continue to depend on libraries that are unfit for purpose. Instead of selecting a library on popularism alone, I recommend writing a checklist of key criteria, then evaluating the library against them. For an ORM the list might be...
 
 - Model Definition
   - Columns
