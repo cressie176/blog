@@ -16,9 +16,9 @@ Then there was [this damning article](https://codedamn.com/news/product/dont-use
 
 In summary, Prisma has a history of surprising, limiting and sometimes dangerous design decisions that make it unfit for typical enterprise applications. So why is it popular? I can only imagine that Prisma's excellent TypeScript support, a pleasing website and use of Rust, enamours it to software engineers who care about those things, but
 
-(i) don't use Prisma in typical enterprise applications, or
-(ii) don't understand what features are most important for such applications, or
-(iii) don't check whether Prisma adequately supports these features
+(i) don't use Prisma in typical enterprise applications, or<br>
+(ii) don't understand what features are most important for such applications, or<br>
+(iii) don't check whether Prisma adequately supports these features<br>
 
 Prisma's popularity, combined with its inflated marketing claims, will ensure those in the second and third categories will continue to adopt it, putting them and their customers at risk of massive data loss. The problem is not restricted to Prisma. While we as an industry continue to trust the naivety of uninformed crowds, the software we produce will continue to depend on libraries that are unfit for purpose.
 
