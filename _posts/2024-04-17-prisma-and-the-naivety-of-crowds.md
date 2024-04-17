@@ -14,7 +14,7 @@ This is not the first time a Prisma design decision has surprised me. When I fir
 
 Then there was [this damning article](https://codedamn.com/news/product/dont-use-prisma) posted in April 2023 by Mehul Mohan of Codedamn, highlighting the problems of Prisma's in-memory joins. Prisma added a [preview feature](https://www.prisma.io/blog/prisma-orm-now-lets-you-choose-the-best-join-strategy-preview) in February 2024 allowing the choice of in-memory/application-level or database-level joins, but once again, I find the original design decision to eschew database-level joins in favour of in-memory/application-level ones bizarre.
 
-In summary, Prisma has a history of surprising, limiting and sometimes dangerous design decisions that make it unfit for typical enterprise applications. So why is it so popular? I can only imagine that Prisma's has excellent TypeScript support, a pleasing website and use of Rust, enamours it to software engineers who care about those things, but
+In summary, Prisma has a history of surprising, limiting and sometimes dangerous design decisions that make it unfit for typical enterprise applications. So why is it popular? I can only imagine that Prisma's excellent TypeScript support, a pleasing website and use of Rust, enamours it to software engineers who care about those things, but
 
 (i) don't use Prisma in typical enterprise applications, or
 (ii) don't understand what features are most important for such applications, or
