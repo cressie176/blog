@@ -29,29 +29,115 @@ Screening is usually simpler than ranking, and since it removes candidates, shou
 ## An Example
 
 ### Screening
-|                        | Candidate A        | Candidate B | Candidate C |
-|------------------------|--------------------|-------------|-------------|
-| Documentation          | ✓ | ✓ | ✓ |
-| Maintained             | ✓ | ✓ | ✓ |
-| PostgreSQL             | ✓ | ✓ | ✓ |
-| Showstoppers           | ✗ | ✓ | ✓ |
-| Test Coverage          |   | ✓ | ✓ |
-| Transactions           |   | ✓ | ✓ |
-| Performance            |   | ✓ | ✓ |
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Candidate A</th>
+<th>Candidate B</th>
+<th>Candidate C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Documentation</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Maintained</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Showstoppers</td>
+<td>✗</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Test Coverage</td>
+<td></td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Transactions</td>
+<td></td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td></td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
 
 Candidate A was rejected due to showstopping issues. Screening criteria that is hard to measure (e.g. Performance) should be evaluated last.
 
 ### Ranking
-|                          | Candidate B    | Candidate C    |
-|--------------------------|----------------|----------------|
-| Model Definition         | Excellent      | Excellent      |
-| Schema Definition        | Excellent      | Excellent      |
-| CRUD Operations          | Good           | Excellent      |
-| Query API                | Good           | Excellent      |
-| Raw Query Support        | Fair           | Good           |
-| Transaction Management   | Good           | Good           |
-| Maintenance              | Excellent      | Fair           |
-| TypeScript Support       | Excellent      | Poor           |
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Candidate B</th>
+<th>Candidate C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model Definition</td>
+<td>Excellent</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Schema Definition</td>
+<td>Excellent</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>CRUD Operations</td>
+<td>Good</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Query API</td>
+<td>Good</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Raw Query Support</td>
+<td>Fair</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Transaction Management</td>
+<td>Good</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Maintenance</td>
+<td>Excellent</td>
+<td>Fair</td>
+</tr>
+<tr>
+<td>TypeScript Support</td>
+<td>Excellent</td>
+<td>Poor</td>
+</tr>
+</tbody>
+</table>
 
 Candidate B has far better TypeScript support and is significantly better maintained, so is probably the best choice. When the decision was closer, extend the table to include less important criteria.
 
