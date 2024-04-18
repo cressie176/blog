@@ -30,7 +30,7 @@ Screening is usually simpler than ranking, and since it removes candidates, shou
 
 ### Screening
 |                        | Candidate A        | Candidate B | Candidate C |
-|:-----------------------|:-------------------|:------------|:------------|
+|------------------------|--------------------|-------------|-------------|
 | Documentation          | ✓ | ✓ | ✓ |
 | Maintained             | ✓ | ✓ | ✓ |
 | PostgreSQL             | ✓ | ✓ | ✓ |
@@ -43,7 +43,7 @@ Candidate A was rejected due to showstopping issues. Screening criteria that is 
 
 ### Ranking
 |                          | Candidate B    | Candidate C    |
-|:-------------------------|:---------------|:---------------|
+|--------------------------|----------------|----------------|
 | Model Definition         | Excellent      | Excellent      |
 | Schema Definition        | Excellent      | Excellent      |
 | CRUD Operations          | Good           | Excellent      |
