@@ -62,7 +62,7 @@ Screening is usually simpler than ranking, and since it removes candidates, shou
 <td>✓</td>
 </tr>
 <tr>
-<td>Showstopper Issues</td>
+<td>Showstoppers</td>
 <td>✗</td>
 <td>✓</td>
 <td>✓</td>
