@@ -1,6 +1,6 @@
 ---
 title: "Overcoming ELK's Fundamental Flaws"
-date: 2024-03-20.md
+date: 2024-03-20
 tags:
 - Elasticsearch
 - ELK
