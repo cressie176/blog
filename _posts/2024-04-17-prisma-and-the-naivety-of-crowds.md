@@ -88,7 +88,7 @@ Screening is usually simpler than ranking, and since it removes candidates, shou
 </tbody>
 </table>
 
-Candidate A was rejected due to showstopping issues. Screening criteria that is hard to measure (e.g. Performance) should be evaluated last, to avoid wasting time for candidates that fail other criteria.
+Candidate A was rejected due to showstopping issues. Screening criteria that is hard to measure (e.g. Performance) should be evaluated last, to avoid wasting time.
 
 ### Ranking Example
 <table>
