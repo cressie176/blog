@@ -19,6 +19,8 @@ A better approach is to wrap 3rd party libraries like pino in custom factory mod
 - Support for test friendly logging
 - Support for [async context tracking](https://nodejs.org/api/async_context.html)
 - Support for redaction of sensitive content
+- Support for conditional sampling
+- Support for level based thresholds
 - Reporting the source of empty log records
 - Reporting the source of overised log records
 - Relocating the context to a subdocument to avoid name clashes (level, time, etc)
