@@ -1,6 +1,6 @@
 ---
 title: "Reminders as Code"
-date: 2024-04-22
+date: 2024-12-23
 tags:
 - Reminders
 - Calendar
