@@ -24,8 +24,8 @@ To see just how poorly the new search performs for these examples, I searched fo
 
 #### Default Search Order
 <table>
-<tr><th>rank</th><th>library</th><th>comment</th><th>relevant</th><th>current</th><th>popular</th></tr>
-<td>1</td><td>node-env-configuration</td><td>A hierarchical configuration library with 4K downloads, last published 8 years ago</td><td>✅</td><td>❌</td><td>❌</td></tr>
+<tr><th>Rank</th><th>Library</th><th>Assessment</th><th>Relevant</th><th>Current</th><th>Popular</th></tr>
+<tr><td>1</td><td>node-env-configuration</td><td>A hierarchical configuration library with 4K downloads, last published 8 years ago</td><td>✅</td><td>❌</td><td>❌</td></tr>
 <tr><td>2</td><td>ngx-access</td><td>An access control library for Angular with 78 downloads, last published 4 years ago</td><td>❌</td><td>❌</td><td>❌</td></tr>
 <tr><td>3</td><td>turing-config</td><td>A hierarchical configuration library with 30 downloads, last published 7 years ago</td><td>✅</td><td>❌</td><td>❌</td></tr>
 <tr><td>4</td><td>typeconf</td><td>A hierarchical configuration library with 21 downloads, last published 7 years ago </td><td>✅</td><td>❌</td><td>❌</td></tr>
@@ -41,7 +41,7 @@ Only 8 of the above results are configuration libraries, 6 have fewer than 100 d
 
 #### Most Downloaded This Week Search Order
 <table>
-<tr><th>rank</th><th>library</th><th>comment</th><th>relevant</th><th>current</th><th>popular</th></tr>
+<tr><th>Rank</th><th>Library</th><th>Assessment</th><th>Relevant</th><th>Current</th><th>Popular</th></tr>
 <tr><td>1</td><td>commander</td><td>A cli library with 165M downloads, last published 7 months ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
 <tr><td>2</td><td>execa</td><td>A process execution library with 87M downloads, last published 1 month ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
 <tr><td>3</td><td>schema-utils</td><td>A webpack validation library with 80M downloads, last published 1 year ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
