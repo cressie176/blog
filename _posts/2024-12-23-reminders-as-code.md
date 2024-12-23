@@ -40,7 +40,7 @@ Reminders as Code offers an open, convenient and long term solution to this prob
 #### Example Reminders File
 
 ```yaml
-  # A unique id used to duplicate checking
+  # A unique id used for duplicate checking
 - id: 'update-contentful-api-key'
 
   # Optional description that can be useful to track the background behind the reminder
