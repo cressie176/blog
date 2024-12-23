@@ -35,7 +35,7 @@ Reminders as Code offers an open, convenient and long term solution to this prob
 
 ### Introducing Knuff
 
-[Knuff](github.com/cressie176/knuff) is an open-source tool designed to implement reminders as code. Reminders are specified as JSON or YAML and stored in plain text. A script that processes the reminders file, identifies due reminders, and posts them to an issue tracking system (e.g., GitHub) via a 'driver'. The script must be run by a scheduler, such as that provided by GitHub Actions.
+[Knuff](github.com/cressie176/knuff) is an open-source reminders as code implementation. Reminders are specified as JSON or YAML and stored in plain text. A script processes the reminders file, identifying due reminders, posting them to the issue tracking system of choice (e.g., GitHub) via a 'driver'. The script must be run by a scheduler (such as that provided by GitHub Actions) on at least a daily basis.
 
 #### Example Reminders File
 
