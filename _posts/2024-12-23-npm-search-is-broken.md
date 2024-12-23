@@ -16,7 +16,7 @@ The new search algorithm prioritises objective sorting criteria like relevance, 
 
 - **Prominence of Obscure or Stale Packages**: In searches like “hierarchical configuration,” packages that are outdated, rarely downloaded, or both dominate the results, displacing widely used and current libraries.
 
-### What Might Have Gone Wrong?
+### What might have gone wrong?
 From my observations, it appears the new search algorithm may disregard or de-emphasise package metadata such as "keywords" in favour of the contents of the package’s README. The problem with prioritising the README is that it inadvertently emphasises irrelevant libraries. For example, many libraries include a section in their README for migrating from previous versions. This causes them to rank highly for searches like “database migration” even when they have nothing to do with databases migration. Similiarly, many libraries include a section titled "Config" or “Configuration” to explain how to set up the package. This means irrelevant libraries frequently rank highly when searching for “configuration”
 
 ### Demonstrating the problem
