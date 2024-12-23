@@ -10,7 +10,7 @@ As an active user of npm and an author/maintainer of several libraries, I’ve r
 ### What's the Issue?
 The new search algorithm prioritises objective sorting criteria like relevance, download counts, dependency counts, and publication date. However, these changes have led to surprising and often unhelpful results in real-world usage. Here are some key concerns:
 
-- **Irrelevant Results**: Searching for “RabbitMQ” now returns results like vasync and slugid, which are unrelated to RabbitMQ. This behaviour was not observed with the previous search implementation.
+- **Irrelevant Results**: Searching for “RabbitMQ” now returns results like [vasync](https://www.npmjs.com/package/vasync) and [slugid](https://www.npmjs.com/package/slugid), which are unrelated to RabbitMQ. This behaviour was not observed with the previous search implementation.
 
 - **Misranked Relevant Packages**: Established and actively maintained libraries have been pushed far down the rankings for relevant keywords, making them difficult to find.
 
@@ -64,4 +64,4 @@ Neither option is useful.
 
 I understand that balancing relevance, popularity, and recency is complex. Furthermore, improving tools like npm search is no small feat, especially given the wide-ranging needs of its user base. I deeply appreciate the work that maintainers to improve npm’s tools. However, the current implementation has clear flaws that undermine its usability.
 
-One of the npm projects authors/maintainers announced the changes via [this discussion](https://github.com/orgs/community/discussions/144952), and invited feedback. I offered the above three weeks ago, but it was initially misunderstood, and after clarification has still to be acknowledged. If you've encountered similar issues or have ideas for improvement, your feedback could help improve npm's search experience. Please join [the discussion](https://github.com/orgs/community/discussions/144952) on GitHub. Thank you.
+One of the npm projects authors/maintainers announced the changes via [this discussion](https://github.com/orgs/community/discussions/144952), and invited feedback. I offered the above three weeks ago, but it was initially misunderstood, and after clarification has still to be adequately acknowledged. If you've encountered similar issues or have ideas for improvement, your feedback could help improve npm's search experience. Please join [the discussion](https://github.com/orgs/community/discussions/144952) on GitHub. Thank you.
