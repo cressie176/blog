@@ -23,34 +23,36 @@ From my observations, it appears the new search algorithm may disregard or de-em
 To see just how poorly the new search performs for these examples, I searched for "hierarchical configuration" and reviewed the top 10 results...
 
 #### Default Search Order
-| rank | library | comment | relevant | current | popular |
-|-----|--------|----------|----------|--------|---------|
-| 1 | node-env-configuration | A hierarchical configuration library with 4K downloads, last published 8 years ago | ✅ | ❌ | ❌ |
-| 2 | ngx-access | An access control library for Angular with 78 downloads, last published 4 years ago | ❌ | ❌ | ❌ |
-| 3 | turing-config | A hierarchical configuration library with 30 downloads, last published 7 years ago | ✅ | ❌ | ❌ |
-| 4 | typeconf | A hierarchical configuration library with 21 downloads, last published 7 years ago  | ✅ | ❌ | ❌ |
-| 5 | config | A hierarchical configuration library with 6M downloads, last published 5 months ago | ✅ | ✅ | ✅ |
-| 6 | d3-hierarchy | A library containing layout algorithms for hierarchical data with 17.6M downloads, last published 3 years ago | ❌ | ❌ | ✅ |
-| 7 | config-core | A hierarchical configuration library with 20 downloads, last published 4 years ago | ✅ | ❌ | ❌ |
-| 8 | @ehosick/config-core | A republish / duplicate of (7) | ✅ | ❌ | ❌ |
-| 9 | nconf | A hierarchical configuration library with 3.5M downloads, last published 1 year ago | ✅ | ✅ | ✅ |
-| 10 | fconf | A hierarchical configuration library with 11 downloads, last published 5 years ago | ✅ | ❌ | ❌ |
+<table>
+<tr><th>rank</th><th>library</th><th>comment</th><th>relevant</th><th>current</th><th>popular</th></tr>
+<td>1</td><td>node-env-configuration</td><td>A hierarchical configuration library with 4K downloads, last published 8 years ago</td><td>✅</td><td>❌</td><td>❌</td></tr>
+<tr><td>2</td><td>ngx-access</td><td>An access control library for Angular with 78 downloads, last published 4 years ago</td><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr><td>3</td><td>turing-config</td><td>A hierarchical configuration library with 30 downloads, last published 7 years ago</td><td>✅</td><td>❌</td><td>❌</td></tr>
+<tr><td>4</td><td>typeconf</td><td>A hierarchical configuration library with 21 downloads, last published 7 years ago </td><td>✅</td><td>❌</td><td>❌</td></tr>
+<tr><td>5</td><td>config</td><td>A hierarchical configuration library with 6M downloads, last published 5 months ago</td><td>✅</td><td>✅</td><td>✅</td></tr>
+<tr><td>6</td><td>d3-hierarchy</td><td>A library containing layout algorithms for hierarchical data with 17.6M downloads, last published 3 years ago</td><td>❌</td><td>❌</td><td>✅</td></tr>
+<tr><td>7</td><td>config-core</td><td>A hierarchical configuration library with 20 downloads, last published 4 years ago</td><td>✅</td><td>❌</td><td>❌</td></tr>
+<tr><td>8</td><td>@ehosick/config-core</td><td>A republish / duplicate of (7)</td><td>✅</td><td>❌</td><td>❌</td></tr>
+<tr><td>9</td><td>nconf</td><td>A hierarchical configuration library with 3.5M downloads, last published 1 year ago</td><td>✅</td><td>✅</td><td>✅</td></tr>
+<tr><td>10</td><td>fconf</td><td>A hierarchical configuration library with 11 downloads, last published 5 years ago</td><td>✅</td><td>❌</td><td>❌</td></tr>
+</table>
 
 Only 8 of the above results are configuration libraries, 6 have fewer than 100 downloads and 7 haven't been published within 3 years. Only [config](https://www.npmjs.com/package/config) and [nconf](https://www.npmjs.com/package/nconf) arguably justify a top 10 spot. More relevant, current and popular libraries like [cosmiconfig](https://www.npmjs.com/package/cosmiconfig) (61M) and [dotenv](https://www.npmjs.com/package/dotenv) (42M) do not even feature on the first page.
 
 #### Most Downloaded This Week Search Order
-| rank | library | comment | relevant | current | popular |
-|-----|--------|----------|----------|--------|---------|
-| 1 | commander | A cli library with 165M downloads, last published 7 months ago | ❌ | ✅ | ✅ |
-| 2 | execa | A process execution library with 87M downloads, last published 1 month ago | ❌ | ✅ | ✅ |
-| 3 | schema-utils | A webpack validation library with 80M downloads, last published 1 year ago | ❌ | ✅ | ✅ |
-| 4 | strip-json-comments | A library to remove comments from JSON files with 62M downloads, last published 1 year ago | ❌ | ✅ | ✅ |
-| 5 | cosmiconfig | A hierarchical configuration library with 61M downloads, last published 1 year ago | ✅ | ✅ | ✅ |
-| 6 | eslint | A linting library with 45M downloads, last published 1 week ago | ❌ | ✅ | ✅ |
-| 7 | dotenv | A hierarchical configuration library with 32M downloads, last published 3 days ago | ✅ | ✅ | ✅ |
-| 8 | diff-sequences | A library for comparing sequences with 41M downloads, last published 1 year ago | ❌ | ✅ | ✅ |
-| 9 | @eslint/eslintrc | A linting library with 36M downloads, last published 1 month ago | ❌ | ✅ | ✅ |
-| 10 | css-select | A CSS selector compiler with 32M downloads, last published 3 years ago | ❌ | ❌ | ✅ |
+<table>
+<tr><th>rank</th><th>library</th><th>comment</th><th>relevant</th><th>current</th><th>popular</th></tr>
+<tr>1</td><td>commander</td><td>A cli library with 165M downloads, last published 7 months ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
+<tr>2</td><td>execa</td><td>A process execution library with 87M downloads, last published 1 month ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
+<tr>3</td><td>schema-utils</td><td>A webpack validation library with 80M downloads, last published 1 year ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
+<tr>4</td><td>strip-json-comments</td><td>A library to remove comments from JSON files with 62M downloads, last published 1 year ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
+<tr>5</td><td>cosmiconfig</td><td>A hierarchical configuration library with 61M downloads, last published 1 year ago</td><td>✅</td><td>✅</td><td>✅</td></tr>
+<tr>6</td><td>eslint</td><td>A linting library with 45M downloads, last published 1 week ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
+<tr>7</td><td>dotenv</td><td>A hierarchical configuration library with 32M downloads, last published 3 days ago</td><td>✅</td><td>✅</td><td>✅</td></tr>
+<tr>8</td><td>diff-sequences</td><td>A library for comparing sequences with 41M downloads, last published 1 year ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
+<tr>9</td><td>@eslint/eslintrc</td><td>A linting library with 36M downloads, last published 1 month ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
+<tr>10</td><td>css-select</td><td>A CSS selector compiler with 32M downloads, last published 3 years ago</td><td>❌</td><td>❌</td><td>✅</td></tr>
+</table>
 
 While all of the results are popular and current, only 2 are configuration libraries.
 
