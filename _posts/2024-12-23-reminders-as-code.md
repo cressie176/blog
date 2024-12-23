@@ -17,19 +17,19 @@ SAAS platforms that provide automated reminders are another option, but they com
 
 Ultimately, you cannot rely on third parties to notify you about critical events, on engineers to set reminders, or on organisations to provide systems that make it convenient to do so.
 
-### The Case for Reminders as Code
+### Reminders as Code
 
-'Reminders as Code' offer an open, convenient and long term solution to this problem. By storing reminders in a text file and committing them to a source code repository, you gain the following advantages:
+Reminders as Code offers an open, convenient and long term solution to this problem. Namely, storing reminders in a text file, committed into to a source code repository. By doing so you gain the following advantages:
 
-- **Transparency**: The reminders are transparent, versioned, and provided good source control management practices are in place, will be accompanied by a meaningful commit message.
+- **Transparency**: The reminders are transparent, versioned, and provided good source control management practices are in place, will be accompanied by a meaningful commit message, so their purpose can be understood after the original committer has left.
 
-- **Automation**: All good issue tracking systems expose an API for programmatically creating issues, so with a suitable script, reminders can automatically create tickets in an issue tracking system at the appropriate time.
+- **Automation**: All good issue tracking systems expose a programmatic API, so with a suitable script, reminders can be created as issues at the appropriate time.
 
 - **Notification**: Issue tracking systems typically have a wide range of user configurable notification mechanisms, ensuring the reminders do not go unmissed.
 
-- **Longevity**: Because reminders are stored as code, they can easily be migrated if you migrate to a new issue tracking system.
+- **Longevity**: Because reminders are stored in an open format, they can easily be migrated if you migrate to a new issue tracking system.
 
-- **Scalability**: This approach scales across teams and projects without relying on individual ownership or third-party platforms.
+- **Scalability**: The approach scales across teams and projects without relying on individual ownership or third-party platforms.
 
 - **Accessibility**: Anyone with access to the source control system and issue tracking system can manage and receive notification of reminders.
 
