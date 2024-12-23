@@ -1,5 +1,5 @@
 ---
-title: "Reminders as Code - An open, convenient and long term approach to managing reminders"
+title: "Reminders as Code - An open, convenient, and long term approach to managing reminders"
 date: 2024-12-23
 tags:
 - Reminders
@@ -7,7 +7,7 @@ tags:
 - RRule
 - rfc5545
 ---
-Reminders as Code - An open, convenient and long term approach to managing reminders
+Reminders as Code - An open, convenient, and long term approach to managing reminders
 
 In the fast-paced world of software engineering, missing a critical renewal or update can cause significant disruption. Consider a scenario I experienced recently: the secret key for a third-party payment provider expired after three years. Since the provider did not send a warning, and the individual who created the key forgot to set a reminder, the company lost its ability to process payments, leading to a brief but avoidable outage and a scramble to restore operations. Another example involves Active Directory client secrets. These tokens have a maximum two-year expiry and provide only a small orange triangle as a warning. Such subtle cues can easily be overlooked, leading to avoidable downtime. These incidents demonstrate the necessity of a robust and reliable reminder system.
 
