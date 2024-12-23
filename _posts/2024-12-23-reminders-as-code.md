@@ -19,7 +19,7 @@ Ultimately, you cannot rely on third parties to notify you about critical events
 
 ### The Case for Reminders as Code
 
-'Reminders as Code' offer an open, convenient and long term approach solution to this problem. By storing reminders in a text file and committing them to a source code repository, you gain the following advantages:
+'Reminders as Code' offer an open, convenient and long term solution to this problem. By storing reminders in a text file and committing them to a source code repository, you gain the following advantages:
 
 - **Transparency**: The reminders are transparent, versioned, and provided good source control management practices are in place, will be accompanied by a meaningful commit message.
 
