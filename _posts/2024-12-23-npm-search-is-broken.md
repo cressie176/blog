@@ -22,7 +22,7 @@ From my observations, it appears the new search algorithm may disregard or de-em
 ### Demonstrating the problem
 To see just how poorly the new search performs for these examples, I searched for "hierarchical configuration" and reviewed the top 10 results...
 
-#### Default Search Order
+#### 'Default' search order
 <table>
 <tr><th>Rank</th><th>Library</th><th>Assessment</th><th>Relevant</th><th>Current</th><th>Popular</th></tr>
 <tr><td>1</td><td>node-env-configuration</td><td>A hierarchical configuration library with 4K downloads, last published 8 years ago</td><td>✅</td><td>❌</td><td>❌</td></tr>
@@ -39,7 +39,7 @@ To see just how poorly the new search performs for these examples, I searched fo
 
 Only 8 of the above results are configuration libraries, 6 have fewer than 100 downloads and 7 haven't been published within 3 years. Only [config](https://www.npmjs.com/package/config) and [nconf](https://www.npmjs.com/package/nconf) arguably justify a top 10 spot. More relevant, current and popular libraries like [cosmiconfig](https://www.npmjs.com/package/cosmiconfig) (61M) and [dotenv](https://www.npmjs.com/package/dotenv) (42M) do not even feature on the first page.
 
-#### Most Downloaded This Week Search Order
+#### 'Most Downloaded This Week' search order
 <table>
 <tr><th>Rank</th><th>Library</th><th>Assessment</th><th>Relevant</th><th>Current</th><th>Popular</th></tr>
 <tr><td>1</td><td>commander</td><td>A cli library with 165M downloads, last published 7 months ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
