@@ -131,7 +131,7 @@ jobs:
       - name: Run Knuff
         run: node index.js reminders.yaml
         env:
-          GITHUB_TOKEN: ${{{{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
 
 ```
 
