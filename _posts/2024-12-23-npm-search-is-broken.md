@@ -42,16 +42,16 @@ Only 8 of the above results are configuration libraries, 6 have fewer than 100 d
 #### Most Downloaded This Week Search Order
 <table>
 <tr><th>rank</th><th>library</th><th>comment</th><th>relevant</th><th>current</th><th>popular</th></tr>
-<tr>1</td><td>commander</td><td>A cli library with 165M downloads, last published 7 months ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
-<tr>2</td><td>execa</td><td>A process execution library with 87M downloads, last published 1 month ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
-<tr>3</td><td>schema-utils</td><td>A webpack validation library with 80M downloads, last published 1 year ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
-<tr>4</td><td>strip-json-comments</td><td>A library to remove comments from JSON files with 62M downloads, last published 1 year ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
-<tr>5</td><td>cosmiconfig</td><td>A hierarchical configuration library with 61M downloads, last published 1 year ago</td><td>✅</td><td>✅</td><td>✅</td></tr>
-<tr>6</td><td>eslint</td><td>A linting library with 45M downloads, last published 1 week ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
-<tr>7</td><td>dotenv</td><td>A hierarchical configuration library with 32M downloads, last published 3 days ago</td><td>✅</td><td>✅</td><td>✅</td></tr>
-<tr>8</td><td>diff-sequences</td><td>A library for comparing sequences with 41M downloads, last published 1 year ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
-<tr>9</td><td>@eslint/eslintrc</td><td>A linting library with 36M downloads, last published 1 month ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
-<tr>10</td><td>css-select</td><td>A CSS selector compiler with 32M downloads, last published 3 years ago</td><td>❌</td><td>❌</td><td>✅</td></tr>
+<tr><td>1</td><td>commander</td><td>A cli library with 165M downloads, last published 7 months ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
+<tr><td>2</td><td>execa</td><td>A process execution library with 87M downloads, last published 1 month ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
+<tr><td>3</td><td>schema-utils</td><td>A webpack validation library with 80M downloads, last published 1 year ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
+<tr><td>4</td><td>strip-json-comments</td><td>A library to remove comments from JSON files with 62M downloads, last published 1 year ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
+<tr><td>5</td><td>cosmiconfig</td><td>A hierarchical configuration library with 61M downloads, last published 1 year ago</td><td>✅</td><td>✅</td><td>✅</td></tr>
+<tr><td>6</td><td>eslint</td><td>A linting library with 45M downloads, last published 1 week ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
+<tr><td>7</td><td>dotenv</td><td>A hierarchical configuration library with 32M downloads, last published 3 days ago</td><td>✅</td><td>✅</td><td>✅</td></tr>
+<tr><td>8</td><td>diff-sequences</td><td>A library for comparing sequences with 41M downloads, last published 1 year ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
+<tr><td>9</td><td>@eslint/eslintrc</td><td>A linting library with 36M downloads, last published 1 month ago</td><td>❌</td><td>✅</td><td>✅</td></tr>
+<tr><td>10</td><td>css-select</td><td>A CSS selector compiler with 32M downloads, last published 3 years ago</td><td>❌</td><td>❌</td><td>✅</td></tr>
 </table>
 
 While all of the results are popular and current, only 2 are configuration libraries.
