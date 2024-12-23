@@ -115,7 +115,7 @@ name: Check Reminders
 on:
   workflow_dispatch: # Allows manual triggering of the workflow
   schedule:
-    - cron: "*/60 * * * *" # Runs every 60 minutes
+    - cron: '*/60 * * * *' # Runs every 60 minutes
 
 jobs:
   run-reminder:
