@@ -1,5 +1,5 @@
 ---
-title: "Reminders as Code - An open, convenient and long term approach to managing reminders"
+title: "Reminders as Code: An open, convenient and long term approach to managing reminders"
 date: 2024-12-23
 tags:
 - Reminders
