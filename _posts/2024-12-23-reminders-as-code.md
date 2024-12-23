@@ -47,7 +47,7 @@ Reminders as Code offers an open, convenient and long term solution to this prob
   description: |
     The Contentful API key expires yearly.
 
-  #  Schedule a single reminder for 1st July 2025 (See RRULE / RFC5545 format)
+  # Schedule a single reminder for 1st July 2025 (See RRULE / RFC5545 format)
   schedule: |
     DTSTART;TZID=Europe/London:20250701T080000
     RRULE:FREQ=DAILY;COUNT=1
