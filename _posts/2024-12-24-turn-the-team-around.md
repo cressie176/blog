@@ -40,7 +40,7 @@ Meanwhile, I worked with the product manager and Chief Product Officer to reduce
 
 ### A New Way of Working
 
-Once the immediate crises were under control, I shifted our approach. Instead of each engineer tackling separate features, we began working together on a single epic. Our first shared effort was integrating social media into the jobs platform. The team was initially skeptical. They worried it would slow them down, but the results spoke for themselves.
+Once the immediate crises were under control, I shifted our approach. Instead of each engineer tackling separate features, we began working together on a single epic. Our first shared effort was integrating social media into the Portal jobs platform. The team was initially skeptical. They worried it would slow them down, but the results spoke for themselves.
 
 Working together meant we could deliver incrementally. Instead of waiting three months to finish three separate features, we completed one feature in the first month, another in the second, and the final one in the third. Not only did this approach deliver value faster, but it also fostered collaboration and shared ownership.
 
