@@ -1,5 +1,5 @@
 ---
-title: "Turn That Team Around!"
+title: "Turn The Team Around!"
 date: 2024-12-24
 tags:
 - Team
@@ -10,8 +10,6 @@ tags:
 - Agile
 - Targets
 ---
-# Turn the Team Around!
-
 Targets can be a double-edged sword. Poorly conceived ones often encourage behaviours that prioritise metrics over real success. For instance, setting a goal like "close 100 tickets this quarter" might push a team to focus on easy wins rather than meaningful work. However, I once encountered a target that broke this mould and completely shifted my perspective. It was when challenged to "make Portal a destination team."
 
 At the time, the School Portal team had a poor reputation. Engineers were reluctant to join, citing a disjointed codebase and a team culture that, while professional, felt siloed and under immense pressure. David’s target wasn’t about deliverables; it was about creating a team environment where people wanted to be. Success would be measured by whether engineers were eager to join us.
