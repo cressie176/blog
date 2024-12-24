@@ -54,6 +54,6 @@ By focusing on collaboration, reducing waste, and building pride, we had turned 
 
 ----
 
-**Recommended Reading**
+### Recommended Reading
 - [Turn the Ship Around!](https://davidmarquet.com/turn-the-ship-around-book/)
 - [The Design of Everyday Things](https://www.nngroup.com/books/design-everyday-things-revised/)
