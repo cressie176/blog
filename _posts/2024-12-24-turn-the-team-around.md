@@ -10,7 +10,7 @@ tags:
 - Agile
 - Targets
 ---
-Targets can be a double-edged sword. Poorly conceived ones often encourage behaviours that prioritise metrics over real success. For instance, setting a goal like "close 100 tickets this quarter" might push a team to focus on easy wins rather than meaningful work. However, I once encountered a target that broke this mould and completely shifted my perspective. It was when challenged to "make Portal a destination team."
+Targets can be a double-edged sword. When poorly conceived they encourage behaviours that prioritise metrics over real success. For instance, setting a goal like "close 100 tickets this quarter" might push a team to focus on easy wins rather than meaningful work. However, I once encountered a target that broke this mould and completely shifted my perspective. It was when challenged to "make Portal a destination team".
 
 At the time, the School Portal team had a poor reputation. Engineers were reluctant to join, citing a disjointed codebase and a team culture that, while professional, felt siloed and under immense pressure. David’s target wasn’t about deliverables; it was about creating a team environment where people wanted to be. Success would be measured by whether engineers were eager to join us.
 
@@ -53,7 +53,6 @@ Within six months, the transformation was evident. The backlog was cleared, the 
 By focusing on collaboration, reducing waste, and building pride, we had turned the team around. The journey wasn’t about individual heroics but about creating an environment where the team could thrive. It’s proof that with the right focus, any team can become a destination team.
 
 ----
-<br/>
 <br/>
 #### Recommended Reading
 - [Turn the Ship Around!](https://davidmarquet.com/turn-the-ship-around-book/)
