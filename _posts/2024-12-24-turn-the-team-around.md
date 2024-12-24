@@ -53,7 +53,8 @@ Within six months, the transformation was evident. The backlog was cleared, the 
 By focusing on collaboration, reducing waste, and building pride, we had turned the team around. The journey wasn’t about individual heroics but about creating an environment where the team could thrive. It’s proof that with the right focus, any team can become a destination team.
 
 ----
-
-### Recommended Reading
+<br/>
+<br/>
+#### Recommended Reading
 - [Turn the Ship Around!](https://davidmarquet.com/turn-the-ship-around-book/)
 - [The Design of Everyday Things](https://www.nngroup.com/books/design-everyday-things-revised/)
