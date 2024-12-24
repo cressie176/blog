@@ -53,3 +53,9 @@ Working together meant we could deliver incrementally. Instead of waiting three 
 Within six months, the transformation was evident. The backlog was cleared, the main board had fewer than 25 tickets, and morale was at an all-time high. Six months later, the team had re-architected the application, eliminating performance bottlenecks and race conditions while continuing to deliver product features. We showcased our work at departmental demos, and, for the first time, other engineers were expressing interest in joining the Portal team.
 
 By focusing on collaboration, reducing waste, and building pride, we had turned the team around. The journey wasn’t about individual heroics but about creating an environment where the team could thrive. It’s proof that with the right focus, any team can become a destination team.
+
+----
+
+**Recommended Reading**
+- [Turn the Ship Around!](https://davidmarquet.com/turn-the-ship-around-book/)
+- [The Design of Everyday Things](https://www.nngroup.com/books/design-everyday-things-revised/)
