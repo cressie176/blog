@@ -60,7 +60,7 @@ Reminders as Code offers an open, convenient and long term solution to this prob
 
   # A set of labels / tags
   labels:
-    - 'Automated Reminder'
+    - 'reminder'
 
   # A list of repositories to post the reminders to
   repositories:
