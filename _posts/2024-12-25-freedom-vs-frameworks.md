@@ -96,8 +96,6 @@ Run ESLint as part of your CI/CD pipeline or pre-commit hooks to ensure complian
 
 ### Real-World Examples
 
-#### Detecting Non-Compliant Dependencies
-
 If your `package.json` includes a dependency on `prisma` (a "hold" package), ESLint will flag it:
 
 ```bash
@@ -108,8 +106,6 @@ If your `package.json` includes a dependency on `prisma` (a "hold" package), ESL
 
 ✖ 1 problem (1 error, 0 warnings)
 ```
-
-#### Keeping Shared Configurations Up-to-Date
 
 If your shared configuration is outdated, the “latest” rule will catch it:
 
