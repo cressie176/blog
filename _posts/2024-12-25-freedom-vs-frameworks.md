@@ -1,5 +1,5 @@
 ---
-title: "Freedom vs. Frameworks: Striking the Balance"
+title: "Freedom vs. Frameworks"
 date: 2024-12-25
 tags:
 - Autonomy
