@@ -38,28 +38,25 @@ Reminders as Code offers an open, convenient and long term solution to this prob
 #### Example Reminders File
 
 ```yaml
-  # A unique id used for duplicate checking
-- id: 'update-contentful-api-key'
+  # The reminder title
+  title: 'Update API Key'
+
+  # The reminder body
+  body: |
+    The API Key expires on the 14th of July 2025.
+    - [ ] Regenerate the API Key
+    - [ ] Update AWS Secrets Manager
+    - [ ] Redeploy the website
+    - [ ] Update the reminder for next year
 
   # Optional description that can be useful to track the background behind the reminder
   description: |
-    The Contentful API key expires yearly.
+    The API key expires yearly.
 
   # Schedule a single reminder for 1st July 2025 (See RRULE / RFC5545 format)
   schedule: |
     DTSTART;TZID=Europe/London:20250701T080000
     RRULE:FREQ=DAILY;COUNT=1
-
-  # The reminder title
-  title: 'Update Contentful API Key'
-
-  # The reminder body
-  body: |
-    The Contentful API Key expires on the 14th of July 2025.
-    - [ ] Regenerate the Contentful API Key
-    - [ ] Update AWS Secrets Manager
-    - [ ] Redeploy the website
-    - [ ] Update the reminder for next year
 
   # A set of labels / tags
   labels:
@@ -76,27 +73,26 @@ Reminders as Code offers an open, convenient and long term solution to this prob
 import fs from 'node:fs';
 import yaml from 'yaml';
 import { Octokit } from '@octokit/rest';
-import GitHubDriver from 'knuff-github-driver';
-import Knuff from 'knuff/index.js';
+import Knuff from '@acuminous/knuff';
+import GitHubDriver from '@acuminous/knuff-github-driver';
 
-const pathToReminders = process.argv[2] || 'reminders.yaml';
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const PATH_TO_REMINDERS = process.env.PATH_TO_REMINDERS || 'reminders.yaml';
 
 const config = {
   repositories: {
-    'acuminous/reminders': {
+    'acuminous/knuff': {
       owner: 'acuminous',
-      name: 'reminders',
+      name: 'knuff',
       driver: 'github',
     },
   },
 };
 
-const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+const octokit = new Octokit({ auth: GITHUB_TOKEN });
 const drivers = { github: new GitHubDriver(octokit) };
-const knuff = new Knuff(config, drivers)
-  .on('error', console.error)
-  .on('progress', console.log);
-const reminders = yaml.parse(fs.readFileSync(pathToReminders, 'utf8'));
+const knuff = new Knuff(config, drivers).on('error', console.error);
+const reminders = yaml.parse(fs.readFileSync(PATH_TO_REMINDERS, 'utf8'));
 
 knuff.process(reminders).then((stats) => {
   console.log(`Successfully processed ${stats.reminders} reminders`);
@@ -138,7 +134,7 @@ jobs:
 
 Knuff’s primary limitation is that it can't force engineers to use it. However, drawing on inspiration from the Kevin Costner movie Field of Dreams: "If you build it, they will come"; Knuff encourages adoption through its simplicity and utility.
 
-A second limitation exists for implementations involving many reminders or repositories. A GitHub Action or Personal Access Token like the one used in the above example may be rate limited, forcing you to register the script as a GitHub App and to implement a more convoluted authorisation flow.
+A second limitation exists for implementations involving many reminders or repositories. A GitHub Action or Personal Access Token like the one used in the above example may be rate limited, forcing you to register the script as a GitHub App and to implement a more convoluted setup and authorisation flow. See [here](https://github.com/acuminous/knuff/tree/main/examples/enterprise) for an example.
 
 ### Conclusion
 Reliable reminders are not just a convenience; they are a necessity in ensuring the smooth operation of modern software systems. The consequences of missed notifications, ranging from expired keys to overlooked updates, can lead to downtime, financial loss, and unnecessary fire-fighting. Traditional approaches, such as relying on individual engineers or third-party solutions, have proven inadequate due to their inherent limitations, including ill-suited UI, lack of transparency, dependence on specific platforms, and the risk of obsolescence or inaccessibility.
