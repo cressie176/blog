@@ -13,7 +13,7 @@ In his book *Drive*, Dan Pink highlights autonomy as one of the critical motivat
 
 Guidelines are necessary to strike a balance between autonomy and consistency, ensuring that choices align with organisational goals. But guidelines alone are insufficient. As Jeff Bezos famously said, "Good intentions don't work. Good mechanisms do." To address this, I'm excited to introduce **eslint-plugin-tech-radar**, a robust mechanism to help engineering teams enforce dependency guidelines at scale.
 
-### Why eslint-plugin-tech-radar?
+### Introducing eslint-plugin-tech-radar?
 
 A traditional [Tech Radar](https://www.thoughtworks.com/radar/byor) provides a visual framework for evaluating tools and technologies based on maturity and strategic alignment. However, it doesn’t prevent engineers from inadvertently or deliberately installing prohibited modules. Mechanisms like private npm registries or post-installation scans have significant drawbacks—blocking transitive dependencies or acting too late in the pipeline.
 
