@@ -17,7 +17,7 @@ The new search algorithm prioritises objective sorting criteria like relevance, 
 - **Prominence of Obscure or Stale Packages**: In searches like “hierarchical configuration,” packages that are outdated, rarely downloaded, or both dominate the results, displacing widely used and current libraries.
 
 ### What might have gone wrong?
-From my observations, it appears the new search algorithm may disregard or de-emphasise package metadata such as "keywords" in favour of the contents of the package’s README. The problem with prioritising the README is that it inadvertently boost irrelevant libraries. For example, many libraries include a section in their README for migrating from previous versions. This causes them to rank highly for searches like “database migration” even when they have nothing to do with databases migration. Similiarly, many libraries include a section titled "Config" or “Configuration” to explain how to set up the package. This means irrelevant libraries frequently rank highly when searching for “configuration”
+From my observations, it appears the new search algorithm may disregard or de-emphasise package metadata such as "keywords" in favour of the contents of the package’s README. The problem with prioritising the README is that it inadvertently boosts irrelevant libraries. For example, many libraries include a section in their README for migrating from previous versions. This causes them to rank highly for searches like “database migration” even when they have nothing to do with databases migration. Similiarly, many libraries include a section titled "Config" or “Configuration” to explain how to set up the package. This means irrelevant libraries frequently rank highly when searching for “configuration”
 
 ### Demonstrating the problem
 To see just how poorly the new search performs for these examples, I searched for "hierarchical configuration" and reviewed the top 10 results...
@@ -59,8 +59,8 @@ While all of the results are popular and current, only 2 are configuration libra
 ### Conclusion
 The new npm search algorithm returns either
 
-- largely relevant, but unpopular and unmaintained libraries, or
-- largely irrelevant, but popular and well maintained libraries
+- mostly relevant, but unpopular and unmaintained libraries, or
+- mostly irrelevant, but popular and well maintained libraries
 
 Neither option is useful.
 
