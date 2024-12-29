@@ -33,7 +33,7 @@ A clear example of this dynamic comes from my experience with Tes Global, the wo
 - Job adverts were 'new' for the first two days, and 'ending soon' for the final two, after which they transitioned to 'ended'.
 - Finally, the job advert was 'closed' once the application close date had passed, indicating that no further applications could be submitted.
 
-The complexity was compounded by the absence of an explicitly persisted "state" for job adverts. This decision was partly because some state change triggers were time-based, making explicit persistence challenging. Instead, the state was derived in application code from various flags and dates. However, we later faced the somewhat unenviable task of reverse engineering the rules and duplicating them in the data lake, with all the reliability issues that entailed.
+The complexity was compounded by the absence of an explicitly persisted state for job adverts. This decision was partly because some state change triggers were time-based, making explicit persistence challenging. Instead, the state was derived in application code from various flags and dates. However, we later faced the somewhat unenviable task of reverse engineering the rules and duplicating them in the data lake, with all the reliability issues that entailed.
 
 #### A Better Approach
 
