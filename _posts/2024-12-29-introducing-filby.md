@@ -7,9 +7,6 @@ tags:
 - Reference Data
 - PostgreSQL
 ---
-
-### Introducing Filby: An Open Source Library for Managing Temporal Reference Data
-
 Temporal reference data can be a tricky aspect of software development, especially in distributed or microservice-based architectures. Enter **Filby**, an open-source library that simplifies the management of such data, ensuring consistency, reliability, and flexibility. Here, we'll explore how Filby works, its key benefits, and why it might be the solution you've been searching for.
 
 #### The Problem: Managing Temporal Reference Data
