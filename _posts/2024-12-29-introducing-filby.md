@@ -23,11 +23,9 @@ Most applications rely on reference data—information that changes infrequently
 | Evolution     | Both reference data, and our understanding of the application domain evolves over time. We will at some point need to make backwards incompatible changes to our reference data, and will need to do so without breaking client applications. This suggests a versioning and validation mechanism. The issue of temporality compounds the challenge of evolution, since we may need to retrospecively add data to historic records. In some cases this data will not be known. |
 | Local Testing | Applications may be tested locally, and therefore any solution sould work well on a local development machine.                                                                                                                                                                                                                                                                                                                                                                        |
 
-This is where Filby steps in.
-
 #### Meet Filby: Version Control for Reference Data
 
-Think of Filby as **Version Control for Reference Data**. Just as source control systems like Git track changes to source code, Filby manages reference data changes. Like checking out a commit, your applications can use Filby to retrieve reference data for a given change set id. They can also inspect the changelog to find which change set was in effect at a given point in time, and subscribe to reference data update notifications.
+Think of Filby as **version control for reference data**. Just as source control systems like Git track changes to source code, Filby manages reference data changes. Like checking out a commit, your applications can use Filby to retrieve reference data for a given change set id. They can also inspect the changelog to find which change set was in effect at a given point in time, and subscribe to reference data update notifications.
 
 #### Key Features and Benefits
 
