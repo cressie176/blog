@@ -98,7 +98,7 @@ Run ESLint as part of your CI/CD pipeline or pre-commit hooks to ensure complian
 
 If your `package.json` includes a dependency on `prisma` (a "hold" package), ESLint will flag it:
 
-```bash
+```
 > eslint .
 
 ~/your-application/package.json
@@ -109,7 +109,7 @@ If your `package.json` includes a dependency on `prisma` (a "hold" package), ESL
 
 If your shared configuration is outdated, the “latest” rule will catch it:
 
-```bash
+```
 > eslint .
 
 ~/your-application/package.json
