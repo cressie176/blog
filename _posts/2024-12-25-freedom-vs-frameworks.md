@@ -11,7 +11,7 @@ tags:
 ---
 In his book *Drive*, Dan Pink highlights autonomy as one of the critical motivators for high-performing teams. Autonomy empowers engineers to innovate, solve problems creatively, and own their work. But with great autonomy comes great responsibility — and sometimes, significant challenges. One such challenge is the tendency for engineers to gravitate towards shiny new toys, often prioritising popularity over suitability. I explored this phenomenon in my blog post ["Prisma and the Naivety of Crowds"](https://www.stephen-cresswell.com/2024/04/17/prisma-and-the-naivety-of-crowds.html), where I discussed how crowdsourcing trends can sometimes overshadow thoughtful, context-specific decision-making.
 
-Guidelines are necessary to strike a balance between autonomy and consistency, ensuring that choices align with organisational goals. But guidelines alone are insufficient. As Jeff Bezos famously said, "Good intentions don't work. Good mechanisms do." To address this, I'm excited to introduce **eslint-plugin-tech-radar**, a robust mechanism to help engineering teams enforce dependency guidelines at scale.
+Guidelines are necessary to strike a balance between autonomy and consistency, ensuring that choices align with organisational goals. But guidelines alone are insufficient. As Jeff Bezos famously said, "Good intentions don't work. Good mechanisms do." To address this, I'm excited to introduce [eslint-plugin-tech-radar](https://github.com/acuminous/eslint-plugin-tech-radar), a robust mechanism to help engineering teams enforce dependency guidelines at scale.
 
 ### Introducing eslint-plugin-tech-radar?
 
