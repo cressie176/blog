@@ -19,9 +19,9 @@ Operational data stores are not static; they evolve rapidly under active develop
 
 1. **Constraints on Engineering**: Changes to the operational data store must accommodate downstream dependencies. Engineers may become bogged down by these constraints, slowing down the development of new features.
 
-2. **Broken Integrations**: Without automated tests, changes to the operational store often break models and reports. The resulting chaos is compounded when consumers—often financial and commercial teams—rely on these reports to make decisions.
+2. **Broken Integrations**: Without automated tests, changes to the operational store often break models and reports. The resulting chaos is compounded when consumers, often financial and commercial teams, rely on these reports to make decisions.
 
-3. **Corporate Fallout**: When reports fail, the fallout is rarely trivial. Commercial stakeholders typically wield significant organisational power. Engineering teams find themselves under pressure to implement ad-hoc fixes and facing new layers of process bureaucracy—introducing waste and blocking progress.
+3. **Corporate Fallout**: When reports fail, the fallout is rarely trivial. Commercial stakeholders typically wield significant organisational power. Engineering teams find themselves under pressure to implement ad-hoc fixes and facing new layers of process bureaucracy, introducing waste and blocking progress.
 
 #### A Cautionary Tale: Job Adverts at Tes Global
 
@@ -33,7 +33,7 @@ A clear example of this dynamic comes from my experience with Tes Global, the wo
 - Job adverts were deemd 'new' in the first two days live, and 'ending soon' in the final two days before the adver tend date, after which they were 'ended'.
 - Finally, the job advert was 'closed' once the application close date had passed, indicating that no further applications could be submitted.
 
-The complexity was compounded by the absence of an explicitly persisted "state" for job adverts. This decision was partly because some state change triggers were time-based, making explicit persistence challenging. Instead, the state was derived in application code from various flags and dates. However, we later faced the somewhat unenviable task of reverse engineering the rules and duplicating them in the data lake — with all the reliability issues that entailed.
+The complexity was compounded by the absence of an explicitly persisted "state" for job adverts. This decision was partly because some state change triggers were time-based, making explicit persistence challenging. Instead, the state was derived in application code from various flags and dates. However, we later faced the somewhat unenviable task of reverse engineering the rules and duplicating them in the data lake, with all the reliability issues that entailed.
 
 #### A Better Approach
 
