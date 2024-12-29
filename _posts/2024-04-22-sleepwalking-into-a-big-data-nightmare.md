@@ -47,5 +47,5 @@ In contrast, slow and steady wins the race when it comes to data modelling, not 
 
 #### Final Thoughts
 
-The allure of big data has led many organisations to sleepwalk into an architectural nightmare. Directly coupling analytics to operational data stores may seem expedient but ultimately causes more harm than good. By prioritising explicit models, testing, deliberate schema design and simple integration, organisations can avoid these pitfalls and unlock the full potential of their data. The choice is simple: sleepwalk into chaos or step deliberately into clarity.
+The allure of big data has led many organisations to sleepwalk into an architectural nightmare. Directly coupling analytics to operational data stores may seem expedient but ultimately causes more harm than good. By prioritising deliberate schema design, testing, and simple integration, organisations can avoid these pitfalls and unlock the full potential of their data. The choice is simple: sleepwalk into chaos or step deliberately into clarity.
 
