@@ -97,21 +97,21 @@ Imagine a system managing holiday park data. With Filby:
 5. Add "hooks" to notify other systems that new data and/or projects are available.
 
 <pre>
-                         Change
-                          Hook      Invalidate Cache
-                      ┌─────────┐   ┌──────────────┐
-                      │         │   │              │
-                      │         ▼   │              ▼
-┌────────┐      ┌───────────┬──────────┐       ┌────────┐   GET /api/changelog?projection=parks&version=1 ┌──────────┐
-│        │      │           │          │◀──────│        │─────────────────────────────────────────────────│          │
-│        │      │           │ RESTful  │       │        │                                                 │  Mobile  │
-│   DB   │◀────▶│   Filby   │   API    │       │  CDN   │                                                 │   App    │
-│        │      │           │          │       │        │     GET /api/projection/v1/parks?changeSetId=29 │          │
-│        │      │           │          │◀──────│        │─────────────────────────────────────────────────│          │
-└────────┘      └───────────┴──────────┘       └────────┘                                                 └──────────┘
-                      ▲
-                      │
-                      │
+               Change
+               Hook       Invalidate Cache
+           ┌─────────┐   ┌──────────────┐
+           │         │   │              │
+           │         ▼   │              ▼
+┌────┬───────────┬──────────┐       ┌────────┐   GET /changelog/parks/v1               ┌──────────┐
+│    │           │          │◀──────│        │◀────────────────────────────────────────│          │
+│    │           │ RESTful  │       │        │                                         │  Mobile  │
+│ DB │   Filby   │   API    │       │  CDN   │                                         │   App    │
+│    │           │          │       │        │   GET /projection/parks/v1?changeSet=29 │          │
+│    │           │          │◀──────│        │◀────────────────────────────────────────│          │
+└────┴───────────┴──────────┘       └────────┘                                         └──────────┘
+           ▲
+           │
+           │
 ┌─────────────────────────────────────────────┐
 │                                             │
 │               Reference Data                │
