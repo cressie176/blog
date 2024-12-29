@@ -34,7 +34,7 @@ The complexity was compounded by the absence of an explicitly persisted state fo
 
 #### A Better Approach
 
-A better solution would have been to explicitly model the job advert’s state and export that refined model to the data lake. Real-time events could have fed the data lake while simultaneously unlocking the ability to coordinate and propagate changes across our microservice architecture. Alternatively, data changes (deltas) could have been exported from the database at regular intervals and uploaded to a cloud-based storage service in a text-based, machine-readable format, such as [Apache Avro](https://avro.apache.org/). Both these approaches would also have allowed us to write tests to catch breaking schema changes. Although this demands more upfront thought, patience, and effort, it avoids the pitfalls of tight coupling and fragile integrations.
+A better solution would have been to explicitly model the job advert’s state and export that refined model to the data lake. Real-time events could have fed the data lake while simultaneously unlocking the ability to coordinate and propagate changes across our microservice architecture. Alternatively, data changes (deltas) could have been exported from the database at regular intervals and uploaded to a cloud-based storage service in a text-based, machine-readable format, such as [Apache Avro](https://avro.apache.org/). Both these approaches would also have allowed us to write automated tests to catch breaking schema changes. Although this demands more upfront thought, patience, and effort, it avoids the pitfalls of tight coupling and fragile integrations.
 
 #### Why Fast and Loose Fails in Big Data
 
