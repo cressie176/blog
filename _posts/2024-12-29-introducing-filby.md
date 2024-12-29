@@ -1,5 +1,5 @@
 ---
-title: "Introducing Filby: An Open Source Library for Managing Temporal Reference Data"
+title: "Introducing Filby: An Open Source Library for Managing Shared Reference Data"
 date: 2024-12-29
 tags:
 - Temporal
@@ -7,9 +7,9 @@ tags:
 - Reference Data
 - PostgreSQL
 ---
-Temporal reference data can be a tricky aspect of software development, especially in distributed or microservice-based architectures. Enter **Filby**, an open-source library that simplifies the management of such data, ensuring consistency, reliability, and flexibility. Here, we'll explore how Filby works, its key benefits, and why it might be the solution you've been searching for.
+Shared reference data can be a tricky aspect of software development, especially in distributed or microservice-based architectures. Enter **Filby**, an open-source library that simplifies the management of such data, ensuring consistency, reliability, and flexibility. Here, we'll explore how Filby works, its key benefits, and why it might be the solution you've been searching for.
 
-#### The Problem: Managing Temporal Reference Data
+#### The Problem: Managing Shared Reference Data
 
 Most applications rely on reference data—information that changes infrequently but must remain consistent across the system. However, managing this data across distributed systems introduces challenges:
 
@@ -29,7 +29,7 @@ Think of Filby as **version control for reference data**. Just as source control
 
 #### Key Features and Benefits
 
-Filby offers a structured approach to managing temporal reference data, delivering several advantages:
+Filby offers a structured approach to managing shared, temporal reference data, delivering several advantages:
 
 1. **Safe, Predictable Updates**: Deploy new reference data ahead of time and activate it when needed.
 2. **Consistency Across Systems**: The change set mechanism ensures consistency, even with distributed systems.
@@ -132,6 +132,6 @@ However, it's completely up to you how the projections are accessed - you could 
 
 ### Conclusion
 
-Filby transforms how you manage temporal reference data, combining the best practices of source control with runtime flexibility, no matter how the data is consumed. It isn't a turn key system though, you need to model and provide the data, then write the code calls the Filby API to retrieve the reference data at a point in time and expose it to the outside world.
+Filby transforms how you manage shared, temporal reference data, combining the best practices of source control with runtime flexibility, no matter how the data is consumed. It isn't a turn key system though, you need to model and provide the data, then write the code calls the Filby API to retrieve the reference data at a point in time and expose it to the outside world.
 
 Ready to explore Filby? [Start here](https://github.com/acuminous/filby).
