@@ -8,7 +8,7 @@ tags:
 - Domain Modelling
 - ETL
 ---
-Sourcing big data within organisations has become routine, with operational data stores (or their replicas) feeding data lakes like Snowflake or Redshift via expensive Change Data Capture (CDC) tools. These lakes become the foundation for developing models and reports. At first glance, this appears efficient and scalable. But there is a lurking problem: tight coupling between the operational data store and downstream analytics.
+Sourcing big data within organisations has become routine, with operational data stores (or their replicas) feeding data lakes like Snowflake or Redshift via expensive Change Data Capture (CDC) tools. These lakes become the foundation for reporting and increasingly, Artificial Intelligence. At first glance, this appears efficient and scalable. But there is a lurking problem: tight coupling between the operational data store and downstream analytics.
 
 #### The Hidden Danger of Tight Coupling
 
