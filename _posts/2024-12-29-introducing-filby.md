@@ -36,7 +36,7 @@ Filby offers a structured approach to managing temporal reference data, deliveri
 3. **Historic and Future Data Access**: Retrieve past data or schedule future changes.
 4. **Customisable Projections**: Tailor views of reference data for specific clients or systems.
 5. **Version Control**: Support backward-incompatible changes with versioned projections.
-6. **Caching Made Easy**: Filby change sets are highly cacheable and the change set id makes an excellent cache buster.
+6. **Caching Made Easy**: Change sets should never change making them highly cacheable.
 7. **Local Development Support**: Test applications locally using HTTP mocking libraries.
 
 #### Filby’s Core Concepts
@@ -98,17 +98,17 @@ Imagine a system managing holiday park data. With Filby:
 
 <pre>
                          Change
-                      Notification                                Webhook
-                      ┌─────────┐   ┌──────────────────────────────────────────────────────────────────┐
-                      │         │   │                                                                  │
-                      │         ▼   │                                                                  ▼
-┌────────┐      ┌───────────┬──────────┐            GET /api/changelog?projection=parks&version=1 ┌──────────┐
-│        │      │           │          ├─────────────────────────────────────────────────────────▶│          │
-│        │      │           │ RESTful  │                                                          │  Mobile  │
-│   DB   │◀────▶│   Filby   │   API    │                                                          │   App    │
-│        │      │           │          │              GET /api/projection/v1/parks?changeSetId=29 │          │
-│        │      │           │          ├─────────────────────────────────────────────────────────▶│          │
-└────────┘      └───────────┴──────────┘                                                          └──────────┘
+                          Hook       Invalidate Cache
+                      ┌─────────┐   ┌─────────────────┐
+                      │         │   │                 │
+                      │         ▼   │                 ▼
+┌────────┐      ┌───────────┬──────────┐          ┌────────┐   GET /api/changelog?projection=parks&version=1 ┌──────────┐
+│        │      │           │          │◀─────────│        │─────────────────────────────────────────────────│          │
+│        │      │           │ RESTful  │          │        │                                                 │  Mobile  │
+│   DB   │◀────▶│   Filby   │   API    │          │  CDN   │                                                 │   App    │
+│        │      │           │          │          │        │     GET /api/projection/v1/parks?changeSetId=29 │          │
+│        │      │           │          │◀─────────│        │─────────────────────────────────────────────────│          │
+└────────┘      └───────────┴──────────┘          └────────┘                                                 └──────────
                       ▲
                       │
                       │
@@ -127,8 +127,11 @@ Imagine a system managing holiday park data. With Filby:
 │         │ │         │ │         │ │         │
 └─────────┘ └─────────┘ └─────────┘ └─────────┘
 </pre>
-The first of the two API calls, namely `/api/changelog` discloses the changes undergone by a projection (a view of the reference data), and provides a set of ids for requesting the projection at a point in time. However, it's completely up to you how the projections are accessed - you could build a RESTful API to expose them over HTTP as above, bundle them in a client side JavaScript module or export them as a set of [Apache AVRO](https://avro.apache.org/) files to S3.
+In the above scenario the first of the two API calls, `/api/changelog` lists the changes sets id and effective dates for the specified projection. The second API call `/api/projection/v1/parks` requestes the park data at a specific point in time. The requests are routed via a CDN for caching. When the data behind the projections a hook causes the cache to be invalidated.
+However, it's completely up to you how the projections are accessed - you could build a RESTful API to expose them over HTTP as above, bundle them in a client side JavaScript module or export them as a set of [Apache AVRO](https://avro.apache.org/) files to S3.
 
-#### Conclusion
+### Conclusion
 
-Filby transforms how you manage temporal reference data, combining the best practices of source control with runtime flexibility. Ready to explore Filby? [Start here](https://github.com/acuminous/filby).
+Filby transforms how you manage temporal reference data, combining the best practices of source control with runtime flexibility, no matter how the data is consumed. It isn't a turn key system though, you need to model and provide the data, then write the code calls the Filby API to retrieve the reference data at a point in time and expose it to the outside world.
+
+Ready to explore Filby? [Start here](https://github.com/acuminous/filby).
