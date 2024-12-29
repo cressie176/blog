@@ -129,10 +129,6 @@ Imagine a system managing holiday park data. With Filby:
 </pre>
 The first of the two API calls, namely `/api/changelog` discloses the changes undergone by a projection (a view of the reference data), and provides a set of ids for requesting the projection at a point in time. However, it's completely up to you how the projections are accessed - you could build a RESTful API to expose them over HTTP as above, bundle them in a client side JavaScript module or export them as a set of [Apache AVRO](https://avro.apache.org/) files to S3.
 
-#### Model and Data Definition
-
-Filby’s DSL (domain-specific language) and database migration tools simplify reference data management. Add or update data using YAML, JSON, CSV, or SQL files, and let Filby handle the heavy lifting.
-
-#### Getting Started with Filby
+#### Conclusion
 
 Filby transforms how you manage temporal reference data, combining the best practices of source control with runtime flexibility. Ready to explore Filby? [Start here](https://github.com/acuminous/filby)
