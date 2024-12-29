@@ -1,6 +1,6 @@
 ---
 title: "Sleepwalking into a Big Data Nightmare"
-date: 2024-04-22
+date: 2024-12-29
 tags:
 - Big Data
 - Snowflake
