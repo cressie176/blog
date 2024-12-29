@@ -91,12 +91,45 @@ To understand how Filby works, let’s break down its main components:
 Imagine a system managing holiday park data. With Filby:
 
 1. Define entities like “Park” and “Season” in JSON or YAML files.
-2. Create a changelog for park data updates, such as opening new parks or adjusting seasons.
-3. Tailor projections to specific needs, such as a client app requiring a compact view of park details.
+2. Create a changelog for park data updates, such as opening new parks or adjusting seasons in JSON, YAML, CSV or SQL.
+3. Tailor projections to specific needs, such as a web client requiring a compact view of park details.
 4. Use Filby’s API to retrieve park data at any point in time.
 5. Add "hooks" to notify other systems that new data and/or projects are available.
 
-It's down to you how the projections are exported - you could build a RESTful service to expose them over HTTP, bundle them in a client side JavaScript module or export them as a set of [Apache AVRO](https://avro.apache.org/) files to S3.
+It's down to you how the projections are exported - you could build a RESTful API to expose them over HTTP, bundle them in a client side JavaScript module or export them as a set of [Apache AVRO](https://avro.apache.org/) files to S3.
+
+<pre>
+                         Change
+                      Notification                                Webhook
+                      ┌─────────┐   ┌──────────────────────────────────────────────────────────────────┐
+                      │         │   │                                                                  │
+                      │         ▼   │                                                                  ▼
+┌────────┐      ┌───────────┬──────────┐            GET /api/changelog?projection=parks&version=1 ┌──────────┐
+│        │      │           │          ├─────────────────────────────────────────────────────────▶│          │
+│        │      │           │ RESTful  │                                                          │  Mobile  │
+│   DB   │◀────▶│   Filby   │   API    │                                                          │   App    │
+│        │      │           │          │              GET /api/projection/v1/parks?changeSetId=29 │          │
+│        │      │           │          ├─────────────────────────────────────────────────────────▶│          │
+└────────┘      └───────────┴──────────┘                                                          └──────────┘
+                      ▲
+                      │
+                      │
+┌─────────────────────────────────────────────┐
+│                                             │
+│               Reference Data                │
+│                 Change Sets                 │
+│                                             │
+└─────────────────────────────────────────────┘
+     ▲           ▲           ▲           ▲
+     │           │           │           │
+     │           │           │           │
+┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐
+│         │ │         │ │         │ │         │
+│   CSV   │ │  YAML   │ │  JSON   │ │   SQL   │
+│         │ │         │ │         │ │         │
+└─────────┘ └─────────┘ └─────────┘ └─────────┘
+</pre>
+The first of the two API calls, namely `/api/changelog` discloses the changes undergone by a projection (a view of the reference data), and provides a set of ids for requesting the projection at a point in time.
 
 #### Model and Data Definition
 
