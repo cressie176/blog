@@ -131,4 +131,4 @@ The first of the two API calls, namely `/api/changelog` discloses the changes un
 
 #### Conclusion
 
-Filby transforms how you manage temporal reference data, combining the best practices of source control with runtime flexibility. Ready to explore Filby? [Start here](https://github.com/acuminous/filby)
+Filby transforms how you manage temporal reference data, combining the best practices of source control with runtime flexibility. Ready to explore Filby? [Start here](https://github.com/acuminous/filby).
