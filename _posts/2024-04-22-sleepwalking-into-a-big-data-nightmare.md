@@ -25,7 +25,7 @@ Operational data stores are not static; they evolve rapidly under active develop
 
 #### A Cautionary Tale: Job Adverts at Tes Global
 
-A clear example of this dynamic comes from my experience with Tes Global, the world's largest teacher network. At Tes, I led the team developing a jobs board where the lifecycle of a job advert was anything but simple, transitioning between implicit explicit states of 'draft', 'published', 'live', 'new', 'ending soon', 'ended', 'closed' and 'deleted'. Here’s how they worked:
+A clear example of this dynamic comes from my experience with Tes Global, the world's largest teacher network. At Tes, I led the team developing a jobs board where the lifecycle of a job advert was anything but simple, transitioning between implicit and explicit states of 'draft', 'published', 'live', 'new', 'ending soon', 'ended', 'closed' and 'deleted'. Here’s how they worked:
 
 - A job advert began as a 'draft', and was 'published' by the advert's creator.
 - Published job adverts automatically becoame 'live' after the advert start date.
