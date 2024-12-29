@@ -120,7 +120,7 @@ If your shared configuration is outdated, the “latest” rule will catch it:
 
 ### Additional Tips
 
-#### Block Installations with npm Scripts
+#### Block Installations Using a Preinstall Script
 
 To prevent undesirable dependencies from being installed, run ESLint during `npm install`:
 
