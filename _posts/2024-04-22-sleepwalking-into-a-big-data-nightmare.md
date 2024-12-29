@@ -41,7 +41,7 @@ A better solution would have been to explicitly model the job advert’s state a
 
 #### Why Fast and Loose Fails in Big Data
 
-Organisations often opt for the fast-and-loose approach because they believe it offers agility. Every Data team I've worked with has asked for "all the data", because they are unsure of which reports will be required in the future. This mindset is pervasive but flawed. Poorly modelled data leads to brittle systems, wasted engineering hours, and unreliable analytics.
+Organisations often opt for the fast-and-loose approach because they believe it offers agility. Every Data team I've worked with has request we "just give them everything", because they are unsure of which reports will be required in the future. This mindset is pervasive but flawed. Poorly modelled data leads to brittle systems, wasted engineering hours, and unreliable analytics.
 
 In contrast, slow and steady wins the race when it comes to data modelling. Furthermore, we are on the cusp of an Machine Learning (ML) and Generative AI revolution, but this technology is impotentent without high-quality, well-structured data on which to train. The upfront investment in thoughtful modelling pays exponential dividends in long-term reliability and usability.
 
