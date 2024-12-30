@@ -51,39 +51,37 @@ To understand how Filby works, let’s break down its main components:
 - **Hooks**: Custom event handlers triggered by data changes.
 
 <pre>
-┌─────────────────┐
-│                 │
-│                 │ announces changes via
-│   Projection    │───────────────────────────┐
-│                 │                           │
-│                 │                           │
-└─────────────────┘                           │
-         │ depends on                         │
-         │                                    │
-         │                                    │
-         │                                    │
-         │                                    │
-        ╱│╲                                  ╱│╲
-┌─────────────────┐                  ┌─────────────────┐                   ┌─────────────────┐
-│                 │                  │                 │                   │                 │
-│                 │                  │                 │╲ delivered via    │                 │
-│     Entity      │                  │  Notification   │───────────────────│      Hook       │
-│                 │                  │                 │╱                  │                 │
-│                 │                  │                 │                   │                 │
-└─────────────────┘                  └─────────────────┘                   └─────────────────┘
-         │ aggregates                        ╲│╱ is raised by
-         │                                    │
-         │                                    │
-         │                                    │
-         │                                    │
-        ╱│╲                                   │
-┌─────────────────┐                  ┌─────────────────┐
-│                 │                  │                 │
-│                 │╲ is grouped by   │                 │
-│   Data Frame    │──────────────────│   Change Set    │
-│                 │╱                 │                 │
-│                 │                  │                 │
-└─────────────────┘                  └─────────────────┘
+┌───────────────┐
+│               │
+│               │ announces changes via
+│  Projection   │────────────────────────┐
+│               │                        │
+│               │                        │
+└───────────────┘                        │
+        │ depends on                     │
+        │                                │
+        │                                │
+        │                                │
+       ╱│╲                              ╱│╲
+┌───────────────┐                ┌───────────────┐                 ┌──────────────┐
+│               │                │               │                 │              │
+│               │                │               │╲ delivered via  │              │
+│    Entity     │                │ Notification  │─────────────────│     Hook     │
+│               │                │               │╱                │              │
+│               │                │               │                 │              │
+└───────────────┘                └───────────────┘                 └──────────────┘
+        │ aggregates                    ╲│╱ is raised by
+        │                                │
+        │                                │
+        │                                │
+       ╱│╲                               │
+┌───────────────┐                ┌───────────────┐
+│               │                │               │
+│               │╲ is grouped by │               │
+│  Data Frame   │────────────────│  Change Set   │
+│               │╱               │               │
+│               │                │               │
+└───────────────┘                └───────────────┘
 </pre>
 
 #### A Real-World Use Case
