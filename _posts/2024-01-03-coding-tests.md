@@ -1,5 +1,5 @@
 ---
-title: "Coding Tests: Why All the Hate?"
+title: "Coding Tests"
 date: 2024-03-16
 tags:
 - Software Engineering
