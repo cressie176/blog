@@ -1,6 +1,6 @@
 ---
 title: "Coding Tests"
-date: 2024-03-16
+date: 2025-01-07
 tags:
 - Software Engineering
 - Hiring
