@@ -46,12 +46,6 @@ This approach gives candidates control over how they prepare and ensures I can s
 
 To paraphrase Warren Buffett, at the heart of any good hiring process is the search for intelligence, energy, and integrity. Depending on the level of role, knowledge and wisdom become increasingly important too. No hiring process will ever be perfect at evaluating these criteria, but thoughtful adjustments, like offering flexible coding tests, observing how candidates use their tools can make the process more effective. The goal is to use these tools not as rigid gatekeepers but as opportunities to learn about candidates and identify those who will thrive in your team.
 
----
-
-### Footnote
-
-I have deliberately avoided discussing other aspects of the hiring process, such as DEI considerations, non-technical criteria, and the understanding that a good interview is a mutual evaluation. These are important topics, but they warrant a separate discussion. Here, I chose to focus purely on the appropriateness and importance of coding tests to ensure clarity and depth on this specific aspect of hiring.
-
 ### Recommended Reading
 - [Why Can't Programmers.. Program?](https://blog.codinghorror.com/why-cant-programmers-program/)
 - [Interviewing for Evidence](https://dannorth.net/interviewing-for-evidence/)
