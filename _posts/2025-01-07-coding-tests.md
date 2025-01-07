@@ -20,7 +20,7 @@ Common criticisms of coding tests include:
 
 - **Time constraints:** Take-home projects can be burdensome, especially for those with limited time due to family or other commitments. An ex-colleague even refused to interview for companies who set take-home tests.
 
-- **Unrealistic tests:** Many interview tests focus on niche skills like recursion or bit masking that are rarely used in day-to-day work. These tests often fail to measure a candidate’s ability to perform in real-world scenarios, leaving a gap in assessing their practical effectiveness.
+- **Unrealistic tests:** Many coding tests focus on niche skills like recursion or bit masking that are rarely used in day-to-day work. These tests often fail to measure a candidate’s ability to perform in real-world scenarios, leaving a gap in assessing their practical effectiveness.
 
 ### Why a Live Coding Test Is Valuable
 
@@ -28,13 +28,13 @@ One of the most revealing parts of a coding interview is observing candidates us
 
 A live coding test allows me to observe these behaviours in action. It shows how candidates approach a problem, how they structure their code, and how they troubleshoot unexpected issues. It also provides insight into their communication skills and how they handle feedback, both of which are critical in collaborative environments.
 
-In some cases, it can reveal red flags about a candidate’s attitude or willingness to adapt. For instance, I have encountered several candidates who ignored feedback, which raised concerns about their adaptability and willingness to engage constructively. In another example, I asked a candidate to adapt their in-memory solution to one using persistence with a datastore of their choice. To my surprise, they responded with exasperation, raising serious concerns about their suitability for a collaborative, team-oriented culture.
+In some cases, it can reveal red flags about a candidate. For instance, I have encountered several candidates who ignored feedback, which raised concerns about their adaptability and willingness to engage constructively. In another example, I asked a candidate to adapt their in-memory solution to one using persistence with a datastore of their choice. To my surprise, they responded with exasperation, raising serious concerns about their suitability for a collaborative, team-oriented culture.
 
 ### Coding Tests: A Flexible Approach
 
 My preferred approach addresses the concerns around live and take-home tests by offering flexibility. I use tests that do not require company domain knowledge but do demonstrate frequently used software engineering skills. These tests are tailored to the experience level of the role, ensuring they are both relevant and fair. Candidates are encouraged to use whatever resources they have available, including Google, Stack Overflow, and AI tools. I always attempt the test myself to ensure its appropriateness and feasibility. Additionally, at least one existing employee of the appropriate level is asked to attempt it as well. I also try to put the candidate at ease prior to starting the live aspect of the test, rather than jumping straight in and advising them that it is not necessary to finish.
 
-I provide candidates with the coding test beforehand. Before diving into technical questions, At a minimum, I ask them to read the exercise and come prepared with their environment ready to go. If they prefer, they can complete the test in advance and walk through their solution during the interview, although I will ask them to make changes so I can observe them work. This allows:
+I provide candidates with the coding test beforehand. At a minimum, I ask them to read the exercise and come prepared with their environment ready to go. If they prefer, they can complete the test in advance and walk through their solution during the interview, although I will ask them to make changes so I can observe them work. This allows:
 
 - Time-poor candidates to do the minimum and focus on live problem-solving,
 
