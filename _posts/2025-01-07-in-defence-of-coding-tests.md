@@ -8,7 +8,9 @@ tags:
 - Coding Tests
 ---
 
-Hiring software engineers is one of the most challenging and critical responsibilities for any team. Having founded a consultancy and led hiring for other companies, I know first-hand how much is at stake. A wrong hire can delay work, frustrate teams, and cost both significant time and money. It is not good for the candidate either. Being in the wrong role causes anxiety, damages confidence, and leaves a blemish on their career history. Furthermore, dealing with someone who underperforms is disruptive, demoralising and exhausting for their manager, their colleagues, and the person themselves. Conversely, a good hiring process means that successful candidates get to work on interesting projects with great colleagues and vice versa. This is why it is in everyone’s interest that the process is effective.
+Hiring software engineers is one of the most challenging and critical responsibilities for any team. Having founded a consultancy and led hiring for other companies, I know first-hand how much is at stake.
+
+A wrong hire can delay work, frustrate teams, and cost both significant time and money. It is not good for the candidate either. Being in the wrong role causes anxiety, damages confidence, and leaves a blemish on their career history. Furthermore, dealing with someone who underperforms is disruptive, demoralising and exhausting for their manager, their colleagues, and the person themselves. Conversely, a good hiring process means that successful candidates get to work on interesting projects with great colleagues and vice versa. This is why it is in everyone’s interest that the process is effective.
 
 However, the methods used in hiring have faced increasing scrutiny, particularly coding tests, whether take-home or live. While these methods are not perfect, dismissing them outright risks missing valuable insights. Let me explore some of these debates and how thoughtful hiring processes can strike a balance.
 
