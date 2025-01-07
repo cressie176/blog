@@ -44,7 +44,7 @@ This approach gives candidates control over how they prepare and ensures I can s
 
 ### Final Thoughts
 
-To paraphrase Warren Buffett, at the heart of any good hiring process is the search for intelligence, energy, and integrity. Depending on the level of role, knowledge and wisdom become increasingly important too. No hiring process will ever be perfect at evaluating these criteria, but thoughtful adjustments, like offering flexible coding tests, observing how candidates use their tools, and researching GitHub contributions, can make the process more effective. The goal is to use these tools not as rigid gatekeepers but as opportunities to learn about candidates and identify those who will thrive in your team.
+To paraphrase Warren Buffett, at the heart of any good hiring process is the search for intelligence, energy, and integrity. Depending on the level of role, knowledge and wisdom become increasingly important too. No hiring process will ever be perfect at evaluating these criteria, but thoughtful adjustments, like offering flexible coding tests, observing how candidates use their tools can make the process more effective. The goal is to use these tools not as rigid gatekeepers but as opportunities to learn about candidates and identify those who will thrive in your team.
 
 ---
 
