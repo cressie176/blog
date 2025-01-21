@@ -9,7 +9,7 @@ tags:
 - Open Source
 ---
 
-After my recent article on coding tests, I read a [post](https://www.linkedin.com/posts/james-mahy_stop-using-github-contributions-in-hiring-activity-7280527334883962880-esvT) by James Mahy, a genuinely kind, and exceptionally talented developer whom I ironically had the good fortune to interview some years ago. In it, he raises some interesting points, suggesting that contributions do not always reflect motivation, skill, or tenacity, and may even be misleading. My own experience leads me to a different perspective. My own experience leads me to a different perspective.
+After my recent article on coding tests, I read a [post](https://www.linkedin.com/posts/james-mahy_stop-using-github-contributions-in-hiring-activity-7280527334883962880-esvT) by James Mahy, a genuinely kind, and exceptionally talented developer whom I ironically had the good fortune to interview some years ago. In it, he raises some interesting points, suggesting that GitHub contributions do not always reflect motivation, skill, or tenacity, and may even be misleading. My own experience leads me to a different perspective. My own experience leads me to a different perspective.
 
 I have been contributing to open source for almost two decades. It has taught me a great deal about real-world problem-solving, communication, and collaboration. Reviewing a candidate’s contributions - whether personal projects, pull requests, or issues, can reveal insights into their creativity, communication skills, and technical mindset. This applies equally to junior developers because even small projects or issues can demonstrate qualities like passion, curiosity, intelligence, diligence, empathy, humility, and respect.
 
