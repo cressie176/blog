@@ -1,6 +1,6 @@
 ---
 title: "Addendum: Open Source Contributions in Hiring"
-date: 2025-01-021
+date: 2025-01-21
 tags:
 - Software Engineering
 - Hiring
