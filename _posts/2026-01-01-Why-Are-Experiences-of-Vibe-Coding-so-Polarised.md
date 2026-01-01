@@ -95,11 +95,15 @@ For my second attempt, I still worked from pre-written stories, marketplace skil
 
 Traditional automation struggles here. As the number of layers increases, reliably merging templates becomes difficult, particularly where cross-cutting concerns are involved. This is where Generative AI proved useful. Each layer includes a "Wiring.md" file describing how it should be integrated into the base. Claude can read and apply these instructions in a way that would be awkward to achieve with scripts. The bootstrap process also made it possible to provide Claude.md files in the templates, but this introduced merge problems as templates were combined. Using [rules](https://code.claude.com/docs/en/memory) proved more effective, as each template can include its own rules separately.
 
-Even with templates and rules in place, Generative AI still required technical direction at the story level. Each story therefore includes explicit Implementation Notes describing constraints, expectations, and trade-offs, along with reminders to review the relevant rules and skills.
+Even with templates and rules in place, Generative AI still required technical direction at the story level. Each story therefore includes explicit Implementation Notes recommending an approach, along with reminders to review the relevant rules and skills.
 
 The intent is to make best practices explicit, inspectable, and repeatable. Templates capture structural decisions, rules capture behavioural constraints, and stories capture local trade-offs. Together, they allow experience to be shared through the artefact itself, rather than through constant explanation or review.
 
-Claude was instructed to install the required templates before implementing any functional stories. With that foundation in place, a single prompt, "Implement the [URL Shortener epic](https://github.com/cressie176/shorty/issues/1) one story at a time", apart from the occasional and minor course correction, was all that was required.
+Claude was instructed to install the required templates before implementing any functional stories. With that foundation in place, apart from the occasional and minor course correction, a single prompt
+```
+> Implement the URL Shortener epic https://github.com/cressie176/shorty/issues/1 one story at a time
+```
+was all that was required.
 
 One deliberate adjustment was made around test-driven development. I allowed Claude to generate tests and production code for a story in a single pass, rather than enforcing a strict red, green, refactor cycle. My assumption was that the model does not benefit from incremental test feedback in the same way a human does, although this remains an open question.
 
