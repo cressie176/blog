@@ -18,9 +18,7 @@ One possible explanation for difference in reported experience is that people wa
 Operational debt is distinct from technical debt. Technical debt only incurs a cost when change is required and is often an explicit trade-off. Operational debt creates ongoing risk and [unplanned work](https://blog.while-true-do.io/devops-4-types-of-work/) and, in the worst cases, can consume an entire team’s capacity through incidents and urgent remediation. A concrete example of this is GitLab’s 2017 data loss [incident](https://about.gitlab.com/blog/postmortem-of-database-outage-of-january-31/) where operational failures led to the permanent deletion of customer repositories.
 
 ### 2. Unparalleled Malleability
-[Clean Code](https://www.oreilly.com/library/view/clean-code-a/9780136083238/) is malleable. When we write clean code, we make a comparatively small sacrifice now to reserve the ability to change rapidly in the future.
-   
-The best way to achieve clean code is to write as little code as possible. This is done by creating a good domain model. When the domain model is good, the code vanishes. As Linus Torvalds is [reported](https://read.engineerscodex.com/p/good-programmers-worry-about-data) to have said:
+[Clean Code](https://www.oreilly.com/library/view/clean-code-a/9780136083238/) is malleable. When we write clean code, we make a comparatively small sacrifice now to reserve the ability to change rapidly in the future. The best way to achieve clean code is to write as little code as possible. This is done by creating a good domain model. When the domain model is good, the code vanishes. As Linus Torvalds is [reported](https://read.engineerscodex.com/p/good-programmers-worry-about-data) to have said:
 
 > “Bad programmers worry about the code. Good programmers worry about data structures and their relationships.”
 
