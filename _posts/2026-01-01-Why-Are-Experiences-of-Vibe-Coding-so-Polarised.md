@@ -98,7 +98,7 @@ Claude was instructed to install the required templates before implementing any 
 │                   *             *                  │ No recent activity                            │
 │                    *   ▘▘ ▝▝   *                   │                                               │
 │                                                    │                                               │
-│ arn:aws:bedrock:eu-west-1:484… · API Usage Billing │                                               │
+│ arn:aws:bedrock:eu-west-1:808… · API Usage Billing │                                               │
 │          ~/Development/cressie176/shorty           │                                               │
 ╰────────────────────────────────────────────────────────────────────────────────────────────────────╯
 
