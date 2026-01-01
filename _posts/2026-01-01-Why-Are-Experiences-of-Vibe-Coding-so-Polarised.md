@@ -65,6 +65,20 @@ The vast variation of experience comes from how Generative AI is being used, not
 * **Stories:** [shorty/issues](https://github.com/cressie176/shorty/issues)
 
 ## Method 1: Prompt Bootstrapping (Abandoned)
+The initial approach was to use pre-written stories, marketplace skills and interactive prompts to fully implement a URL Shortening service. The intention was to encode structure, constraints, and best practices entirely through instructions. In practice this proved unreliable, particularly while the codebase was in infancy. Even when instructions were repeated and made increasingly explicit, Claude would occasionally ignore them or drift away from the intended structure. Early architectural. Continuing in this direction wasted both time and tokens.
+
+I briefly considered developing a reference repository, which would have provided concrete examples of structure and conventions rather than relying on abstract descriptions. While viable in principle, this approach does not scale in a microservice environment. The number of permutations of infrastructure components (databases, message brokers, etc.) grows rapidly, and maintaining reference repositories for each combination would simply relocate the complexity.
+
+## Method 2: Template Bootstrapping
+For my second attempt, I still worked from pre-written stories, marketplace skills and interactive prompts, but my infrastructure story instructed Claude to bootstrap the service from a set of pre-written templates. A base service template establishes the core structure, with additional templates layered on top for concerns such as PostgreSQL or other infrastructure. This allows common practices to be shared while still supporting different combinations.
+
+Traditional automation struggles here. As the number of layers increases, reliably merging templates becomes difficult, particularly where cross-cutting concerns are involved. This is where Generative AI proved useful. Each layer includes a "Wiring.md" file describing how it should be integrated into the base. Claude can read and apply these instructions in a way that would be awkward to achieve with scripts. The bootstrap process also made it possible to provide Claude.md files in the templates, but this introduced merge problems as templates were combined. Using [rules](https://code.claude.com/docs/en/memory) proved more effective, as each template can include its own rules separately.
+
+Even with templates and rules in place, Generative AI still required technical direction at the story level. Each story therefore includes explicit Implementation Notes recommending an approach, along with reminders to review the relevant rules and skills.
+
+The intent is to make best practices explicit, inspectable, and repeatable. Templates capture structural decisions, rules capture behavioural constraints, and stories capture local trade-offs. Together, they allow experience to be shared through the artefact itself, rather than through constant explanation or review.
+
+Claude was instructed to install the required templates before implementing any functional stories. With that foundation in place, apart from the occasional and minor course correction, a single prompt was all that was required.
 ```
 ╭─── Claude Code v2.0.76 ────────────────────────────────────────────────────────────────────────────╮
 │                                                    │ Tips for getting started                      │
@@ -84,26 +98,8 @@ The vast variation of experience comes from how Generative AI is being used, not
 > Implement the URL Shortener epic https://github.com/cressie176/shorty/issues/1 one story at a time 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────
   ? for shortcuts
+```lement the URL Shortener epic https://github.com/cressie176/shorty/issues/1 one story at a time
 ```
-
-The initial approach was to use pre-written stories, marketplace skills and interactive prompts to fully implement a URL Shortening service. The intention was to encode structure, constraints, and best practices entirely through instructions. In practice this proved unreliable, particularly while the codebase was in infancy. Even when instructions were repeated and made increasingly explicit, Claude would occasionally ignore them or drift away from the intended structure. Early architectural. Continuing in this direction wasted both time and tokens.
-
-I briefly considered developing a reference repository, which would have provided concrete examples of structure and conventions rather than relying on abstract descriptions. While viable in principle, this approach does not scale in a microservice environment. The number of permutations of infrastructure components (databases, message brokers, etc.) grows rapidly, and maintaining reference repositories for each combination would simply relocate the complexity.
-
-## Method 2: Template Bootstrapping
-For my second attempt, I still worked from pre-written stories, marketplace skills and interactive prompts, but my infrastructure story instructed Claude to bootstrap the service from a set of pre-written templates. A base service template establishes the core structure, with additional templates layered on top for concerns such as PostgreSQL or other infrastructure. This allows common practices to be shared while still supporting different combinations.
-
-Traditional automation struggles here. As the number of layers increases, reliably merging templates becomes difficult, particularly where cross-cutting concerns are involved. This is where Generative AI proved useful. Each layer includes a "Wiring.md" file describing how it should be integrated into the base. Claude can read and apply these instructions in a way that would be awkward to achieve with scripts. The bootstrap process also made it possible to provide Claude.md files in the templates, but this introduced merge problems as templates were combined. Using [rules](https://code.claude.com/docs/en/memory) proved more effective, as each template can include its own rules separately.
-
-Even with templates and rules in place, Generative AI still required technical direction at the story level. Each story therefore includes explicit Implementation Notes recommending an approach, along with reminders to review the relevant rules and skills.
-
-The intent is to make best practices explicit, inspectable, and repeatable. Templates capture structural decisions, rules capture behavioural constraints, and stories capture local trade-offs. Together, they allow experience to be shared through the artefact itself, rather than through constant explanation or review.
-
-Claude was instructed to install the required templates before implementing any functional stories. With that foundation in place, apart from the occasional and minor course correction, a single prompt
-```
-> Implement the URL Shortener epic https://github.com/cressie176/shorty/issues/1 one story at a time
-```
-was all that was required.
 
 One deliberate adjustment was made around test-driven development. I allowed Claude to generate tests and production code for a story in a single pass, rather than enforcing a strict red, green, refactor cycle. My assumption was that the model does not benefit from incremental test feedback in the same way a human does, although this remains an open question.
 
