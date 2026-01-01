@@ -60,7 +60,7 @@ To move this discussion forward, we need something more concrete than confident 
 
 The vast variation of experience comes from how Generative AI is being used, not from a fundamental weakness in the tool itself.
 
-### Aparatus
+### Apparatus
 
 * **Machine:** MacBook M1 Pro with 32GB RAM
 * **Operating system:** macOS 15.6.1 (24G90)
@@ -71,11 +71,11 @@ The vast variation of experience comes from how Generative AI is being used, not
 * **Generative AI execution:** Separate terminal window running in plan mode, with safe GitHub and Bash commands pre-allowed
 * **CLI tooling:** GitHub CLI and faster command line alternatives
 * **Claude Marketplace**: [cressie176-claude-marketplace](https://github.com/cressie176/cressie176-claude-marketplace)
-* **Node.JS Templates:** [node-templates](https://github.com/cressie176/node-templates)
+* **Node.js Templates:** [node-templates](https://github.com/cressie176/node-templates)
 * **Stories:** [shorty/issues](https://github.com/cressie176/shorty/issues)
 
 ## Method 1: Prompt Bootstrapping (Abandoned)
-The initial approach was to use pre-written stories, marketplace skills and interactive prompts to fully implement a URL Shortening service. The intention was to encode structure, constraints, and best practices entirely through instructions. In practice this proved unreliable, particularly while the codebase was in infancy. Even when instructions were repeated and made increasingly explicit, Claude would occasionally ignore them or drift away from the intended structure. Early architectural. Continuing in this direction wasted both time and tokens.
+The initial approach was to use pre-written stories, marketplace skills and interactive prompts to fully implement a URL Shortening service. The intention was to encode structure, constraints, and best practices entirely through instructions. In practice this proved unreliable, particularly while the codebase was in infancy. Even when instructions were repeated and made increasingly explicit, Claude would occasionally ignore them or drift away from the intended structure. Continuing in this direction wasted both time and tokens.
 
 I briefly considered developing a reference repository, which would have provided concrete examples of structure and conventions rather than relying on abstract descriptions. While viable in principle, this approach does not scale in a microservice environment. The number of permutations of infrastructure components (databases, message brokers, etc.) grows rapidly, and maintaining reference repositories for each combination would simply relocate the complexity.
 
@@ -128,7 +128,7 @@ I reran the experiment multiple times from the same starting point and received 
 | 8     | Schedule VACUUM ANALYZE  | ✅     | 00:02 | 0             | [4ed2837](https://github.com/cressie176/shorty/commit/4ed283719e72528998c7d6cccf3ffdafffae5339) |
 |       |                          |        | 01:07 | 17            |             |
 
-Using this approach, Claude correctly implemented the URL shortener service in one hour and 7 mintes, with minimal intervention or further prompting. The architectural drift and disobedience seen earlier largely disappeared once the environment was properly bootstrapped. The code satisfied my goals of minimal operational debt and cleanliness. I estimate it would have taken me 2-3 working days to produce an equivalent codebase working without AI.
+Using this approach, Claude correctly implemented the URL shortener service in one hour and 7 minutes, with minimal intervention or further prompting. The architectural drift and disobedience seen earlier largely disappeared once the environment was properly bootstrapped. The code satisfied my goals of minimal operational debt and cleanliness. I estimate it would have taken me 2-3 working days to produce an equivalent codebase working without AI.
 
 However, that elapsed time does not reflect the full cost. Achieving these results required repeated iteration on both the stories and the skills. Significant effort went into refining story structure, clarifying implementation notes, and adjusting skills so that Claude behaved consistently.
 
