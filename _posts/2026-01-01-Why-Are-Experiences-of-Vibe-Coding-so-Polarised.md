@@ -34,7 +34,7 @@ Operational debt is distinct from technical debt. Technical debt only incurs a c
 
 A good domain model requires good encapsulation. Behaviour is contained in one place, colocated with the associated data. Accessors are few, mutators fewer still. Conditional logic is pushed to the boundaries of the application and eliminated internally through polymorphism. The code clearly expresses intent.
 
-I have a nagging suspicion that my attachment to clean code is a mental prison, framed by Scott Adams as [Loserthink](https://en.wikipedia.org/wiki/Loserthink) may be unnecessary in a world of Generative AI. Until that suspicion is proven, I am sticking with it. The risk of a future filled with vast quantities of even less malleable code than we already have is too great.
+I have a nagging suspicion that my attachment to clean code may be what Scott Adams calls [Loserthink](https://en.wikipedia.org/wiki/Loserthink), and no longer needed in the world of Generative AI. Until that suspicion is proven, I am sticking with it. The risk of a future filled with vast quantities of even less malleable code than we already have is too great.
 
 ## My Experience Of Vibe Coding (So Far)
 
