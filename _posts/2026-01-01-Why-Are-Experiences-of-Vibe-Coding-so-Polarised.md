@@ -118,15 +118,6 @@ I reran the experiment multiple times from the same starting point and received 
 | 8     | Schedule VACUUM ANALYZE  | ✅     | 00:02 | 0             | 4ed2837 |
 |       |                          |        | 01:07 | 17            |         |
 
-| Metric            | Value                          |
-|-------------------|--------------------------------|
-| Tests             | 39 (All passing)               |
-| Commits           | 8 (One per story)              |
-| Linter Errors     | 0                              |
-| TypeScript Errors | 0                              |
-| Test Output       | Clean (No error log pollution) |
-| Stories Completed | 8/8 (100%)                     |
-
 Using this approach, Claude correctly implemented the URL shortener service in one hour and 7 mintes, with minimal intervention or further prompting. The architectural drift and disobedience seen earlier largely disappeared once the environment was properly bootstrapped. The code satisfied my goals of minimal operational debt and cleanliness. I estimate it would have taken me 2-3 working days to produce an equivalent codebase working without AI.
 
 However, that elapsed time does not reflect the full cost. Achieving these results required repeated iteration on both the stories and the skills. Significant effort went into refining story structure, clarifying implementation notes, and adjusting skills so that Claude behaved consistently.
