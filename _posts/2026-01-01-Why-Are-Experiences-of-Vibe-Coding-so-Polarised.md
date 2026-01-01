@@ -28,8 +28,6 @@ A good domain model requires good encapsulation. Behaviour is contained in one p
 
 I have a nagging suspicion that my attachment to clean code, framed by Scott Adams as [Loserthink](https://en.wikipedia.org/wiki/Loserthink) may be unnecessary in a world of Generative AI. Until that suspicion is proven, I am sticking with it. The risk of a future filled with vast quantities of even less malleable code than we already have is too great.
 
-To achieve these objectives in teams, the AI tooling must behave consistently well. Outcomes cannot depend on individuals repeatedly crafting perfect prompts. Until that point is reached, tooling must support and encourage the development and adoption of best practices. Without this, AI will always be a [damp squib](https://en.wiktionary.org/wiki/damp_squib).
-
 ## My Experience Of Vibe Coding (So Far)
 
 ### The Good
