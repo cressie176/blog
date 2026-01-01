@@ -114,9 +114,7 @@ However, that elapsed time does not reflect the full cost. Achieving these resul
 
 ### Conclusion
 
-This experiment demonstrates that Claude can produce high quality code more rapidly than even an experienced software engineer, but only when projects are properly bootstrapped and guided by effective prompts in the form of skills and detailed stories. 
-
-While the skills represent a long-term investment that can be reused, the stories do not. My method necessitates embedding implementation notes into each story, making them brittle. The success of the approach depends either on becoming very good at writing stories up front, or on the engineers driving Claude being experienced enough to recognise when stories are flawed.
+This experiment demonstrates that Claude can produce high quality code more rapidly than even an experienced software engineer, but only when projects are properly bootstrapped and guided by effective prompts in the form of marketplace skills and detailed stories. While the marketplace skills represent a long-term investment that can be reused, the stories do not. My method necessitates embedding implementation notes into each story, making them brittle. The success of the approach depends either on becoming very good at writing stories up front, or on the engineers driving Claude being experienced enough to recognise when stories are flawed.
 
 When stories are wrong or incomplete, someone must stop and rewrite them, along with any dependent stories, some of which may already be in development. In effect, this approach shifts the primary bottleneck from implementation to story writing and maintenance. It may be that my method is only suitable for small teams of experienced engineers.
 
@@ -126,4 +124,4 @@ I still have the following open questions.
 2. Was my method the most effective way to use Generative AI, and specifically Claude Code?
 3. Do other goals matter more in different contexts?
 
-If you are getting good results from vibe coding, what are you optimising for, and how does your approach support that? If you are getting poor results how does your approach differ from mine? I'd love to know.
+If you are getting better results from vibe coding, what are you optimising for, and how does your approach support that? If you are getting poor results how does your approach differ from mine? I'd love to know.
