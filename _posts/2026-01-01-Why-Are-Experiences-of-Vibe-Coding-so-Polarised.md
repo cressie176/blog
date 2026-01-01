@@ -149,7 +149,7 @@ When the implementaion notes are wrong or incomplete, someone must stop and rewr
 
 I also still have the following open questions.
 
-1. Were my goals the right ones (particularly the one relating to Clean Code)?
+1. Were my goals the right ones (particularly Clean Code)?
 2. Was my method the most effective way to use Generative AI, and specifically Claude Code?
 3. Do other goals matter more in different contexts?
 
