@@ -116,6 +116,7 @@ I reran the experiment multiple times from the same starting point and received 
 | 6     | Expire Redirects         | ✅     | 00:06 | 0             | aafa1ba |
 | 7     | Delete Expired Redirects | ✅     | 00:03 | 0             | 6419983 |
 | 8     | Schedule VACUUM ANALYZE  | ✅     | 00:02 | 0             | 4ed2837 |
+|       |                          |        | 01:07 | 17            |         |
 
 Final Stats:
 - 39 tests - All passing
