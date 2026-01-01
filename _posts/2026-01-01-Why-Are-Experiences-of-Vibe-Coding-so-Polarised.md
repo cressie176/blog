@@ -40,7 +40,7 @@ I have a nagging suspicion that my attachment to clean code may be what Scott Ad
 
 ### The Good
 
-It is often stated that Generative AI is effective at mechanical or rote tasks, or comparable to the output of a junior engineer, but this is not where it offers the most value. The area where I have found my Generative AI tool of choice, [Claude Code](https://www.claude.com/product/claude-code), to be most effective is where I have strong high-level judgement about what needs to be achieved, but lack the detailed, low-level knowledge to implement it quickly without time, research, and mistakes. In those cases, the limiting factor is not judgement, but execution.
+It is often stated that Generative AI is effective at mechanical or rote tasks, or comparable to the output of a junior engineer, but this is not where it offers the most value. The area where I have found my Generative AI tool of choice, [Claude Code](https://www.claude.com/product/claude-code), to be most effective is where I have strong high-level judgement about what needs to be achieved, but lack the detailed, low-level knowledge to implement it without time, research, and mistakes. In those cases, the limiting factor is not judgement, but execution.
 
 CI/CD pipelines and Docker-related configuration provide good examples. I know what I want a pipeline to do, how the stages should fit together, and what correct behaviour looks like. Implementing that by hand usually involves reading documentation, iterating on syntax, and discovering edge cases through failure. Claude is much faster at cycling through that execution loop than I am, especially after installing the [GitHub CLI](https://cli.github.com) - a genuine game changer!
 
