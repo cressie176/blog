@@ -15,26 +15,22 @@ That gap is pushing organisations to make extreme decisions. Some, driven by unr
 One possible explanation for difference in reported experience is that people want different outcomes. If that is the case, then disagreement about Generative AI performance is inevitable. Before comparing tools or techniques, the goals themselves need to be explicit. I want Generative AI to rapidly create applications with the following characteristics:
 
 ### 1. Negligible Operational Debt
-
 Operational debt is distinct from technical debt. Technical debt only incurs a cost when change is required and is often an explicit trade-off. Operational debt creates ongoing risk and [unplanned work](https://blog.while-true-do.io/devops-4-types-of-work/) and, in the worst cases, can consume an entire team’s capacity through incidents and urgent remediation.
-
+   
 A concrete example of this is GitLab’s 2017 data loss [incident](https://about.gitlab.com/blog/postmortem-of-database-outage-of-january-31/) where operational failures led to the permanent deletion of customer repositories.
 
 ### 2. Unparalleled Malleability
+[Clean Code](https://www.oreilly.com/library/view/clean-code-a/9780136083238/) is malleable. When we write clean code, we make a comparatively small sacrifice now to reserve the ability to change rapidly in the future.
+   
+The best way to achieve clean code is to write as little code as possible. This is done by creating a good domain model. When the domain model is good, the code vanishes. As Linus Torvalds is [reported](https://read.engineerscodex.com/p/good-programmers-worry-about-data) to have said:
 
-Clean Code [https://www.oreilly.com/library/view/clean-code-a/9780136083238/](https://www.oreilly.com/library/view/clean-code-a/9780136083238/) is malleable. When we write clean code, we make a comparatively small sacrifice now to reserve the ability to change rapidly in the future.
-
-The best way to achieve clean code is to write as little code as possible. This is done by creating a good domain model. When the domain model is good, the code vanishes. As Linus Torvalds is reported to have said:
-
-> “Bad programmers worry about the code. Good programmers worry about data structures and their relationships.” [https://read.engineerscodex.com/p/good-programmers-worry-about-data](https://read.engineerscodex.com/p/good-programmers-worry-about-data)
+> “Bad programmers worry about the code. Good programmers worry about data structures and their relationships.”
 
 A good domain model requires good encapsulation. Behaviour is contained in one place, colocated with the associated data. Accessors are few, mutators fewer still. Conditional logic is pushed to the boundaries of the application and eliminated internally through polymorphism. The code clearly expresses intent.
 
-I have a nagging suspicion that my attachment to clean code, framed by Scott Adams as Loserthink [https://en.wikipedia.org/wiki/Loserthink](https://en.wikipedia.org/wiki/Loserthink) may be unnecessary in a world of Generative AI. Until that suspicion is proven, I am sticking with it. The risk of a future filled with vast quantities of even less malleable code than we already have is too great.
+I have a nagging suspicion that my attachment to clean code, framed by Scott Adams as [Loserthink](https://en.wikipedia.org/wiki/Loserthink) may be unnecessary in a world of Generative AI. Until that suspicion is proven, I am sticking with it. The risk of a future filled with vast quantities of even less malleable code than we already have is too great.
 
-To achieve these objectives in teams, the AI tooling must behave consistently well. Outcomes cannot depend on individuals repeatedly crafting perfect prompts. Until that point is reached, tooling must support and encourage the development and adoption of best practices. Without this, AI will always be a damp squib [https://en.wiktionary.org/wiki/damp_squib](https://en.wiktionary.org/wiki/damp_squib).
-
----
+To achieve these objectives in teams, the AI tooling must behave consistently well. Outcomes cannot depend on individuals repeatedly crafting perfect prompts. Until that point is reached, tooling must support and encourage the development and adoption of best practices. Without this, AI will always be a [damp squib](https://en.wiktionary.org/wiki/damp_squib).
 
 ## My Experience of Vibe Coding (So Far)
 
@@ -50,7 +46,7 @@ This is also an area with a comparatively low risk profile. A CI/CD workflow eit
 
 ### The Bad
 
-At the same time, my Generative AI tool of choice (Claude Code [https://www.claude.com/product/claude-code](https://www.claude.com/product/claude-code)), has ignored explicit instructions, made false assumptions, implemented changes that were not requested, and drifted away from the intended structure, particularly early in a codebase when there is less existing context. It has also misdiagnosed problems and disappeared down rabbit holes without ever fixing them, or worse, unilaterally decided that they can be safely ignored.
+At the same time, my Generative AI tool of choice ([Claude Code](https://www.claude.com/product/claude-code)), has ignored explicit instructions, made false assumptions, implemented changes that were not requested, and drifted away from the intended structure, particularly early in a codebase when there is less existing context. It has also misdiagnosed problems and disappeared down rabbit holes without ever fixing them, or worse, unilaterally decided that they can be safely ignored.
 
 What stands out is how sensitive the results are to relatively small changes in how the tool is used. Claude is not a compiler. The results are not deterministic. Small differences in context, ordering, or phrasing can lead to materially different outcomes, even when the intent appears unchanged. Overall, the outcomes are still positive, but not to the degree claimed by those most strongly advocating for it. Either those claims are grossly overstated, or those making them have found ways to circumvent these issues and make Claude perform consistently well. If the latter is true, I want to learn and adopt their methods, but what are they?
 
@@ -58,69 +54,55 @@ What stands out is how sensitive the results are to relatively small changes in 
 
 To move this discussion forward, we need something more concrete than confident anecdote. When the same tool is reported to produce both dangerous, unmaintainable systems and dramatic productivity gains, opinion alone cannot tell us whether the difference lies in the tool, the goals, or the way it is being used. The only way to separate those factors is to make the goals explicit and then test, in a controlled way, whether a particular method of using Generative AI can reliably produce outcomes aligned with them.
 
----
-
-## Hypothesis
+### Hypothesis
 
 The vast variation of experience comes from how Generative AI is being used, not from a fundamental weakness in the tool itself.
 
----
-
-## Equipment
+### Aparatus
 
 * **Machine:** MacBook M1 Pro with 32GB RAM
 * **Operating system:** macOS 15.6.1 (24G90)
 * **Model:** Claude Sonnet 4.5 via AWS Bedrock
 * **Context window:** 1MB
 * **Claude version:** 2.0.76
-* **Editor:** Zed
-  [https://zed.dev](https://zed.dev)
+* **Editor:** [Zed](https://zed.dev)
 * **Generative AI execution:** Separate terminal window running in plan mode, with safe GitHub client and Bash commands allowed
 * **CLI tooling:** GitHub CLI and faster command line alternatives
-* **Claude Marketplace**: [**https://github.com/cressie176/cressie176-claude-marketplace**](https://github.com/cressie176/cressie176-claude-marketplace)[**lace**](https://github.com/cressie176/cressie176-claude-marketplace)
-* **Node.JS Templates:** [https://github.com/cressie176/node-templates](https://github.com/cressie176/node-templates)
+* **Claude Marketplace**: [cressie176-claude-marketplace](https://github.com/cressie176/cressie176-claude-marketplace)
+* **Node.JS Templates:** [node-templates](https://github.com/cressie176/node-templates)
+* **Stories:** [shorty/issues](https://github.com/cressie176/shorty/issues)
 
----
+## Method 1: Prompt Bootstrapping (Abandoned)
 
-## Method
+The initial approach was to use interactive prompts and marketplace skills to bootstrap the project from an empty repository. The intention was to encode structure, constraints, and best practices entirely through instructions. In practice this proved unreliable, particularly while the codebase was in infancy. Even when instructions were repeated and made increasingly explicit, Claude would occasionally ignore them or drift away from the intended structure. Early architectural. Continuing in this direction wasted both time and tokens.
 
-The initial approach was to rely on prompting alone through interactive prompts and marketplace skills. In practice this was unreliable, particularly while the codebase was still small. Even when instructions were repeated and made increasingly explicit, the model would occasionally ignore them or drift away from the intended structure. Continuing in this direction mostly resulted in wasted time and tokens.
+I briefly considered developing a reference repository, which would have provided concrete examples of structure and conventions rather than relying on abstract descriptions. While viable in principle, this approach does not scale in a microservice environment. The number of permutations of infrastructure components (databases, message brokers, etc.) grows rapidly, and maintaining reference repositories for each combination would simply relocate the complexity.
 
-I considered developing a reference repository, which would have provided concrete examples of structure and conventions rather than relying on abstract descriptions. While viable in principle, this does not scale in a microservice environment. The number of permutations of infrastructure components (databases, message brokers, etc). Maintaining reference repositories for each combination is too time consuming.
+## Method 2: Template Bootstrapping
 
-Instead, I chose a templating approach. I developed a base service template to establish the core structure, with additional templates layered on top for concerns such as PostgreSQL or other infrastructure. This allows common practices to be shared while still supporting different combinations.
+Instead of prompting, I adopted a templating approach to bootstramp the project. A base service template establishes the core structure, with additional templates layered on top for concerns such as PostgreSQL or other infrastructure. This allows common practices to be shared while still supporting different combinations.
 
-Traditional automation struggles here. As the number of layers increases, reliably merging templates becomes difficult, particularly where cross-cutting concerns are involved. This is where Generative AI proved useful. Each layer includes a "Wiring.md" file describing how it should be integrated into the base. Claude can read and apply these instructions in a way that would be awkward to achieve with scripts.
-
-The bootstrap process also made it possible to provide Claude.md files in the templates, but this introduced merge problems as templates were combined. Using rules ([https://code.claude.com/docs/en/memory](https://code.claude.com/docs/en/memory)) proved more effective, as each template can include its own rules separately.
+Traditional automation struggles here. As the number of layers increases, reliably merging templates becomes difficult, particularly where cross-cutting concerns are involved. This is where Generative AI proved useful. Each layer includes a "Wiring.md" file describing how it should be integrated into the base. Claude can read and apply these instructions in a way that would be awkward to achieve with scripts. The bootstrap process also made it possible to provide Claude.md files in the templates, but this introduced merge problems as templates were combined. Using [rules](https://code.claude.com/docs/en/memory) proved more effective, as each template can include its own rules separately.
 
 Even with templates and rules in place, Generative AI still required technical direction at the story level. Each story therefore includes explicit Implementation Notes describing constraints, expectations, and trade-offs, along with reminders to review the relevant rules and skills.
 
 The intent is to make best practices explicit, inspectable, and repeatable. Templates capture structural decisions, rules capture behavioural constraints, and stories capture local trade-offs. Together, they allow experience to be shared through the artefact itself, rather than through constant explanation or review.
 
-Claude was instructed to install the required templates before implementing any functional stories. With that foundation in place, a single prompt was sufficient: to implement the epic one story at a time, operating in plan mode and requiring explicit approval for each change.
+Claude was instructed to install the required templates before implementing any functional stories. With that foundation in place, a single prompt, "Implement the [URL Shortener epic](https://github.com/cressie176/shorty/issues/1) one story at a time", apart from the occasional and minor course correction, was all that was required.
 
 One deliberate adjustment was made around test-driven development. I allowed Claude to generate tests and production code for a story in a single pass, rather than enforcing a strict red, green, refactor cycle. My assumption was that the model does not benefit from incremental test feedback in the same way a human does, although this remains an open question.
 
 I reran the experiment multiple times from the same starting point and received similar results.
 
-**Stories:**
-[https://github.com/cressie176/shorty/issues](https://github.com/cressie176/shorty/issues)
+### Results
 
----
-
-## Results
+**Generated Codebase:** [shorty](https://github.com/cressie176/shorty)
 
 Using this approach, Generative AI correctly implemented the URL shortener end to end in under two hours, with minimal intervention or further prompting. The architectural drift and disobedience seen earlier largely disappeared once the environment was properly bootstrapped. The resulting code met the goals I was optimising for and is of a high standard. I estimate it would have taken me 2-3 working days to produce an equivalent codebase working without AI.
 
 However, that elapsed time does not reflect the full cost. Achieving these results required repeated iteration on both the stories and the skills. Significant effort went into refining story structure, clarifying implementation notes, and adjusting skills so that Claude behaved consistently.
 
-**Resulting codebase:**
-[https://github.com/cressie176/shorty](https://github.com/cressie176/shorty)
-
----
-
-## Conclusion
+### Conclusion
 
 This experiment demonstrates that Claude can produce high quality code more rapidly than even an experienced software engineer, but only when projects are properly bootstrapped and guided by effective prompts in the form of skills and detailed stories. 
 
