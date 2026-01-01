@@ -106,9 +106,26 @@ I reran the experiment multiple times from the same starting point and received 
 
 ### Results
 
-**Generated Codebase:** [shorty](https://github.com/cressie176/shorty)
+| Story | Description              | Status | Time  | Interventions | Commit  |
+|-------|--------------------------|--------|-------|---------------|---------|
+| 1     | Project Initialisation   | ✅     | 00:08 | 0             | 2f37d74 |
+| 2     | Shorten URL              | ✅     | 00:21 | 7             | b83c51f |
+| 3     | Get URL                  | ✅     | 00:10 | 4             | ea2f837 |
+| 4     | URL Redirection          | ✅     | 00:07 | 3             | 9ebc8e3 |
+| 5     | Handle Key Collisions    | ✅     | 00:10 | 3             | 9da1d50 |
+| 6     | Expire Redirects         | ✅     | 00:06 | 0             | aafa1ba |
+| 7     | Delete Expired Redirects | ✅     | 00:03 | 0             | 6419983 |
+| 8     | Schedule VACUUM ANALYZE  | ✅     | 00:02 | 0             | 4ed2837 |
 
-Using this approach, Claude correctly implemented the URL shortener service in under two hours, with minimal intervention or further prompting. The architectural drift and disobedience seen earlier largely disappeared once the environment was properly bootstrapped. The code satisfied my goals of minimal operational debt and cleanliness. I estimate it would have taken me 2-3 working days to produce an equivalent codebase working without AI.
+Final Stats:
+- 39 tests - All passing
+- 8 commits - One per story
+- 0 linter errors
+- 0 TypeScript errors
+- Clean test output - No error log pollution
+- Generated Codebase: [shorty](https://github.com/cressie176/shorty)
+
+Using this approach, Claude correctly implemented the URL shortener service in one hour and 7 mintes, with minimal intervention or further prompting. The architectural drift and disobedience seen earlier largely disappeared once the environment was properly bootstrapped. The code satisfied my goals of minimal operational debt and cleanliness. I estimate it would have taken me 2-3 working days to produce an equivalent codebase working without AI.
 
 However, that elapsed time does not reflect the full cost. Achieving these results required repeated iteration on both the stories and the skills. Significant effort went into refining story structure, clarifying implementation notes, and adjusting skills so that Claude behaved consistently.
 
