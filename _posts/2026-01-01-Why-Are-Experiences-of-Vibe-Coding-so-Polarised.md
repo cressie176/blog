@@ -108,7 +108,7 @@ I reran the experiment multiple times from the same starting point and received 
 
 **Generated Codebase:** [shorty](https://github.com/cressie176/shorty)
 
-Using this approach, Generative AI correctly implemented the URL shortener end to end in under two hours, with minimal intervention or further prompting. The architectural drift and disobedience seen earlier largely disappeared once the environment was properly bootstrapped. The resulting code met the goals I was optimising for and is of a high standard. I estimate it would have taken me 2-3 working days to produce an equivalent codebase working without AI.
+Using this approach, Claude correctly implemented the URL shortener service in under two hours, with minimal intervention or further prompting. The architectural drift and disobedience seen earlier largely disappeared once the environment was properly bootstrapped. The resulting code met the goals I was optimising for and is of a high standard. I estimate it would have taken me 2-3 working days to produce an equivalent codebase working without AI.
 
 However, that elapsed time does not reflect the full cost. Achieving these results required repeated iteration on both the stories and the skills. Significant effort went into refining story structure, clarifying implementation notes, and adjusting skills so that Claude behaved consistently.
 
