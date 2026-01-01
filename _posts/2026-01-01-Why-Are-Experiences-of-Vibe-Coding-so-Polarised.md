@@ -18,7 +18,7 @@ It does not matter that Generative AI is unusually non-deterministic. For it to 
 
 Even allowing for bias and differing [personality temperaments](https://keirsey.com/temperament-overview/) (Artisans derive greater pleasure from novelty than Rationals or Guardians) does not adequately explain the gap. The same tool is being described, with equal confidence, as producing dangerous, unmaintainable AI slop on the one hand, and delivering twenty times productivity on the other.
 
-This gap is pushing organisations to make extreme decisions. Some, driven by unrealistic expectations, are rushing to quickly into AI adoption, creating unnecessary anxiety and disruption. Others are avoiding it entirely, missing out on potential benefits and frustrating their internal AI advocates. The gap needs to be understood and closed.
+This gap is pushing organisations to make extreme decisions. Some, driven by unrealistic expectations, are rushing too quickly into AI adoption, creating unnecessary anxiety and disruption. Others are avoiding it entirely, missing out on potential benefits and frustrating their internal AI champions. The gap needs to be understood and closed.
 
 ## **What I Want From Generative AI**
 
@@ -34,15 +34,15 @@ Operational debt is distinct from technical debt. Technical debt only incurs a c
 
 A good domain model requires good encapsulation. Behaviour is contained in one place, colocated with the associated data. Accessors are few, mutators fewer still. Conditional logic is pushed to the boundaries of the application and eliminated internally through polymorphism. The code clearly expresses intent.
 
-I have a nagging suspicion that my attachment to clean code, framed by Scott Adams as [Loserthink](https://en.wikipedia.org/wiki/Loserthink) may be unnecessary in a world of Generative AI. Until that suspicion is proven, I am sticking with it. The risk of a future filled with vast quantities of even less malleable code than we already have is too great.
+I have a nagging suspicion that my attachment to clean code may be what Scott Adams calls [Loserthink](https://en.wikipedia.org/wiki/Loserthink), and no longer needed in the world of Generative AI. Until that suspicion is proven, I am sticking with it. The risk of a future filled with vast quantities of even less malleable code than we already have is too great.
 
 ## My Experience Of Vibe Coding (So Far)
 
 ### The Good
 
-It is often stated that Generative AI is effective at mechanical or rote tasks, or comparable to the output of a junior engineer, but this is not where it offers the most value. The area where I have found my Generative AI tool of choice, [Claude Code](https://www.claude.com/product/claude-code), to be most effective is where I have strong high-level judgement about what needs to be achieved, but lack the detailed, low-level knowledge to implement it quickly without time, research, and mistakes. In those cases, the limiting factor is not judgement, but execution.
+It is often stated that Generative AI is effective at mechanical or rote tasks, or comparable to the output of a junior engineer, but this is not where it offers the most value. The area where I have found my Generative AI tool of choice, [Claude Code](https://www.claude.com/product/claude-code), to be most effective is where I have strong high-level judgement about what needs to be achieved, but lack the detailed, low-level knowledge to implement it without time, research, and mistakes. In those cases, the limiting factor is not judgement, but execution.
 
-CI/CD pipelines and Docker-related configuration provide good examples. I know what I want a pipeline to do, how the stages should fit together, and what correct behaviour looks like. Implementing that by hand usually involves reading documentation, iterating on syntax, and discovering edge cases through failure. Claude is much faster at cycling through that execution loop than I am, especially after installing the [GitHub CLI](https://cli.github.com) - a genuine game changer!
+CI/CD pipelines and Docker-related configuration provide good examples. I know what I want a pipeline to do, how the stages should fit together, and what correct behaviour looks like. Implementing that by hand usually involves reading documentation, iterating on syntax, and discovering edge cases through failure. Claude is much faster at cycling through that execution loop than I am, especially after installing the [GitHub CLI](https://cli.github.com), which is an absolute game changer!
 
 In summary, Generative AI adds the most value when it operates below my level of judgement but above my knowledge or ability to acquire it. It accelerates low-level execution without being asked to make high-level decisions it is poorly suited to make.
 
@@ -50,7 +50,7 @@ In summary, Generative AI adds the most value when it operates below my level of
 
 At the same time, Claude, has ignored explicit instructions, made false assumptions, implemented changes that were not requested, and drifted away from the intended structure, particularly early in a codebase when there is less existing context. It has also misdiagnosed problems and disappeared down rabbit holes without ever fixing them, or worse, unilaterally decided that they can be safely ignored.
 
-What stands out is how sensitive the results are to relatively small changes in how the tool is used. Claude is not a compiler. The results are not deterministic. Small differences in context, ordering, or phrasing can lead to materially different outcomes, even when the intent appears unchanged. Overall, the outcomes are still positive, but I have yet to achieve a 20x improvement reported by some. Either those reports are grossly overstated, or those making them have found ways to circumvent these issues and make Claude perform consistently well. If the latter is true, I want to learn and adopt their methods, but what are they?
+What stands out is how sensitive the results are to relatively small changes in how the tool is used. Claude is not a compiler. The results are not deterministic. Small differences in context, ordering, or phrasing can lead to materially different outcomes, even when the intent appears unchanged. Overall, the outcomes are still positive, but I have yet to achieve the 20x improvement reported by some. Either those reports are grossly overstated, or those making them have found ways to circumvent these issues and make Claude perform consistently well. If the latter is true, I want to learn and adopt their methods, but what are they?
 
 ## What We Need Is An Experiment
 
@@ -98,7 +98,7 @@ Claude was instructed to install the required templates before implementing any 
 │                   *             *                  │ No recent activity                            │
 │                    *   ▘▘ ▝▝   *                   │                                               │
 │                                                    │                                               │
-│ arn:aws:bedrock:eu-west-1:484… · API Usage Billing │                                               │
+│ arn:aws:bedrock:eu-west-1:808… · API Usage Billing │                                               │
 │          ~/Development/cressie176/shorty           │                                               │
 ╰────────────────────────────────────────────────────────────────────────────────────────────────────╯
 
@@ -126,7 +126,19 @@ I reran the experiment multiple times from the same starting point and received 
 | 6     | Expire Redirects         | ✅     | 00:06 | 0             | [aafa1ba](https://github.com/cressie176/shorty/commit/aafa1ba1d980758b303e2749df01f711e73f69eb) |
 | 7     | Delete Expired Redirects | ✅     | 00:03 | 0             | [6419983](https://github.com/cressie176/shorty/commit/64199839424353f7bd002400afbb28631326607d) |
 | 8     | Schedule VACUUM ANALYZE  | ✅     | 00:02 | 0             | [4ed2837](https://github.com/cressie176/shorty/commit/4ed283719e72528998c7d6cccf3ffdafffae5339) |
-|       |                          |        | 01:07 | 17            |             |
+|       |                          |        | 01:07 | 17            |         |
+
+#### Tool Rejections (deduped)
+1. Don't duplicate config in tests
+2. Use single-line if statements
+3. Don't use try-catch for testing errors, use throws/rejects
+4. Pass the full redirect config not just the key
+5. Use object parameters in constructors
+6. Don't be lazy with assertions (use eq not ok/match when you know the full string)
+7. Inject the full error message into the JSX template
+8. Use throws for synchronous errors
+9. Suppress expected error logs in tests
+10. Use destructuring { rows } instead of result.rows
 
 Using this approach, Claude correctly implemented the URL shortener service in one hour and 7 minutes, with minimal intervention or further prompting. The architectural drift and disobedience seen earlier largely disappeared once the environment was properly bootstrapped. The code satisfied my goals of minimal operational debt and cleanliness. I estimate it would have taken me 2-3 working days to produce an equivalent codebase working without AI.
 
