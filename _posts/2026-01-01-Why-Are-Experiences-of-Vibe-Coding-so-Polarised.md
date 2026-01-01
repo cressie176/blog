@@ -8,8 +8,6 @@ tags:
 - Vibe Coding
 ---
 
-## Why Are Experiences Of Vibe Coding So Polarised?
-
 Jason Gorman’s recent [post](https://codemanship.wordpress.com/2025/11/25/the-future-of-software-development-is-software-developers/) on the future of software development is causing quite a stir. The comments on the accompanying Hacker News [discussion](https://news.ycombinator.com/item?id=46424233) span an extraordinary range of experience with vibe coding, particularly when using Claude Code. Some describe dramatic productivity gains and rapid delivery of complex systems. Others report dangerously misleading output, architectural drift, and large amounts of unusable code. Both sides speak with confidence, often dismissing the other as naïve, reckless, or simply doing it wrong. The discussion reflects a broader pattern which has been bothering me for some time.
 
 I have been a professional software engineer for thirty years, and strong disagreements are nothing new. Functional versus object-oriented programming, static versus dynamic typing, competing approaches to testing. What is different this time is the nature of the tool itself. Generative AI does not operate at the level of a language, framework, or architectural paradigm. It operates at the level of intent. In that sense it is a meta tool, unconstrained by the trade-offs that normally explain why a tool works well for some people or some problems, and poorly for others.
