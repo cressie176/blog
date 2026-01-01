@@ -34,7 +34,7 @@ To achieve these objectives in teams, the AI tooling must behave consistently we
 
 ### The Good
 
-It is often stated that Generative AI is effective at mechanical or rote tasks, or comparable to the output of a junior engineer, but this is not where it offers the most value. The area where I have found my Generative AI tool of choice, ([Claude Code](https://www.claude.com/product/claude-code)), to be most effective is where I have strong high-level judgement about what needs to be achieved, but lack the detailed, low-level knowledge to implement it quickly without time, research, and mistakes. In those cases, the limiting factor is not judgement, but execution.
+It is often stated that Generative AI is effective at mechanical or rote tasks, or comparable to the output of a junior engineer, but this is not where it offers the most value. The area where I have found my Generative AI tool of choice, [Claude Code](https://www.claude.com/product/claude-code), to be most effective is where I have strong high-level judgement about what needs to be achieved, but lack the detailed, low-level knowledge to implement it quickly without time, research, and mistakes. In those cases, the limiting factor is not judgement, but execution.
 
 CI/CD pipelines and Docker-related configuration provide good examples. I know what I want a pipeline to do, how the stages should fit together, and what correct behaviour looks like. Implementing that by hand usually involves reading documentation, iterating on syntax, and discovering edge cases through failure. Generative AI is faster at cycling through that execution loop than I am, while remaining steerable because the intent is clear and significant deviations are obvious.
 
