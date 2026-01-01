@@ -139,19 +139,19 @@ I reran the experiment multiple times from the same starting point and received 
 
 Using this approach, Claude correctly implemented the URL shortener service in one hour and 7 minutes, with minimal intervention or further prompting. The architectural drift and disobedience seen earlier largely disappeared once the environment was properly bootstrapped. 
 
-There were some minor style problems; Claude is overly fond of blank lines, and despite it being mentioned in the implementation plan, it missed that an object's toJSON() method will be called automatically by Hono's JSON serializer. However these are minor niggles, and overall the code satisfied my goals of minimal operational debt and cleanliness. I estimate it would have taken me 2-3 working days to produce an equivalent codebase without AI.
+There were some minor style problems; Claude is overly fond of blank lines, and despite it being mentioned in the implementation plan, it missed that an object's toJSON() method will be called automatically by Hono's JSON serializer. However, these are minor niggles, and overall the code satisfied my goals of minimal operational debt and cleanliness. I estimate it would have taken me 1-2 working days to produce an equivalent codebase from the same templates but without AI.
 
-However, that elapsed time does not reflect the full cost. Achieving these results required repeated iteration on both the stories and the skills. Significant effort went into refining story structure, clarifying implementation notes, and adjusting skills so that Claude behaved consistently.
+This would suggest that Claude achieved 8x-16x improvement, however, the implementation time does not reflect the full cost. These results required repeated iteration on both the stories and the skills. Significant effort went into refining story structure, clarifying implementation notes, and adjusting skills so that Claude behaved consistently.
 
 ### Conclusion
 
-This experiment demonstrates that Claude can produce high quality code more rapidly than even an experienced software engineer, but only when projects are properly bootstrapped and guided by effective prompts in the form of marketplace skills and detailed stories. While the marketplace skills represent a long-term investment that can be reused, the stories do not. My method necessitates embedding implementation notes into each story, making them brittle. The success of the approach depends either on becoming very good at writing implementation notes up front, or on the engineers driving Claude being experienced enough to recognise when stories are flawed.
+This experiment demonstrates that Claude can produce high quality code far more rapidly than even an experienced software engineer, but only when projects are properly bootstrapped and guided by effective prompts in the form of marketplace skills and detailed stories. While the marketplace skills represent a long-term investment that can be reused, the stories do not. My method necessitates embedding implementation notes into each story, making them brittle. The success of the approach depends either on becoming very good at writing implementation notes up front, or on the engineers driving Claude being experienced enough to recognise when stories are flawed.
 
-When the implementaion notes are wrong or incomplete, someone must stop and rewrite them, along with any dependent stories, some of which may already be in development. In effect, this approach shifts the primary bottleneck from implementation to story writing and maintenance. It may be that my method is only suitable for small teams of experienced engineers.
+When the implementation notes are wrong or incomplete, someone must stop and rewrite them, along with any dependent stories, some of which may already be in development. In effect, this approach shifts the primary bottleneck from implementation to story writing and maintenance. It may be that my method is only suitable for small teams of experienced engineers.
 
-I also still have the following open questions.
+I am also still left with the following open questions.
 
-1. Were my goals the right ones (particularly Clean Code)?
+1. Were my goals the right ones (particularly my need for Clean Code)?
 2. Was my method the most effective way to use Generative AI, and specifically Claude Code?
 3. Do other goals matter more in different contexts?
 
