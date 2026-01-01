@@ -15,9 +15,7 @@ This gap is pushing organisations to make extreme decisions. Some, driven by unr
 One possible explanation for difference in reported experience is that people want different outcomes. If that is the case, then disagreement about Generative AI performance is inevitable. Before comparing tools or techniques, the goals themselves need to be explicit. I want Generative AI to rapidly create applications with the following characteristics:
 
 ### 1. Negligible Operational Debt
-Operational debt is distinct from technical debt. Technical debt only incurs a cost when change is required and is often an explicit trade-off. Operational debt creates ongoing risk and [unplanned work](https://blog.while-true-do.io/devops-4-types-of-work/) and, in the worst cases, can consume an entire team’s capacity through incidents and urgent remediation.
-   
-A concrete example of this is GitLab’s 2017 data loss [incident](https://about.gitlab.com/blog/postmortem-of-database-outage-of-january-31/) where operational failures led to the permanent deletion of customer repositories.
+Operational debt is distinct from technical debt. Technical debt only incurs a cost when change is required and is often an explicit trade-off. Operational debt creates ongoing risk and [unplanned work](https://blog.while-true-do.io/devops-4-types-of-work/) and, in the worst cases, can consume an entire team’s capacity through incidents and urgent remediation. A concrete example of this is GitLab’s 2017 data loss [incident](https://about.gitlab.com/blog/postmortem-of-database-outage-of-january-31/) where operational failures led to the permanent deletion of customer repositories.
 
 ### 2. Unparalleled Malleability
 [Clean Code](https://www.oreilly.com/library/view/clean-code-a/9780136083238/) is malleable. When we write clean code, we make a comparatively small sacrifice now to reserve the ability to change rapidly in the future.
