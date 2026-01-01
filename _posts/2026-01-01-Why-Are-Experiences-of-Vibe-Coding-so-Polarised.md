@@ -98,7 +98,6 @@ Claude was instructed to install the required templates before implementing any 
 > Implement the URL Shortener epic https://github.com/cressie176/shorty/issues/1 one story at a time 
 ──────────────────────────────────────────────────────────────────────────────────────────────────────
   ? for shortcuts
-```lement the URL Shortener epic https://github.com/cressie176/shorty/issues/1 one story at a time
 ```
 
 One deliberate adjustment was made around test-driven development. I allowed Claude to generate tests and production code for a story in a single pass, rather than enforcing a strict red, green, refactor cycle. My assumption was that the model does not benefit from incremental test feedback in the same way a human does, although this remains an open question.
