@@ -38,9 +38,7 @@ It is often stated that Generative AI is effective at mechanical or rote tasks, 
 
 CI/CD pipelines and Docker-related configuration provide good examples. I know what I want a pipeline to do, how the stages should fit together, and what correct behaviour looks like. Implementing that by hand usually involves reading documentation, iterating on syntax, and discovering edge cases through failure. Claude is much faster at cycling through that execution loop than I am, especially after installing the [GitHub CLI](https://cli.github.com) - a genuine game changer!
 
-This distinction matters. Generative AI adds the most value when it operates below my level of judgement but above my knowledge or ability to acquire it. It accelerates low-level execution without being asked to make high-level decisions it is poorly suited to make.
-
-This is also an area with a comparatively low risk profile. A CI/CD workflow either works or it does not, and failures are visible and easy to diagnose. When it breaks, the impact is inconvenient rather than catastrophic.
+In summary, Generative AI adds the most value when it operates below my level of judgement but above my knowledge or ability to acquire it. It accelerates low-level execution without being asked to make high-level decisions it is poorly suited to make.
 
 ### The Bad
 
