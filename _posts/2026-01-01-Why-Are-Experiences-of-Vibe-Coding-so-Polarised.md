@@ -6,7 +6,7 @@ I have been a professional software engineer for thirty years, and strong disagr
 
 It does not matter that Generative AI is unusually non-deterministic. For it to be useful to anyone, it still has to produce desired outcomes with sufficient consistency. That makes the scale and intensity of the reported disagreement surprising. Vastly different experiences are unlikely to be explained by an inherent defect in the tool itself.
 
-Even allowing for bias and differing personality [temperaments](https://keirsey.com/temperament-overview/) (Artisans derive greater pleasure from novelty than Rationals or Guardians) does not adequately explain the gap. The same tool is being described, with equal confidence, as producing dangerous, unmaintainable AI slop on the one hand, and delivering twenty times productivity on the other.
+Even allowing for bias and differing [personality temperaments](https://keirsey.com/temperament-overview/) (Artisans derive greater pleasure from novelty than Rationals or Guardians) does not adequately explain the gap. The same tool is being described, with equal confidence, as producing dangerous, unmaintainable AI slop on the one hand, and delivering twenty times productivity on the other.
 
 That gap is pushing organisations to make extreme decisions. Some, driven by unrealistic expectations, are rushing headlong into AI adoption, creating unnecessary anxiety and disruption. Others are avoiding it entirely, missing out on potential benefits and frustrating their internal AI advocates. The gap needs to be understood and closed.
 
