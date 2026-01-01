@@ -18,7 +18,7 @@ It does not matter that Generative AI is unusually non-deterministic. For it to 
 
 Even allowing for bias and differing [personality temperaments](https://keirsey.com/temperament-overview/) (Artisans derive greater pleasure from novelty than Rationals or Guardians) does not adequately explain the gap. The same tool is being described, with equal confidence, as producing dangerous, unmaintainable AI slop on the one hand, and delivering twenty times productivity on the other.
 
-This gap is pushing organisations to make extreme decisions. Some, driven by unrealistic expectations, are rushing to quickly into AI adoption, creating unnecessary anxiety and disruption. Others are avoiding it entirely, missing out on potential benefits and frustrating their internal AI advocates. The gap needs to be understood and closed.
+This gap is pushing organisations to make extreme decisions. Some, driven by unrealistic expectations, are rushing too quickly into AI adoption, creating unnecessary anxiety and disruption. Others are avoiding it entirely, missing out on potential benefits and frustrating their internal AI advocates. The gap needs to be understood and closed.
 
 ## **What I Want From Generative AI**
 
