@@ -34,7 +34,7 @@ To achieve these objectives in teams, the AI tooling must behave consistently we
 
 ### The Good
 
-It is often stated that Generative AI is effective at mechanical or rote tasks, or comparable to the output of a junior engineer, but this is not where it offers the most value. The area where I have found Generative AI to be most effective is where I have strong high-level judgement about what needs to be achieved, but lack the detailed, low-level knowledge to implement it quickly without time, research, and mistakes. In those cases, the limiting factor is not judgement, but execution.
+It is often stated that Generative AI is effective at mechanical or rote tasks, or comparable to the output of a junior engineer, but this is not where it offers the most value. The area where I have found my Generative AI tool of choice, ([Claude Code](https://www.claude.com/product/claude-code)), to be most effective is where I have strong high-level judgement about what needs to be achieved, but lack the detailed, low-level knowledge to implement it quickly without time, research, and mistakes. In those cases, the limiting factor is not judgement, but execution.
 
 CI/CD pipelines and Docker-related configuration provide good examples. I know what I want a pipeline to do, how the stages should fit together, and what correct behaviour looks like. Implementing that by hand usually involves reading documentation, iterating on syntax, and discovering edge cases through failure. Generative AI is faster at cycling through that execution loop than I am, while remaining steerable because the intent is clear and significant deviations are obvious.
 
@@ -44,7 +44,7 @@ This is also an area with a comparatively low risk profile. A CI/CD workflow eit
 
 ### The Bad
 
-At the same time, my Generative AI tool of choice ([Claude Code](https://www.claude.com/product/claude-code)), has ignored explicit instructions, made false assumptions, implemented changes that were not requested, and drifted away from the intended structure, particularly early in a codebase when there is less existing context. It has also misdiagnosed problems and disappeared down rabbit holes without ever fixing them, or worse, unilaterally decided that they can be safely ignored.
+At the same time, Claude, has ignored explicit instructions, made false assumptions, implemented changes that were not requested, and drifted away from the intended structure, particularly early in a codebase when there is less existing context. It has also misdiagnosed problems and disappeared down rabbit holes without ever fixing them, or worse, unilaterally decided that they can be safely ignored.
 
 What stands out is how sensitive the results are to relatively small changes in how the tool is used. Claude is not a compiler. The results are not deterministic. Small differences in context, ordering, or phrasing can lead to materially different outcomes, even when the intent appears unchanged. Overall, the outcomes are still positive, but not to the degree claimed by those most strongly advocating for it. Either those claims are grossly overstated, or those making them have found ways to circumvent these issues and make Claude perform consistently well. If the latter is true, I want to learn and adopt their methods, but what are they?
 
