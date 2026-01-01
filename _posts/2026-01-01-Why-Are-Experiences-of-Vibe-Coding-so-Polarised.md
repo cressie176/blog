@@ -126,7 +126,20 @@ I reran the experiment multiple times from the same starting point and received 
 | 6     | Expire Redirects         | ✅     | 00:06 | 0             | [aafa1ba](https://github.com/cressie176/shorty/commit/aafa1ba1d980758b303e2749df01f711e73f69eb) |
 | 7     | Delete Expired Redirects | ✅     | 00:03 | 0             | [6419983](https://github.com/cressie176/shorty/commit/64199839424353f7bd002400afbb28631326607d) |
 | 8     | Schedule VACUUM ANALYZE  | ✅     | 00:02 | 0             | [4ed2837](https://github.com/cressie176/shorty/commit/4ed283719e72528998c7d6cccf3ffdafffae5339) |
-|       |                          |        | 01:07 | 17            |             |
+|       |                          |        | 01:07 | 17            |         |
+
+#### Tool Rejections (deduped)
+1. Don't duplicate config in tests
+2. Use single-line if statements
+3. Don't use try-catch for testing errors, use throws/rejects
+4. Pass the full redirect config not just the key
+5. Use object parameters in constructors
+6. Don't be lazy with assertions (use eq not ok/match when you know the full string)
+7. Inject the full error message into the JSX template
+8. Use throws for synchronous errors
+9. Suppress expected error logs in tests
+10. Use destructuring { rows } instead of result.rows
+```
 
 Using this approach, Claude correctly implemented the URL shortener service in one hour and 7 minutes, with minimal intervention or further prompting. The architectural drift and disobedience seen earlier largely disappeared once the environment was properly bootstrapped. The code satisfied my goals of minimal operational debt and cleanliness. I estimate it would have taken me 2-3 working days to produce an equivalent codebase working without AI.
 
