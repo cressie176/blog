@@ -108,15 +108,15 @@ I reran the experiment multiple times from the same starting point and received 
 
 | Story | Description              | Status | Time  | Interventions | Commit  |
 |-------|--------------------------|--------|-------|---------------|---------|
-| 1     | Project Initialisation   | ✅     | 00:08 | 0             | 2f37d74 |
-| 2     | Shorten URL              | ✅     | 00:21 | 7             | b83c51f |
-| 3     | Get URL                  | ✅     | 00:10 | 4             | ea2f837 |
-| 4     | URL Redirection          | ✅     | 00:07 | 3             | 9ebc8e3 |
-| 5     | Handle Key Collisions    | ✅     | 00:10 | 3             | 9da1d50 |
-| 6     | Expire Redirects         | ✅     | 00:06 | 0             | aafa1ba |
-| 7     | Delete Expired Redirects | ✅     | 00:03 | 0             | 6419983 |
-| 8     | Schedule VACUUM ANALYZE  | ✅     | 00:02 | 0             | 4ed2837 |
-|       |                          |        | 01:07 | 17            |         |
+| 1     | Project Initialisation   | ✅     | 00:08 | 0             | [2f37d74](https://github.com/cressie176/shorty/commit/2f37d746d84039a2f58e239fa5bae90760db194b) |
+| 2     | Shorten URL              | ✅     | 00:21 | 7             | [b83c51f](https://github.com/cressie176/shorty/commit/2f37d746d84039a2f58e239fa5bae90760db194b) |
+| 3     | Get URL                  | ✅     | 00:10 | 4             | [ea2f837](https://github.com/cressie176/shorty/commit/ea2f83796b255a7c1130ae4baa92ac097deba1e0) |
+| 4     | URL Redirection          | ✅     | 00:07 | 3             | [9ebc8e3](https://github.com/cressie176/shorty/commit/9ebc8e37754125c7f6d5feb7c464643a1d24e232) |
+| 5     | Handle Key Collisions    | ✅     | 00:10 | 3             | [9da1d50](https://github.com/cressie176/shorty/commit/9da1d50236d8eae8bd378246d7acd14294859d22) |
+| 6     | Expire Redirects         | ✅     | 00:06 | 0             | [aafa1ba](https://github.com/cressie176/shorty/commit/aafa1ba1d980758b303e2749df01f711e73f69eb) |
+| 7     | Delete Expired Redirects | ✅     | 00:03 | 0             | [6419983](https://github.com/cressie176/shorty/commit/64199839424353f7bd002400afbb28631326607d) |
+| 8     | Schedule VACUUM ANALYZE  | ✅     | 00:02 | 0             | [4ed2837](https://github.com/cressie176/shorty/commit/4ed283719e72528998c7d6cccf3ffdafffae5339) |
+|       |                          |        | 01:07 | 17            |             |
 
 Using this approach, Claude correctly implemented the URL shortener service in one hour and 7 mintes, with minimal intervention or further prompting. The architectural drift and disobedience seen earlier largely disappeared once the environment was properly bootstrapped. The code satisfied my goals of minimal operational debt and cleanliness. I estimate it would have taken me 2-3 working days to produce an equivalent codebase working without AI.
 
