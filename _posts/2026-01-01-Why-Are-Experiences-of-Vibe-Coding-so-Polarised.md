@@ -1,3 +1,13 @@
+---
+title: "Why Are Experiences Of Vibe Coding So Polarised?"
+date: 2026-01-01
+tags:
+- Generative AI
+- Claude Code
+- Clean Code
+- Vibe Coding
+---
+
 ## Why Are Experiences Of Vibe Coding So Polarised?
 
 Jason Gorman’s recent [post](https://codemanship.wordpress.com/2025/11/25/the-future-of-software-development-is-software-developers/) on the future of software development is causing quite a stir. The comments on the accompanying Hacker News [discussion](https://news.ycombinator.com/item?id=46424233) span an extraordinary range of experience with vibe coding, particularly when using Claude Code. Some describe dramatic productivity gains and rapid delivery of complex systems. Others report dangerously misleading output, architectural drift, and large amounts of unusable code. Both sides speak with confidence, often dismissing the other as naïve, reckless, or simply doing it wrong. The discussion reflects a broader pattern which has been bothering me for some time.
