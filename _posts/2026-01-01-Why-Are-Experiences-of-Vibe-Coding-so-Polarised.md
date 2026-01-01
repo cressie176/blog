@@ -18,7 +18,7 @@ Even allowing for bias and differing [personality temperaments](https://keirsey.
 
 This gap is pushing organisations to make extreme decisions. Some, driven by unrealistic expectations, are rushing too quickly into AI adoption, creating unnecessary anxiety and disruption. Others are avoiding it entirely, missing out on potential benefits and frustrating their internal AI champions. The gap needs to be understood and closed.
 
-## **What I Want From Generative AI**
+## What I Want From Generative AI
 
 One possible explanation for difference in reported experience is that people want different outcomes. If that is the case, then disagreement about Generative AI performance is inevitable. Before comparing tools or techniques, the goals themselves need to be explicit. I want Generative AI to rapidly create applications with the following characteristics:
 
