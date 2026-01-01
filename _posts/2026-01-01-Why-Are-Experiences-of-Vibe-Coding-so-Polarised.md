@@ -130,15 +130,14 @@ I reran the experiment multiple times from the same starting point and received 
 
 #### Tool Rejections (deduped)
 1. Don't duplicate config in tests
-2. Use single-line if statements
+2. Prefer single-line if statements
 3. Don't use try-catch for testing errors, use throws/rejects
 4. Pass the full redirect config not just the key
 5. Use object parameters in constructors
 6. Don't be lazy with assertions (use eq not ok/match when you know the full string)
 7. Inject the full error message into the JSX template
-8. Use throws for synchronous errors
-9. Suppress expected error logs in tests
-10. Use destructuring { rows } instead of result.rows
+8. Suppress expected error logs in tests
+9. Destructure { rows } instead of result.rows
 
 Using this approach, Claude correctly implemented the URL shortener service in one hour and 7 minutes, with minimal intervention or further prompting. The architectural drift and disobedience seen earlier largely disappeared once the environment was properly bootstrapped. The code satisfied my goals of minimal operational debt and cleanliness. I estimate it would have taken me 2-3 working days to produce an equivalent codebase working without AI.
 
