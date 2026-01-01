@@ -34,7 +34,7 @@ Operational debt is distinct from technical debt. Technical debt only incurs a c
 
 A good domain model requires good encapsulation. Behaviour is contained in one place, colocated with the associated data. Accessors are few, mutators fewer still. Conditional logic is pushed to the boundaries of the application and eliminated internally through polymorphism. The code clearly expresses intent.
 
-I have a nagging suspicion that my attachment to clean code may be what Scott Adams calls [Loserthink](https://en.wikipedia.org/wiki/Loserthink), and no longer needed in the world of Generative AI. Until that suspicion is proven, I am sticking with it. The risk of a future filled with vast quantities of even less malleable code than we already have is too great.
+I have a nagging suspicion that my attachment to clean code may be what Scott Adams calls [Loserthink](https://en.wikipedia.org/wiki/Loserthink), and no longer needed in the world of Generative AI. Until that suspicion is proven, I am sticking with it though. The risk of a future filled with vast quantities of even less malleable code than we already have is too great.
 
 ## My Experience Of Vibe Coding (So Far)
 
@@ -149,9 +149,9 @@ This experiment demonstrates that Claude can produce high quality code more rapi
 
 When the implementaion notes are wrong or incomplete, someone must stop and rewrite them, along with any dependent stories, some of which may already be in development. In effect, this approach shifts the primary bottleneck from implementation to story writing and maintenance. It may be that my method is only suitable for small teams of experienced engineers.
 
-I still have the following open questions.
+I also still have the following open questions.
 
-1. Were my goals the right ones?
+1. Were my goals the right ones (particularly the one relating to Clean Code)?
 2. Was my method the most effective way to use Generative AI, and specifically Claude Code?
 3. Do other goals matter more in different contexts?
 
