@@ -1,4 +1,4 @@
-## Why Are Experiences of Vibe Coding So Polarised?
+## Why Are Experiences Of Vibe Coding So Polarised?
 
 Jason Gorman’s recent [post](https://codemanship.wordpress.com/2025/11/25/the-future-of-software-development-is-software-developers/) on the future of software development is causing quite a stir. The comments on the accompanying Hacker News [discussion](https://news.ycombinator.com/item?id=46424233) span an extraordinary range of experience with vibe coding, particularly when using Claude Code. Some describe dramatic productivity gains and rapid delivery of complex systems. Others report dangerously misleading output, architectural drift, and large amounts of unusable code. Both sides speak with confidence, often dismissing the other as naïve, reckless, or simply doing it wrong. The discussion reflects a broader pattern which has been bothering me for some time.
 
@@ -30,7 +30,7 @@ I have a nagging suspicion that my attachment to clean code, framed by Scott Ada
 
 To achieve these objectives in teams, the AI tooling must behave consistently well. Outcomes cannot depend on individuals repeatedly crafting perfect prompts. Until that point is reached, tooling must support and encourage the development and adoption of best practices. Without this, AI will always be a [damp squib](https://en.wiktionary.org/wiki/damp_squib).
 
-## My Experience of Vibe Coding (So Far)
+## My Experience Of Vibe Coding (So Far)
 
 ### The Good
 
@@ -48,7 +48,7 @@ At the same time, my Generative AI tool of choice ([Claude Code](https://www.cla
 
 What stands out is how sensitive the results are to relatively small changes in how the tool is used. Claude is not a compiler. The results are not deterministic. Small differences in context, ordering, or phrasing can lead to materially different outcomes, even when the intent appears unchanged. Overall, the outcomes are still positive, but not to the degree claimed by those most strongly advocating for it. Either those claims are grossly overstated, or those making them have found ways to circumvent these issues and make Claude perform consistently well. If the latter is true, I want to learn and adopt their methods, but what are they?
 
-## What We Need Now Is An Experiment
+## What We Need Is An Experiment
 
 To move this discussion forward, we need something more concrete than confident anecdote. When the same tool is reported to produce both dangerous, unmaintainable systems and dramatic productivity gains, opinion alone cannot tell us whether the difference lies in the tool, the goals, or the way it is being used. The only way to separate those factors is to make the goals explicit and then test, in a controlled way, whether a particular method of using Generative AI can reliably produce outcomes aligned with them.
 
