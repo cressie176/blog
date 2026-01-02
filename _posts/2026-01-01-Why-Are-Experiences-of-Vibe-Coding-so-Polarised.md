@@ -195,11 +195,9 @@ This time I ran Claude in auto accept mode and explicitly instructed it to ignor
   ? for shortcuts
 ```
 
-The branch is cressie176/shorty claude-lazy-mode
+The branch is [claude-unattended](https://github.com/cressie176/shorty/tree/claude-unattended)
 
-It completed all eight stories in 30 minutes and 34 seconds.
-
-On the surface, this looks impressive. In reality, it demonstrates why speed alone is a poor proxy for success.
+It completed all eight stories in 30 minutes and 34 seconds. On the surface, this looks impressive. In reality the code was a hot mess.
 
 Excluding blank lines, the guided version produced 158 lines of code across eight files with no comments. The unattended version produced 271 lines across the same eight files, with seven comments. The extra code was not adding capability. It was adding accidental complexity.
 
