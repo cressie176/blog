@@ -220,7 +220,7 @@ Excluding blank lines, the guided version produced 158 lines of code across eigh
 |          | Total comments              | 0                 | 7                      |
 |          | **Total lines (excl blanks)**   | **158**               | **271**                    |
 
-**The unattended method produced 72% more code for the same behaviour!**. 
+**The unattended method produced 72% more code and 104% more TypeScript for the same behaviour!!!**. Imagine that increase for the average code base!
 
 Furthermore, the unattended implementation introduced substantial technical and operational debt:
 
