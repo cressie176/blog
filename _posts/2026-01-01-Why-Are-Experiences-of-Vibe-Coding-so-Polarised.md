@@ -160,7 +160,6 @@ After all of this I am still left pondering the following open questions:
 If you are getting better results from vibe coding, what are you optimising for, and how does your approach support that? If you are getting poor results how does your approach differ from mine? I'd love to know.
 <br/>
 <br/>
-<br/>
 ## PS, Method 3 (Unattended)
 
 As a final experiment, I tried a deliberately unattended approach. The branch is [claude-unattended](https://github.com/cressie176/shorty/tree/claude-unattended)
