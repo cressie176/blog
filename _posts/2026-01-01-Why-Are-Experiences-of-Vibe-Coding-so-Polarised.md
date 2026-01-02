@@ -191,9 +191,9 @@ As a final experiment, I tried a deliberately unattended approach. The branch is
 ──────────────────────────────────────────────────────────────────────────────────────────────────────
   ? for shortcuts
 ```
-<br/>
+
 It completed all eight stories in 30 minutes and 34 seconds. On the surface, this looks impressive. In reality the code was a hot mess.
-<br/>
+
 
 | Area     | Metric                     | Method 2 (Guided) | Method 3 (Unattended) |
 |----------|----------------------------|-------------------|------------------------|
@@ -215,6 +215,7 @@ It completed all eight stories in 30 minutes and 34 seconds. On the surface, thi
 | Overall  | Total files                | 8                 | 8                      |
 |          | Total comments              | 0                 | 7                      |
 |          | **Total lines (excl blanks)**   | **158**               | **271**                    |
+
 
 The guided version produced 158 lines of code with no comments. The unattended version produced 271 lines across with seven comments. **That's 72% more code and 104% more TypeScript for the same behaviour!**.
 The extra code did not add capability, it added complexity.
