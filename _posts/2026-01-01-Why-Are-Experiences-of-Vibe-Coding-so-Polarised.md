@@ -186,7 +186,7 @@ As another experiment, I tried a deliberately unattended approach. The branch is
   ? for shortcuts
 ```
 <br/>
-It completed all eight stories in 30 minutes and 34 seconds. On the surface, this looks impressive. In reality the code was a hot mess.
+Claude completed all eight stories in 30 minutes and 34 seconds. On the surface, this looks impressive. In reality the code was a hot mess.
 <br/>
 <br/>
 
