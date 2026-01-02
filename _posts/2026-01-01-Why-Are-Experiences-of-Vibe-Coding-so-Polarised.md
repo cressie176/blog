@@ -12,18 +12,16 @@ Jason Gorman’s recent [post](https://codemanship.wordpress.com/2025/11/25/the-
 
 I have been a professional software engineer for thirty years, and strong disagreements are nothing new. Functional versus object-oriented programming, static versus dynamic typing, competing approaches to testing. What is different this time is the nature of the tool itself. Generative AI does not operate at the level of a language, framework, or architectural paradigm. It operates at the level of intent. In that sense it is a meta tool, unconstrained by the trade-offs that normally explain why a tool works well for some people or some problems, and poorly for others.
 
-It does not matter that Generative AI is unusually non-deterministic. For it to be useful to anyone, it still has to produce desired outcomes with sufficient consistency. That makes the scale and intensity of the reported disagreement surprising. Vastly different experiences are unlikely to be explained by an inherent defect in the tool itself.
-
-Even allowing for bias and differing [personality temperaments](https://keirsey.com/temperament-overview/) (Artisans derive greater pleasure from novelty than Rationals or Guardians) does not adequately explain the gap. The same tool is being described, with equal confidence, as producing dangerous, unmaintainable AI slop on the one hand, and delivering twenty times productivity on the other.
+It does not matter that Generative AI is unusually non-deterministic. For it to be useful to anyone, it still has to produce desired outcomes with sufficient consistency. That makes the scale and intensity of the reported disagreement surprising. Vastly different experiences are unlikely to be explained by an inherent defect in the tool itself. Even allowing for bias and differing [personality temperaments](https://keirsey.com/temperament-overview/) (Artisans derive greater pleasure from novelty than Rationals or Guardians) does not adequately explain the gap. The same tool is being described, with equal confidence, as producing dangerous, unmaintainable AI slop on the one hand, and delivering twenty times productivity on the other.
 
 This gap is pushing organisations to make extreme decisions. Some, driven by unrealistic expectations, are rushing too quickly into AI adoption, creating unnecessary anxiety and disruption. Others are avoiding it entirely, missing out on potential benefits and frustrating their internal AI champions. The gap needs to be understood and closed.
 
 ## What I Want From Generative AI
 
-One possible explanation for difference in reported experience is that people want different outcomes. If that is the case, then disagreement about Generative AI performance is inevitable. Before comparing tools or techniques, the goals themselves need to be explicit. I want Generative AI to rapidly create applications with the following characteristics:
+One possible explanation for difference in experience is that people want different outcomes. If that is the case, then disagreement about Generative AI performance is inevitable. Before comparing tools or techniques, the goals themselves need to be explicit. I want Generative AI to rapidly create applications with the following characteristics:
 
 ### 1. Negligible Operational Debt
-Operational debt is distinct from technical debt. Technical debt only incurs a cost when change is required and is often an explicit trade-off. Operational debt creates ongoing risk and [unplanned work](https://blog.while-true-do.io/devops-4-types-of-work/) and, in the worst cases, can consume an entire team’s capacity through incidents and urgent remediation. A concrete example of this is GitLab’s 2017 data loss [incident](https://about.gitlab.com/blog/postmortem-of-database-outage-of-january-31/) where operational failures led to the permanent deletion of customer repositories.
+Operational debt is distinct from technical debt. Technical debt only incurs a cost when change is required and is often an explicit trade-off. Operational debt creates ongoing risk and [unplanned work](https://blog.while-true-do.io/devops-4-types-of-work/) and, in the worst cases, can consume an entire team’s capacity through incidents and urgent remediation.
 
 ### 2. Unparalleled Malleability
 [Clean Code](https://www.oreilly.com/library/view/clean-code-a/9780136083238/) is malleable. When we write clean code, we make a comparatively small sacrifice now to reserve the ability to change rapidly in the future. The best way to achieve clean code is to write as little code as possible. This is done by creating a good domain model. When the domain model is good, the code vanishes. As Linus Torvalds is [reported](https://read.engineerscodex.com/p/good-programmers-worry-about-data) to have said:
@@ -40,7 +38,7 @@ I have a nagging suspicion that my attachment to clean code may be what Scott Ad
 
 It is often stated that Generative AI is effective at mechanical or rote tasks, or comparable to the output of a junior engineer, but this is not where it offers the most value. The area where I have found my Generative AI tool of choice, [Claude Code](https://www.claude.com/product/claude-code), to be most effective is where I have strong high-level judgement about what needs to be achieved, but lack the detailed, low-level knowledge to implement it without time, research, and mistakes. In those cases, the limiting factor is not judgement, but execution.
 
-CI/CD pipelines and Docker-related configuration provide good examples. I know what I want a pipeline to do, how the stages should fit together, and what correct behaviour looks like. Implementing that by hand usually involves reading documentation, iterating on syntax, and discovering edge cases through failure. Claude is much faster at cycling through that execution loop than I am, especially after installing the [GitHub CLI](https://cli.github.com), which is an absolute game changer!
+CI/CD pipelines leveraging Docker provide a good example. I know what I want a pipeline to do, how the stages should fit together, and what correct behaviour looks like. Implementing that by hand usually involves reading documentation, iterating on syntax, and discovering edge cases through failure. Claude is much faster at cycling through that execution loop than I am, especially after installing the [GitHub CLI](https://cli.github.com), which is an absolute game changer!
 
 In summary, Generative AI adds the most value when it operates below my level of judgement but above my knowledge or ability to acquire it. It accelerates low-level execution without being asked to make high-level decisions it is poorly suited to make.
 
@@ -52,7 +50,7 @@ What stands out is how sensitive the results are to relatively small changes in 
 
 ## What We Need Is An Experiment
 
-To move this discussion forward, we need something more concrete than confident anecdote. When the same tool is reported to produce both dangerous, unmaintainable systems and dramatic productivity gains, opinion alone cannot tell us whether the difference lies in the tool, the goals, or the way it is being used. The only way to separate those factors is to make the goals explicit and then test, in a controlled way, whether a particular method of using Generative AI can reliably produce outcomes aligned with them.
+To move this discussion forward, we need something more concrete than confident anecdote. When the same tool is reported to produce both dangerous, unmaintainable systems and dramatic productivity gains, opinion alone cannot tell us whether the difference lies in the tool, the goals, or the way it is being used. The only way to separate those factors is to make the goals explicit and then test, in a controlled way, whether a particular method of using Generative AI can reliably produce outcomes aligned with them. We need is a repeatable experiment against which we can evaluate different approaches.
 
 ### Hypothesis
 
@@ -73,18 +71,16 @@ The vast variation of experience comes from how Generative AI is being used, not
 * **Stories:** [shorty/issues](https://github.com/cressie176/shorty/issues)
 
 ### Method 1: Prompt Bootstrapping (Abandoned)
-The initial approach was to use pre-written stories, marketplace skills and interactive prompts to fully implement a URL Shortening service. The intention was to encode structure, constraints, and best practices entirely through instructions. In practice this proved unreliable, particularly while the codebase was in infancy. Even when instructions were repeated and made increasingly explicit, Claude would occasionally ignore them or drift away from the intended structure. Continuing in this direction wasted both time and tokens.
+The initial approach was to use pre-written stories, marketplace skills and interactive prompts to fully implement a URL Shortening service. The intention was to encode structure, constraints, and best practices entirely through instructions. Unfortunately, this proved unreliable, particularly while the codebase was in infancy. Even when instructions were repeated and made increasingly explicit, Claude would occasionally ignore them or drift away from the intended structure. Continuing in this direction wasted both time and tokens. I needed a way to bootstrap the application without Claude.
 
-I briefly considered developing a reference repository, which would have provided concrete examples of structure and conventions rather than relying on abstract descriptions. While viable in principle, this approach does not scale in a microservice environment. The number of permutations of infrastructure components (databases, message brokers, etc.) grows rapidly, and maintaining reference repositories for each combination would simply relocate the complexity.
+I briefly considered developing a reference repository, which would have provided concrete examples of structure and conventions rather than relying on abstract descriptions. While viable in principle, this approach does not scale in a microservice environment. The number of permutations of infrastructure components (databases, message brokers, etc.) grows rapidly, and maintaining reference repositories for each combination would simply relocate the complexity. Instead I went with templates.
 
 ### Method 2: Template Bootstrapping
 For my second attempt, I still worked from pre-written stories, marketplace skills and interactive prompts, but my infrastructure story instructed Claude to bootstrap the service from a set of pre-written templates. A base service template establishes the core structure, with additional templates layered on top for concerns such as PostgreSQL or other infrastructure. This allows common practices to be shared while still supporting different combinations.
 
 Traditional automation struggles here. As the number of layers increases, reliably merging templates becomes difficult, particularly where cross-cutting concerns are involved. This is where Generative AI proved useful. Each layer includes a "Wiring.md" file describing how it should be integrated into the base. Claude can read and apply these instructions in a way that would be awkward to achieve with scripts. The bootstrap process also made it possible to provide Claude.md files in the templates, but this introduced merge problems as templates were combined. Using [rules](https://code.claude.com/docs/en/memory) proved more effective, as each template can include its own rules separately.
 
-Even with templates and rules in place, Generative AI still required technical direction at the story level. Each story therefore includes explicit Implementation Notes recommending an approach, along with reminders to review the relevant rules and skills.
-
-The intent is to make best practices explicit, inspectable, and repeatable. Templates capture structural decisions, rules capture behavioural constraints, and stories capture local trade-offs. Together, they allow experience to be shared through the artefact itself, rather than through constant explanation or review.
+Even with templates and rules in place, Generative AI still required technical direction at the story level. Each story therefore includes explicit Implementation Notes recommending an approach, along with reminders to review the relevant rules and skills. These could have been entered interactively, but this would have made the experiment less repeatable and transparent. The desire was to make best practices explicit, inspectable, and repeatable. Templates capture structural decisions, rules capture behavioural constraints, and stories capture local trade-offs and more nuanced technical decisions. Together, they allow experience to be shared through the artefact itself, rather than through constant explanation or review.
 
 Claude was instructed to install the required templates before implementing any functional stories. With that foundation in place, apart from the occasional and minor course correction, a single prompt was all that was required.
 ```
@@ -110,7 +106,7 @@ Claude was instructed to install the required templates before implementing any 
 
 One deliberate adjustment was made around test-driven development. I allowed Claude to generate tests and production code for a story in a single pass, rather than enforcing a strict red, green, refactor cycle. My assumption was that the model does not benefit from incremental test feedback in the same way a human does, although this remains an open question.
 
-I reran the experiment multiple times from the same starting point and received similar results.
+I reran the experiment multiple times from the same starting point and received approximately similar results.
 
 ### Results
 
@@ -137,21 +133,19 @@ I reran the experiment multiple times from the same starting point and received 
 8. Suppress expected error logs in tests
 9. Destructure { rows } instead of result.rows
 
-Using this approach, Claude correctly implemented the URL shortener service in one hour and 7 minutes, with minimal intervention or further prompting. The architectural drift and disobedience seen earlier largely disappeared once the environment was properly bootstrapped. 
+Using this approach, Claude correctly implemented the URL shortener service in one hour and seven minutes, with minimal intervention or further prompting. The architectural drift and disobedience seen earlier largely disappeared once the environment was properly bootstrapped. 
 
-There were some minor style problems. Claude is overly fond of blank lines, and despite it being mentioned in the implementation plan, it missed that an object’s toJSON() method will be called automatically by Hono’s JSON serialiser. Slightly more serious was that Claude omitted running database migrations from each integration test. The tests still passed because migrations were run from the template Postgres.test.ts, but this may not have run first, resulting in intermittent test failures. The node-pg template should be updated to run migrations automatically from within the Postgres class to avoid this in future. Overall, these are minor niggles, and the code satisfied my goals of minimal operational debt and cleanliness.
+There were some minor style problems. Claude is overly fond of blank lines, and despite it being mentioned in the implementation plan, it missed that an object’s toJSON() method will be called automatically by Hono’s JSON serialiser. Slightly more serious was that Claude omitted running database migrations from each integration test. The tests still passed because migrations were run from the template Postgres.test.ts, but this may not have run first, potentially causing intermittent test failures. I have since updated the node-pg template to run migrations automatically from within the Postgres class to avoid this in future. Overall, these are minor niggles, and the code satisfied my goals of minimal operational debt and cleanliness.
 
 I estimate it would have taken me 1 to 2 working days to produce an equivalent codebase from the same templates but without AI. This would suggest that Claude achieved an 8x to 16x improvement. However, the implementation time does not reflect the full cost. These results required repeated iteration on both the stories and the skills. Significant effort went into refining story structure, clarifying implementation notes, and adjusting skills so that Claude behaved consistently.
 
 ### Conclusion
 
-This experiment demonstrates that Claude can produce high quality code far more rapidly than even an experienced software engineer, but only when projects are properly bootstrapped and guided by effective prompts in the form of marketplace skills and detailed stories. While the marketplace skills represent a long-term investment that can be reused, the stories do not. My method necessitates embedding implementation notes into each story, making them brittle. The success of the approach depends either on becoming very good at writing implementation notes up front, or on the engineers driving Claude being experienced enough to recognise when stories are flawed.
+This experiment demonstrates that Claude can produce high quality code far more rapidly than even an experienced software engineer, but only when projects are properly bootstrapped and guided by effective prompts in the form of marketplace skills, part of the story or interactively. While the marketplace skills represent a long-term investment that can be reused, the stories do not. My method of embedding implementation notes into each story was necessary for the experiment, but made them brittle. Real world success will depend on becoming very good at writing implementation notes up front, or on the engineers driving Claude being skilled enough to provide sufficiently good prompts just-in-time. Assuming they can, stories which previously took days can be delivered in hours, switching the primary bottleneck from implementation to story writing. It may be that AI empowered teams will need to be far smaller.
 
-When the implementation notes are wrong or incomplete, someone must stop and rewrite them, along with any dependent stories, some of which may already be in development. In effect, this approach shifts the primary bottleneck from implementation to story writing and maintenance. It may be that my method is only suitable for small teams of experienced engineers.
+It is also important to put these productivity gains into context. Software engineers do not spend anything close to 100% of their time writing code. Design discussions, team ceremonies, research, troubleshooting, supporting others, administrative work, and training all consume significant portions of a typical working day. Even a dramatic improvement in coding effectiveness therefore does not translate directly into an equivalent improvement in overall productivity.
 
-It is also important to put these gains into context. Software engineers do not spend anything close to 100% of their time writing code. Design discussions, team ceremonies, research, troubleshooting, supporting others, administrative work, and training all consume significant portions of a typical working day. Even a dramatic improvement in coding effectiveness therefore does not translate directly into an equivalent improvement in overall productivity.
-
-After all of this I am still left pondering the following open questions:
+After all of this, I am still left pondering the following open questions:
 
 1. Were my goals the right ones (particularly my need for Clean Code)?
 2. Was my method the most effective way to use Generative AI, and specifically Claude Code?
@@ -162,7 +156,7 @@ If you are getting better results from vibe coding, what are you optimising for,
 <br/>
 ## PS, Method 3 (Unattended)
 
-As a final experiment, I tried a deliberately unattended approach. The branch is [claude-unattended](https://github.com/cressie176/shorty/tree/claude-unattended)
+As another experiment, I tried a deliberately unattended approach. The branch is [claude-unattended](https://github.com/cressie176/shorty/tree/claude-unattended)
 <br/>
 
 ```
@@ -224,17 +218,17 @@ Furthermore, the unattended implementation introduced substantial technical and 
 
 * Unnecesary new services for key generation and expiry management.
 * Redirects retrieved from the API were not expired.
-* Reads and expiry updates were performed using separate client calls, so they were not part of the same transaction.
+* Consecutive database queries were performed using separate client calls, so they were not part of the same transaction.
 * Errors polluted the logs during test runs.
 * It implemented an explicit rude word filter rather than removing vowels, increasing maintenance burden.
-* setInterval was used for the maintenance tasks without unref(), preventing the process from exiting cleanly and competing with other nodes in a clustered environment.
+* setInterval was used for the maintenance tasks without unref(), which can prevent the process from exiting and does not scale horizontally.
 * Functions were far larger, with SQL and JSX inlined making the code harder to follow.
 * PostgreSQL was used poorly, with application code compensating for weak queries, e.g.
   - Expiry logic was checked in application code rather than expressed directly in a query.
   - Duplicate urls were inserted rather than being upserted.
 * The codebase was littered with low value comments that narrated rather than clarified.
 * Monkey patching was used instead of dependency injection.
-* Fetch was directly in some tests rather than extending the TestClient increasing duplication, worsinging the signal to noise ratio, and making the tests brittle.
+* Fetch was used in tests directly increasing duplication, reducing their readability, and making the tests brittle.
 
-The implementation notes were not just optional hints, they were essential guard rails.
+Clearly, Claude is not yet something you can leave to its own devices and expect consistently good outcomes. Without strong constraints, it reliably drifts towards verbosity, duplication, and accidental complexity, even when it is functionally correct. That gap between apparent success and long term maintainability likely explains much of the current pushback.
 
