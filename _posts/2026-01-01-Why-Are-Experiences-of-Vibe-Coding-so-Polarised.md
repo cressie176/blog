@@ -221,8 +221,8 @@ Excluding blank lines, the guided version produced 158 lines of code across eigh
 |          | SQL lines                   | 0                 | 0                      |
 |          | Comments                    | 0                 | 0                      |
 | Overall  | Total files                | 8                 | 8                      |
-|          | **Total lines (excl blanks)**   | **158**               | **271**                    |
 |          | Total comments              | 0                 | 7                      |
+|          | **Total lines (excl blanks)**   | **158**               | **271**                    |
 
 **The unattended method produced 72% more code for the same behaviour!**. Furthermore, the unattended implementation introduced substantial technical and operational debt:
 
