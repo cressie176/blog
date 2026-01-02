@@ -169,11 +169,29 @@ As a final experiment, I tried a deliberately unattended approach.
 
 This time I ran Claude in auto accept mode and explicitly instructed it to ignore all implementation notes except for Project Initialisation. To prevent accidental influence, I told it to strip everything after the Implementation Notes heading before parsing each issue. This was the prompt:
 
-I want you to Implement [https://github.com/cressie176/shorty/issues/1](https://github.com/cressie176/shorty/issues/1) story by story. This next part is IMPORTANT. I want to evaluate you, so I want you to completely ignore the implementation notes
-within the github issues for everyting EXCEPT the Project Initialisation story. You MUST NOT even read them otherwise they will influence you. To avoid reading them pipe the output from the gh issue
-command into something to remove everything after the title Implementation Notes so that it is completely unavailable to you. The Implementation Notes are the last section of the issue so you
-will not miss anything vital. When you think a story is done, build,
-lint, test and commit.
+╭─── Claude Code v2.0.76 ────────────────────────────────────────────────────────────────────────────╮
+│                                                    │ Tips for getting started                      │
+│                    Welcome back!                   │ Run /init to create a CLAUDE.md file          │
+│                                                    │ ──────────────────────────────────────────────│
+│                    * ▗ ▗   ▖ ▖ *                   │ Recent activity                               │
+│                   *             *                  │ No recent activity                            │
+│                    *   ▘▘ ▝▝   *                   │                                               │
+│                                                    │                                               │
+│ arn:aws:bedrock:eu-west-1:808… · API Usage Billing │                                               │
+│          ~/Development/cressie176/shorty           │                                               │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+  /model to try Opus 4.5. Note: you may need to request access from your cloud provider
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────
+> I want you to implement https://github.com/cressie176/shorty/issues/1 story by story.
+  I want you to completely ignore the implementation notes within the GitHub issues for everyting
+  EXCEPT the Project Initialisation story. You MUST NOT even read them otherwise they will influence 
+  you. To avoid reading them pipe the output from the gh issue command into something to remove 
+  everything after the "Implementation Notes" title so that it is completely unavailable to you. 
+  When you think a story is done, build, lint, test and commit.
+──────────────────────────────────────────────────────────────────────────────────────────────────────
+  ? for shortcuts
 
 The branch is cressie176/shorty claude-lazy-mode
 
@@ -204,7 +222,7 @@ Excluding blank lines, the guided version produced 158 lines of code across eigh
 |          | Total lines (excl blanks)   | 158               | 271                    |
 |          | Total comments              | 0                 | 7                      |
 
-*The unattended method produced 72% more code for the same behaviour!*. Furthermore, the unattended implementation introduced substantial technical and operational debt:
+**The unattended method produced 72% more code for the same behaviour!**. Furthermore, the unattended implementation introduced substantial technical and operational debt:
 
 * It created new services for key generation and expiry management that were unnecessary.
 * Redirects retrieved from the API were not expired.
