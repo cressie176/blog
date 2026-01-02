@@ -161,8 +161,6 @@ If you are getting better results from vibe coding, what are you optimising for,
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
 ## PS, Method 3 (Unattended)
 
 As a final experiment, I tried a deliberately unattended approach.
