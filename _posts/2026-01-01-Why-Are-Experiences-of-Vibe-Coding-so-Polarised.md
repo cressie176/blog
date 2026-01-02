@@ -164,6 +164,7 @@ If you are getting better results from vibe coding, what are you optimising for,
 ## PS, Method 3 (Unattended)
 
 As a final experiment, I tried a deliberately unattended approach. The branch is [claude-unattended](https://github.com/cressie176/shorty/tree/claude-unattended)
+<br/>
 
 ```
 ╭─── Claude Code v2.0.76 ────────────────────────────────────────────────────────────────────────────╮
@@ -190,8 +191,9 @@ As a final experiment, I tried a deliberately unattended approach. The branch is
 ──────────────────────────────────────────────────────────────────────────────────────────────────────
   ? for shortcuts
 ```
-
+<br/>
 It completed all eight stories in 30 minutes and 34 seconds. On the surface, this looks impressive. In reality the code was a hot mess.
+<br/>
 
 | Area     | Metric                     | Method 2 (Guided) | Method 3 (Unattended) |
 |----------|----------------------------|-------------------|------------------------|
