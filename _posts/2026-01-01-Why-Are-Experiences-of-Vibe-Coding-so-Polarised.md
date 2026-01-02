@@ -197,8 +197,6 @@ The branch is [claude-unattended](https://github.com/cressie176/shorty/tree/clau
 
 It completed all eight stories in 30 minutes and 34 seconds. On the surface, this looks impressive. In reality the code was a hot mess.
 
-Excluding blank lines, the guided version produced 158 lines of code across eight files with no comments. The unattended version produced 271 lines across the same eight files, with seven comments. The extra code was not adding capability. It was adding accidental complexity.
-
 | Area     | Metric                     | Method 2 (Guided) | Method 3 (Unattended) |
 |----------|----------------------------|-------------------|------------------------|
 | Domain   | Files                      | 1                 | 1                      |
@@ -220,23 +218,24 @@ Excluding blank lines, the guided version produced 158 lines of code across eigh
 |          | Total comments              | 0                 | 7                      |
 |          | **Total lines (excl blanks)**   | **158**               | **271**                    |
 
-**The unattended method produced 72% more code and 104% more TypeScript for the same behaviour!**.
+The guided version produced 158 lines of code with no comments. The unattended version produced 271 lines across with seven comments. **That's 72% more code and 104% more TypeScript for the same behaviour!**.
+The extra code did not add capability, it added complexity.
 
 Furthermore, the unattended implementation introduced substantial technical and operational debt:
 
-* It created new services for key generation and expiry management that were unnecessary.
+* Unnecesary new services for key generation and expiry management.
 * Redirects retrieved from the API were not expired.
 * Reads and expiry updates were performed using separate client calls, so they were not part of the same transaction.
-* Expected errors polluted the logs, reducing their usefulness in production.
+* Errors polluted the logs during test runs.
 * It implemented an explicit rude word filter rather than removing vowels, increasing maintenance burden.
-* It used setInterval without unref(), preventing the process from exiting cleanly.
-* Functions were larger, with SQL and JSX inlined.
-* Expiry logic was checked in application code rather than expressed directly in a query.
-* PostgreSQL was used poorly, with application code compensating for weak queries.
+* setInterval was used for the maintenance tasks without unref(), preventing the process from exiting cleanly and competing with other nodes in a clustered environment.
+* Functions were far larger, with SQL and JSX inlined making the code harder to follow.
+* PostgreSQL was used poorly, with application code compensating for weak queries, e.g.
+  - Expiry logic was checked in application code rather than expressed directly in a query.
+  - Duplicate urls were inserted rather than being upserted.
 * The codebase was littered with low value comments that narrated rather than clarified.
-* Tests regressed: monkey patching was used instead of dependency injection, and fetch was called directly rather than extending the TestClient.
-
-The adage that the most reliable way to avoid bugs is not to type them in is clearly as true for agents as it is for humans!
+* Monkey patching was used instead of dependency injection.
+* Fetch was directly in some tests rather than extending the TestClient increasing duplication, worsinging the signal to noise ratio, and making the tests brittle.
 
 This experiment reinforces a central point of this post. Claude does not fail because it is careless. It fails because, without strong constraints, it explores a much larger solution space and reliably drifts towards unnecessary structure. In the guided approach, the implementation notes were not optional hints. They were the guard rails.
 
