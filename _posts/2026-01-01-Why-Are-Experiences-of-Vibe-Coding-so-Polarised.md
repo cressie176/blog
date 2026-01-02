@@ -228,7 +228,7 @@ Furthermore, the unattended implementation introduced substantial technical and 
   - Expiry logic was checked in application code rather than expressed directly in a query.
   - Duplicate urls were inserted rather than being upserted.
 * The codebase was littered with low value comments that narrated rather than clarified.
-* Monkey patching was used instead of dependency injection.
+* Tests used Monkey patching instead of dependency injection to fake behaviour.
 * Fetch was used in tests directly increasing duplication, reducing their readability, and making the tests brittle.
 
 Clearly, Claude is not yet something you can leave to its own devices and expect consistently good outcomes. Without strong constraints, it reliably drifts towards verbosity, duplication, and accidental complexity, even when it is functionally correct. That gap between apparent success and long term maintainability likely explains much of the current pushback.
