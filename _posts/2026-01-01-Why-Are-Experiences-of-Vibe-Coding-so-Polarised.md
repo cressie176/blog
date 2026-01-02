@@ -50,7 +50,8 @@ What stands out is how sensitive the results are to relatively small changes in 
 
 ## What We Need Is An Experiment
 
-To move this discussion forward, we need something more concrete than confident anecdote. When the same tool is reported to produce both dangerous, unmaintainable systems and dramatic productivity gains, opinion alone cannot tell us whether the difference lies in the tool, the goals, or the way it is being used. The only way to separate those factors is to make the goals explicit and then test, in a controlled way, whether a particular method of using Generative AI can reliably produce outcomes aligned with them. We need is a repeatable experiment against which we can evaluate different approaches.
+To move this discussion forward, we need something more concrete than confident anecdote. When the same tool is reported to produce both dangerous, unmaintainable systems and dramatic productivity gains, opinion alone cannot tell us whether the difference lies in the tool itself, the goals being optimised for, or the way it is being used. The only way to separate those factors is to make the goals explicit and then test, in a controlled way, whether a particular method of using Generative AI can reliably produce outcomes aligned with them.
+What is needed is a repeatable test case against which different approaches can be evaluated. It must be small enough to run repeatedly, representative of real world software, and sufficiently complex to expose meaningful trade offs and failure modes. A URL shortening service meets those criteria.
 
 ### Hypothesis
 
@@ -71,7 +72,7 @@ The vast variation of experience comes from how Generative AI is being used, not
 * **Stories:** [shorty/issues](https://github.com/cressie176/shorty/issues)
 
 ### Method 1: Prompt Bootstrapping (Abandoned)
-The initial approach was to use pre-written stories, marketplace skills and interactive prompts to fully implement a URL Shortening service. The intention was to encode structure, constraints, and best practices entirely through instructions. Unfortunately, this proved unreliable, particularly while the codebase was in infancy. Even when instructions were repeated and made increasingly explicit, Claude would occasionally ignore them or drift away from the intended structure. Continuing in this direction wasted both time and tokens. I needed a way to bootstrap the application without Claude.
+The initial approach was to use pre-written stories, marketplace skills and interactive prompts to fully implement the URL Shortening service. The intention was to encode structure, constraints, and best practices entirely through instructions. Unfortunately, this proved unreliable, particularly while the codebase was in infancy. Even when instructions were repeated and made increasingly explicit, Claude would occasionally ignore them or drift away from the intended structure. Continuing in this direction wasted both time and tokens. I needed a way to bootstrap the application without Claude.
 
 I briefly considered developing a reference repository, which would have provided concrete examples of structure and conventions rather than relying on abstract descriptions. While viable in principle, this approach does not scale in a microservice environment. The number of permutations of infrastructure components (databases, message brokers, etc.) grows rapidly, and maintaining reference repositories for each combination would simply relocate the complexity. Instead I went with templates.
 
