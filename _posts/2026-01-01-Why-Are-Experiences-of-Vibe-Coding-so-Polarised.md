@@ -149,7 +149,9 @@ This experiment demonstrates that Claude can produce high quality code far more 
 
 When the implementation notes are wrong or incomplete, someone must stop and rewrite them, along with any dependent stories, some of which may already be in development. In effect, this approach shifts the primary bottleneck from implementation to story writing and maintenance. It may be that my method is only suitable for small teams of experienced engineers.
 
-I am also still left with the following open questions.
+It is also important to put these gains into context. Software engineers do not spend anything close to 100% of their time writing code. Design discussions, team ceremonies, research, troubleshooting, supporting others, administrative work, and training all consume significant portions of a typical working day. Even a dramatic improvement in coding effectiveness therefore does not translate directly into an equivalent improvement in overall productivity.
+
+After all of this I am still left pondering the following open questions:
 
 1. Were my goals the right ones (particularly my need for Clean Code)?
 2. Was my method the most effective way to use Generative AI, and specifically Claude Code?
