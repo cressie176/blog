@@ -158,3 +158,67 @@ After all of this I am still left pondering the following open questions:
 3. Do other goals matter more in different contexts?
 
 If you are getting better results from vibe coding, what are you optimising for, and how does your approach support that? If you are getting poor results how does your approach differ from mine? I'd love to know.
+
+Here is a sharp, copy ready update with your requested title and your prompt pasted verbatim. I have kept it tight and used bullet points for the failures.
+
+---
+
+## PS, Method 3 (Unattended)
+
+As a final experiment, I tried a deliberately unattended approach.
+
+This time I ran Claude in auto accept mode and explicitly instructed it to ignore all implementation notes except for Project Initialisation. To prevent accidental influence, I told it to strip everything after the Implementation Notes heading before parsing each issue. This was the prompt:
+
+I want you to Implement [https://github.com/cressie176/shorty/issues/1](https://github.com/cressie176/shorty/issues/1) story by story. This next part is IMPORTANT. I want to evaluate you, so I want you to completely ignore the implementation notes
+within the github issues for everyting EXCEPT the Project Initialisation story. You MUST NOT even read them otherwise they will influence you. To avoid reading them pipe the output from the gh issue
+command into something to remove everything after the title Implementation Notes so that it is completely unavailable to you. The Implementation Notes are the last section of the issue so you
+will not miss anything vital. When you think a story is done, build,
+lint, test and commit.
+
+The branch is cressie176/shorty claude-lazy-mode
+
+It completed all eight stories in 30 minutes and 34 seconds.
+
+On the surface, this looks impressive. In reality, it demonstrates why speed alone is a poor proxy for success.
+
+Excluding blank lines, the guided version produced 158 lines of code across eight files with no comments. The unattended version produced 271 lines across the same eight files, with seven comments. The extra code was not adding capability. It was adding accidental complexity.
+
+| Area     | Metric                     | Method 2 (Guided) | Method 3 (Unattended) |
+|----------|----------------------------|-------------------|------------------------|
+| Domain   | Files                      | 1                 | 1                      |
+|          | TypeScript lines            | 55                | 6                      |
+|          | SQL lines                   | 0                 | 0                      |
+|          | TSX lines                   | 0                 | 0                      |
+|          | Comments                    | 0                 | 0                      |
+| Services | Files                      | 4                 | 4                      |
+|          | TypeScript lines            | 47                | 199                    |
+|          | SQL lines                   | 7                 | 0                      |
+|          | TSX lines                   | 0                 | 0                      |
+|          | Comments                    | 0                 | 7                      |
+| Routes   | Files                      | 3                 | 3                      |
+|          | TypeScript lines            | 31                | 66                     |
+|          | TSX lines                   | 18                | 0                      |
+|          | SQL lines                   | 0                 | 0                      |
+|          | Comments                    | 0                 | 0                      |
+| Overall  | Total files                | 8                 | 8                      |
+|          | Total lines (excl blanks)   | 158               | 271                    |
+|          | Total comments              | 0                 | 7                      |
+
+*The unattended method produced 72% more code for the same behaviour!*. Furthermore, the unattended implementation introduced substantial technical and operational debt:
+
+* It created new services for key generation and expiry management that were unnecessary.
+* Redirects retrieved from the API were not expired.
+* Reads and expiry updates were performed using separate client calls, so they were not part of the same transaction.
+* Expected errors polluted the logs, reducing their usefulness in production.
+* It implemented an explicit rude word filter rather than removing vowels, increasing maintenance burden.
+* It used setInterval without unref(), preventing the process from exiting cleanly.
+* Functions were larger, with SQL and JSX inlined.
+* Expiry logic was checked in application code rather than expressed directly in a query.
+* PostgreSQL was used poorly, with application code compensating for weak queries.
+* The codebase was littered with low value comments that narrated rather than clarified.
+* Tests regressed: monkey patching was used instead of dependency injection, and fetch was called directly rather than extending the TestClient.
+
+The adage that the most reliable way to avoid bugs is not to type them in is clearly as true for agents as it is for humans!
+
+This experiment reinforces a central point of this post. Claude does not fail because it is careless. It fails because, without strong constraints, it explores a much larger solution space and reliably drifts towards unnecessary structure. In the guided approach, the implementation notes were not optional hints. They were the guard rails.
+
