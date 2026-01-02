@@ -158,7 +158,11 @@ After all of this I am still left pondering the following open questions:
 3. Do other goals matter more in different contexts?
 
 If you are getting better results from vibe coding, what are you optimising for, and how does your approach support that? If you are getting poor results how does your approach differ from mine? I'd love to know.
-
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 ## PS, Method 3 (Unattended)
 
 As a final experiment, I tried a deliberately unattended approach.
