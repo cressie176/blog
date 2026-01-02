@@ -212,7 +212,7 @@ Claude completed all eight stories in 30 minutes and 34 seconds. On the surface,
 |          | **Total lines (excl blanks)**   | **158**               | **271**                    |
 
 
-The guided version produced 158 lines of code with no comments. The unattended version produced 271 lines across with seven comments. **That's 72% more code and 104% more TypeScript for the same behaviour!**.
+The guided version produced 158 lines of code with no comments. The unattended version produced 271 lines with seven (pointless) comments. **That's 72% more code and 104% more TypeScript for the same behaviour!**.
 The extra code did not add capability, it added complexity.
 
 Furthermore, the unattended implementation introduced substantial technical and operational debt:
