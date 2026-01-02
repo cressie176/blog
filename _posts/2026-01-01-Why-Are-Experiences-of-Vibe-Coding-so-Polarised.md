@@ -191,9 +191,11 @@ As a final experiment, I tried a deliberately unattended approach. The branch is
 ──────────────────────────────────────────────────────────────────────────────────────────────────────
   ? for shortcuts
 ```
-
+<br/>
+<br/>
 It completed all eight stories in 30 minutes and 34 seconds. On the surface, this looks impressive. In reality the code was a hot mess.
-
+<br/>
+<br/>
 
 | Area     | Metric                     | Method 2 (Guided) | Method 3 (Unattended) |
 |----------|----------------------------|-------------------|------------------------|
