@@ -169,6 +169,7 @@ As a final experiment, I tried a deliberately unattended approach.
 
 This time I ran Claude in auto accept mode and explicitly instructed it to ignore all implementation notes except for Project Initialisation. To prevent accidental influence, I told it to strip everything after the Implementation Notes heading before parsing each issue. This was the prompt:
 
+```
 ╭─── Claude Code v2.0.76 ────────────────────────────────────────────────────────────────────────────╮
 │                                                    │ Tips for getting started                      │
 │                    Welcome back!                   │ Run /init to create a CLAUDE.md file          │
@@ -192,6 +193,7 @@ This time I ran Claude in auto accept mode and explicitly instructed it to ignor
   When you think a story is done, build, lint, test and commit.
 ──────────────────────────────────────────────────────────────────────────────────────────────────────
   ? for shortcuts
+```
 
 The branch is cressie176/shorty claude-lazy-mode
 
