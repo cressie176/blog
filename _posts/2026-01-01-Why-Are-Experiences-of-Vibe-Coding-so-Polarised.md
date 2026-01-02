@@ -191,7 +191,6 @@ As a final experiment, I tried a deliberately unattended approach. The branch is
   ? for shortcuts
 ```
 <br/>
-<br/>
 It completed all eight stories in 30 minutes and 34 seconds. On the surface, this looks impressive. In reality the code was a hot mess.
 <br/>
 <br/>
@@ -237,5 +236,5 @@ Furthermore, the unattended implementation introduced substantial technical and 
 * Monkey patching was used instead of dependency injection.
 * Fetch was directly in some tests rather than extending the TestClient increasing duplication, worsinging the signal to noise ratio, and making the tests brittle.
 
-This experiment reinforces a central point of this post. Claude does not fail because it is careless. It fails because, without strong constraints, it explores a much larger solution space and reliably drifts towards unnecessary structure. In the guided approach, the implementation notes were not optional hints. They were the guard rails.
+The implementation notes were not just optional hints, they were essential guard rails.
 
