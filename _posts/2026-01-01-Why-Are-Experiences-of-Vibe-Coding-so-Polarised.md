@@ -224,7 +224,9 @@ Excluding blank lines, the guided version produced 158 lines of code across eigh
 |          | Total comments              | 0                 | 7                      |
 |          | **Total lines (excl blanks)**   | **158**               | **271**                    |
 
-**The unattended method produced 72% more code for the same behaviour!**. Furthermore, the unattended implementation introduced substantial technical and operational debt:
+**The unattended method produced 72% more code for the same behaviour!**. 
+
+Furthermore, the unattended implementation introduced substantial technical and operational debt:
 
 * It created new services for key generation and expiry management that were unnecessary.
 * Redirects retrieved from the API were not expired.
