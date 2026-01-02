@@ -163,9 +163,7 @@ If you are getting better results from vibe coding, what are you optimising for,
 <br/>
 ## PS, Method 3 (Unattended)
 
-As a final experiment, I tried a deliberately unattended approach.
-
-This time I ran Claude in auto accept mode and explicitly instructed it to ignore all implementation notes except for Project Initialisation. To prevent accidental influence, I told it to strip everything after the Implementation Notes heading before parsing each issue. This was the prompt:
+As a final experiment, I tried a deliberately unattended approach. The branch is [claude-unattended](https://github.com/cressie176/shorty/tree/claude-unattended)
 
 ```
 ╭─── Claude Code v2.0.76 ────────────────────────────────────────────────────────────────────────────╮
@@ -192,8 +190,6 @@ This time I ran Claude in auto accept mode and explicitly instructed it to ignor
 ──────────────────────────────────────────────────────────────────────────────────────────────────────
   ? for shortcuts
 ```
-
-The branch is [claude-unattended](https://github.com/cressie176/shorty/tree/claude-unattended)
 
 It completed all eight stories in 30 minutes and 34 seconds. On the surface, this looks impressive. In reality the code was a hot mess.
 
