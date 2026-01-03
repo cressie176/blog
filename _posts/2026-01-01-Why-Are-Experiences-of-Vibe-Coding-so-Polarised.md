@@ -50,7 +50,7 @@ What stands out is how sensitive the results are to relatively small changes in 
 
 ## What We Need Is An Experiment
 
-To move this discussion forward, we need something more concrete than confident anecdote. When the same tool is reported to produce both dangerous, unmaintainable systems and dramatic productivity gains, opinion alone cannot tell us whether the difference lies in the tool itself, the goals being optimised for, or the way it is being used. The only way to separate those factors is to make the goals explicit and then test, in a controlled way, whether a particular method of using Generative AI can reliably produce outcomes aligned with them. What is needed is a repeatable test case against which different approaches can be evaluated. It must be small enough to run repeatedly, representative of real world software, and sufficiently complex to expose meaningful trade offs and failure modes. A URL shortening service meets those criteria. Here are the stories:
+To move this discussion forward, we need something more concrete than confident anecdote. When the same tool is reported to produce both dangerous, unmaintainable systems and dramatic productivity gains, opinion alone cannot tell us whether the difference lies in the tool itself, the goals being optimised for, or the way it is being used. The only way to separate those factors is to make the goals explicit and then test, in a controlled way, whether a particular method of using Generative AI can reliably produce outcomes aligned with them. What is needed is a repeatable test case against which different methods can be evaluated. It must be small enough to run repeatedly, representative of real world software, and sufficiently complex to expose meaningful trade offs and failure modes. A URL shortening service meets those criteria. Here are the stories:
 
 | Story                                                 | Title                          | Description                                                                                            |
 |-------------------------------------------------------|--------------------------------|--------------------------------------------------------------------------------------------------------|
@@ -82,12 +82,12 @@ The vast variation of experience comes from how Generative AI is being used, not
 * **Node.js Templates:** [node-templates](https://github.com/cressie176/node-templates)
 * **Stories:** [shorty/issues](https://github.com/cressie176/shorty/issues)
 
-### Method 1: Prompt Bootstrapping (Abandoned)
+### Method 1: Prompt Bootstrapping, Implementation Notes and Manual Accepts (Abandoned)
 The initial approach was to use pre-written stories, marketplace skills and interactive prompts to fully implement the URL Shortening service. The intention was to encode structure, constraints, and best practices entirely through instructions. Unfortunately, this proved unreliable, particularly while the codebase was in infancy. Even when instructions were repeated and made increasingly explicit, Claude would occasionally ignore them or drift away from the intended structure. Continuing in this direction wasted both time and tokens. I needed a way to bootstrap the application without Claude.
 
 I briefly considered developing a reference repository, which would have provided concrete examples of structure and conventions rather than relying on abstract descriptions. While viable in principle, this approach does not scale in a microservice environment. The number of permutations of infrastructure components (databases, message brokers, etc.) grows rapidly, and maintaining reference repositories for each combination would simply relocate the complexity. Instead I decided to use a [GitHub Template Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository).
 
-### Method 2: Template Bootstrapping
+### Method 2: Template Bootstrapping, Implementation Notes and Manual Accepts
 For my second attempt, I still worked from pre-written stories, marketplace skills and interactive prompts, but my infrastructure story instructed Claude to bootstrap the service from the aforementioned templates. A base service template establishes the core structure, with additional templates layered on top for concerns such as PostgreSQL or other infrastructure. This allows common practices to be shared while still supporting different combinations.
 
 Traditional automation struggles here. As the number of layers increases, reliably merging templates becomes difficult, particularly where cross-cutting concerns are involved. This is where Generative AI proved useful. Each layer includes a "Wiring.md" file describing how it should be integrated into the base. Claude can read and apply these instructions in a way that would be awkward to achieve with scripts. The bootstrap process also made it possible to provide Claude.md files in the templates, but this introduced merge problems as templates were combined. Using [rules](https://code.claude.com/docs/en/memory) proved more effective, as each template can include its own rules separately.
@@ -123,6 +123,8 @@ I reran the experiment multiple times from the same starting point and received 
 
 ### Results
 
+ The code can be found here: [shorty](https://github.com/cressie176/shorty/)
+
 | Story | Description                    | Status | Time  | Interventions | Commit  |
 |-------|--------------------------------|--------|-------|---------------|---------|
 | 1     | Project Initialisation         | ✅     | 00:08 | 0             | [2f37d74](https://github.com/cressie176/shorty/commit/2f37d746d84039a2f58e239fa5bae90760db194b) |
@@ -152,24 +154,9 @@ There were some minor style problems. Claude is overly fond of blank lines, and 
 
 I estimate it would have taken me 1 to 2 working days to produce an equivalent codebase from the same templates without AI. This would suggest that Claude achieved an 8x to 16x improvement. However, the implementation time does not reflect the full cost. These results required repeated iteration on both the stories and the skills. Significant effort went into refining story structure, clarifying implementation notes, and adjusting skills so that Claude behaved consistently.
 
-### Conclusion
+## Method 3: Templated Bootstraping, No Implementation Notes and Automatic Accepts
 
-This experiment demonstrates that Claude can produce high quality code far more rapidly than even an experienced software engineer, but only when projects are properly bootstrapped and guided by effective prompts in the form of marketplace skills, embedded in the user stories or given interactively. While the marketplace skills represent a long-term investment that can be reused, the stories do not. My method of incorporating implementation notes into each story was necessary for the experiment, but made them brittle. Real world success will depend on becoming very good at writing implementation notes up front, or on the engineers driving Claude being skilled enough to provide sufficiently good prompts just-in-time. Assuming they can, stories which previously took days can be delivered in hours, switching the primary bottleneck from implementation to story writing. It may be that AI empowered teams will need to be far smaller.
-
-It is also important to put these productivity gains into context. Software engineers do not spend anything close to 100% of their time writing code. Design discussions, team ceremonies, research, troubleshooting, supporting others, administrative work, and training all consume significant portions of a typical working day. Even a dramatic improvement in coding effectiveness therefore does not translate directly into an equivalent improvement in overall productivity.
-
-After all of this, I am still left pondering the following open questions:
-
-1. Were my goals the right ones (particularly my need for Clean Code)?
-2. Was my method the most effective way to use Generative AI, and specifically Claude Code?
-3. Do other goals matter more in different contexts?
-
-If you are getting better results from vibe coding, what are you optimising for, and how does your approach support that? If you are getting poor results how does your approach differ from mine? I'd love to know.
-<br/>
-<br/>
-## PS, Method 3 (Unattended)
-
-As another experiment, I tried a deliberately unattended approach. The branch is [claude-unattended](https://github.com/cressie176/shorty/tree/claude-unattended)
+As another experiment, I tried a deliberately unattended approach without the benefit of implementation notes. The code can be found here: [claude-unattended](https://github.com/cressie176/shorty/tree/claude-unattended)
 <br/>
 
 ```
@@ -197,7 +184,9 @@ As another experiment, I tried a deliberately unattended approach. The branch is
 ──────────────────────────────────────────────────────────────────────────────────────────────────────
   ? for shortcuts
 ```
-<br/>
+
+### Results
+
 Claude completed all eight stories in 30 minutes and 34 seconds. On the surface, this looks impressive. In reality the code was a hot mess.
 <br/>
 <br/>
@@ -244,5 +233,21 @@ Furthermore, the unattended implementation introduced substantial technical and 
 * Tests used Monkey patching instead of dependency injection to fake behaviour.
 * Fetch was used in tests directly increasing duplication, reducing readability, making them brittle. and in disregard of the [Test Client](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/typescript-tdd-cookbook/skills/typescript-tdd-cookbook/SKILL.md#test-client-pattern) pattern.
 
-Clearly, Claude is not yet something you can leave to its own devices and expect consistently good outcomes. Without strong constraints, it reliably drifts towards verbosity, duplication, and accidental complexity, even when it is functionally correct. That gap between apparent success and long term maintainability likely explains much of the current pushback.
+## Conclusion
+
+**Method 2 (Template Bootstrapping, Implementation Notes, and Manual Accepts)** demonstrates that Claude can produce high-quality code far more rapidly than even an experienced software engineer, but only when projects are properly bootstrapped and guided by effective prompts, whether through marketplace skils, embedded directly in user stories or provided interactively. While marketplace skills represent a long-term investment that can be reused, stories do not. Incorporating detailed implementation notes into each story was necessary for this experiment, but it also made those stories brittle. Real world success will therefore depend either on becoming very good at writing implementation notes up front, or on the engineers driving Claude being skilled enough to provide sufficiently strong just-in-time guidance. Where that is the case, stories that previously took days can be delivered in hours, shifting the primary bottleneck from implementation to story writing. It may be that AI-empowered teams will need to be significantly smaller.
+
+It is also important to put these productivity gains into context. Software engineers do not spend anything close to 100% of their time writing code. Design discussions, team ceremonies, research, troubleshooting, supporting others, administrative work, and training all consume significant portions of a typical working day. Even a dramatic improvement in coding effectiveness therefore does not translate directly into an equivalent improvement in overall productivity.
+
+In contrast, **Method 3 (Template Bootstrapping, No Implementation Notes, and Automatic Accepts)** demonstrates that Claude is not yet something that can be left to operate unattended while still producing consistently good outcomes. Without strong constraints, it reliably drifts towards verbosity, duplication, and accidental complexity, even when the resulting system is functionally correct. That gap between apparent success and long-term maintainability likely explains much of the current scepticism and pushback.
+
+After all of this, I am still left pondering the following open questions:
+
+1. Were my goals the right ones (particularly my need for Clean Code)?
+2. Was my method the most effective way to use Generative AI, and specifically Claude Code?
+3. Do other goals matter more in different contexts?
+
+If you are getting better results from vibe coding, what are you optimising for, and how does your approach support that? If you are getting poor results how does your approach differ from mine? I'd love to know.
+
+
 
