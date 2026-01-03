@@ -62,7 +62,7 @@ To move this discussion forward, we need something more concrete than confident 
 | [5](https://github.com/cressie176/shorty/issues/6)    | Improve Duplicate Key Handling | Detect and handle the extremely rare case where the same short key is generated for different URLs.    |
 | [6](https://github.com/cressie176/shorty/issues/7)    | Expire Redirects               | Automatically expire the redirects when they have not been accessed for a configurable period of time. |
 | [7](https://github.com/cressie176/shorty/issues/8)    | Delete Expired Redirects       | Automatically delete expired redirects.                                                                |
-| [8](https://github.com/cressie176/shorty/issues/9)    | Schedule VACUUM ANALYZE        | Schedule daily VACUUM ANALYZE to maintain query planner statistics.                                    |
+| [8](https://github.com/cressie176/shorty/issues/9)    | Schedule Database Maintenance  | Schedule daily database maintenance to maintain PostgreSQL query planner statistics.                   |
 
 ### Hypothesis
 
@@ -123,17 +123,17 @@ I reran the experiment multiple times from the same starting point and received 
 
 ### Results
 
-| Story | Description              | Status | Time  | Interventions | Commit  |
-|-------|--------------------------|--------|-------|---------------|---------|
-| 1     | Project Initialisation   | ✅     | 00:08 | 0             | [2f37d74](https://github.com/cressie176/shorty/commit/2f37d746d84039a2f58e239fa5bae90760db194b) |
-| 2     | Shorten URL              | ✅     | 00:21 | 7             | [b83c51f](https://github.com/cressie176/shorty/commit/2f37d746d84039a2f58e239fa5bae90760db194b) |
-| 3     | Get URL                  | ✅     | 00:10 | 4             | [ea2f837](https://github.com/cressie176/shorty/commit/ea2f83796b255a7c1130ae4baa92ac097deba1e0) |
-| 4     | URL Redirection          | ✅     | 00:07 | 3             | [9ebc8e3](https://github.com/cressie176/shorty/commit/9ebc8e37754125c7f6d5feb7c464643a1d24e232) |
-| 5     | Handle Key Collisions    | ✅     | 00:10 | 3             | [9da1d50](https://github.com/cressie176/shorty/commit/9da1d50236d8eae8bd378246d7acd14294859d22) |
-| 6     | Expire Redirects         | ✅     | 00:06 | 0             | [aafa1ba](https://github.com/cressie176/shorty/commit/aafa1ba1d980758b303e2749df01f711e73f69eb) |
-| 7     | Delete Expired Redirects | ✅     | 00:03 | 0             | [6419983](https://github.com/cressie176/shorty/commit/64199839424353f7bd002400afbb28631326607d) |
-| 8     | Schedule VACUUM ANALYZE  | ✅     | 00:02 | 0             | [4ed2837](https://github.com/cressie176/shorty/commit/4ed283719e72528998c7d6cccf3ffdafffae5339) |
-|       |                          |        | 01:07 | 17            |         |
+| Story | Description                    | Status | Time  | Interventions | Commit  |
+|-------|--------------------------------|--------|-------|---------------|---------|
+| 1     | Project Initialisation         | ✅     | 00:08 | 0             | [2f37d74](https://github.com/cressie176/shorty/commit/2f37d746d84039a2f58e239fa5bae90760db194b) |
+| 2     | Shorten URL                    | ✅     | 00:21 | 7             | [b83c51f](https://github.com/cressie176/shorty/commit/2f37d746d84039a2f58e239fa5bae90760db194b) |
+| 3     | Get URL                        | ✅     | 00:10 | 4             | [ea2f837](https://github.com/cressie176/shorty/commit/ea2f83796b255a7c1130ae4baa92ac097deba1e0) |
+| 4     | URL Redirection                | ✅     | 00:07 | 3             | [9ebc8e3](https://github.com/cressie176/shorty/commit/9ebc8e37754125c7f6d5feb7c464643a1d24e232) |
+| 5     | Handle Key Collisions          | ✅     | 00:10 | 3             | [9da1d50](https://github.com/cressie176/shorty/commit/9da1d50236d8eae8bd378246d7acd14294859d22) |
+| 6     | Expire Redirects               | ✅     | 00:06 | 0             | [aafa1ba](https://github.com/cressie176/shorty/commit/aafa1ba1d980758b303e2749df01f711e73f69eb) |
+| 7     | Delete Expired Redirects       | ✅     | 00:03 | 0             | [6419983](https://github.com/cressie176/shorty/commit/64199839424353f7bd002400afbb28631326607d) |
+| 8     | Schedule Database Maintenance  | ✅     | 00:02 | 0             | [4ed2837](https://github.com/cressie176/shorty/commit/4ed283719e72528998c7d6cccf3ffdafffae5339) |
+|       |                                |        | 01:07 | 17            |         |
 
 #### Tool Rejections (deduped)
 1. Don't duplicate config in tests
@@ -231,17 +231,18 @@ Furthermore, the unattended implementation introduced substantial technical and 
 
 * Unnecesary new services for key generation and expiry management.
 * Redirects retrieved from the API were not expired.
-* Consecutive database queries were performed using separate client calls, so they were not part of the same transaction.
-* Errors polluted the logs during test runs.
+* Consecutive database queries were performed using separate client calls, so they were not part of the same transaction despite the Unit of Work pattern being described in the [TypeScript Service Cookbook](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/typescript-service-cookbook/skills/typescript-service-cookbook/SKILL.md#unit-of-work-pattern-with-asynclocalstorage) skill.
+* Errors polluted the logs during test runs despite being covered in the [TypeScript TDD Cookbook](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/typescript-tdd-cookbook/skills/typescript-tdd-cookbook/SKILL.md#suppressing-expected-error-logs) skill.
 * It implemented an explicit rude word filter rather than removing vowels, increasing maintenance burden.
 * setInterval was used for the maintenance tasks without unref(), which can prevent the process from exiting and does not scale horizontally.
-* Functions were far larger, with SQL and JSX inlined making the code harder to follow.
+* Functions were far larger, with SQL and JSX inlined making the code harder to follow, despite function size being discussed in the [TypeScript Clean Code Cookbook](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/typescript-clean-code-cookbook/skills/typescript-clean-code-cookbook/SKILL.md#function-design) skill.
 * PostgreSQL was used poorly, with application code compensating for weak queries, e.g.
   - Expiry logic was checked in application code rather than expressed directly in a query.
   - Duplicate urls were inserted rather than being upserted.
-* The codebase was littered with low value comments that narrated rather than clarified.
+  - Scheduling was done in application code despite an entry for pg_cron in the [PostgreSQL Cookbook](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/postgresql-cookbook/skills/postgresql-cookbook/SKILL.md#scheduled-deletion-of-old-records-with-pg_cron) skill.
+* The codebase was littered with low value comments that narrated rather than clarified. This is despite being discussesd in thte [TypeScript Clean Clode Cookbook](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/typescript-clean-code-cookbook/skills/typescript-clean-code-cookbook/SKILL.md#comments) skill.
 * Tests used Monkey patching instead of dependency injection to fake behaviour.
-* Fetch was used in tests directly increasing duplication, reducing readability, and making them brittle.
+* Fetch was used in tests directly increasing duplication, reducing readability, and making them brittle. This is despite being discussed in the [TypeScript TDD Cookbook](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/typescript-tdd-cookbook/skills/typescript-tdd-cookbook/SKILL.md#test-client-pattern) skill.
 
 Clearly, Claude is not yet something you can leave to its own devices and expect consistently good outcomes. Without strong constraints, it reliably drifts towards verbosity, duplication, and accidental complexity, even when it is functionally correct. That gap between apparent success and long term maintainability likely explains much of the current pushback.
 
