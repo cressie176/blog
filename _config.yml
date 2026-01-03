@@ -1,3 +1,5 @@
 theme: minima
 author: Stephen Cresswell
 
+plugins:
+  - jekyll-redirect-from
