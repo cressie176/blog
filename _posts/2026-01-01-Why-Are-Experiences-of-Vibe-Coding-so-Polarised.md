@@ -123,7 +123,7 @@ I reran the experiment multiple times from the same starting point and received 
 
 ### Results
 
- The code can be found here: [shorty](https://github.com/cressie176/shorty/)
+The code can be found here: [shorty](https://github.com/cressie176/shorty/)
 
 | Story | Description                    | Status | Time  | Interventions | Commit  |
 |-------|--------------------------------|--------|-------|---------------|---------|
@@ -154,7 +154,7 @@ There were some minor style problems. Claude is overly fond of blank lines, and 
 
 I estimate it would have taken me 1 to 2 working days to produce an equivalent codebase from the same templates without AI. This would suggest that Claude achieved an 8x to 16x improvement. However, the implementation time does not reflect the full cost. These results required repeated iteration on both the stories and the skills. Significant effort went into refining story structure, clarifying implementation notes, and adjusting skills so that Claude behaved consistently.
 
-## Method 3: Templated Bootstraping, No Implementation Notes and Automatic Accepts
+### Method 3: Templated Bootstraping, No Implementation Notes and Automatic Accepts
 
 As another experiment, I tried a deliberately unattended approach without the benefit of implementation notes. The code can be found here: [claude-unattended](https://github.com/cressie176/shorty/tree/claude-unattended)
 <br/>
