@@ -10,8 +10,11 @@ tags:
 
 ## TL;DR
 This post explores why experiences with Generative AI assisted software development vary so dramatically. While some developers report order of magnitude productivity gains, others encounter architectural drift, excessive code, and serious operational risk. The author argues that this gap is not primarily caused by the tools themselves, but by differences in goals, constraints, and methods of use.
+
 Treating Generative AI as a meta tool that operates on intent rather than code mechanics, the post makes explicit its own optimisation goals: negligible operational debt and highly malleable, clean code. A controlled experiment using a small but realistic URL shortener service tests three ways of working with Claude Code.
+
 Prompt only bootstrapping proved unreliable. A guided approach combining layered templates, explicit implementation notes, rules, and manual review produced a clean, low debt system in just over an hour, delivering an estimated eight to sixteen times improvement over manual development. In contrast, an unattended approach without guidance completed faster but generated substantially more code, significant technical and operational debt, and multiple design regressions.
+
 The conclusion is that Generative AI can deliver dramatic gains, but only when projects are properly bootstrapped and strongly constrained. Left unattended, it reliably drifts towards verbosity and accidental complexity. The real question for organisations is therefore not whether to adopt Generative AI, but how to use it in a way that aligns with their long term engineering goals.
 
 ## Introduction
