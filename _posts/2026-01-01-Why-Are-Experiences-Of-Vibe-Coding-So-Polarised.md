@@ -1,6 +1,8 @@
 ---
 title: "Why Are Experiences Of Vibe Coding So Polarised?"
 date: 2026-01-01
+redirect_from:
+  - /2026/01/01/Why-Are-Experiences-of-Vibe-Coding-so-Polarised.html
 tags:
 - Generative AI
 - Claude Code
