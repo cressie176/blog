@@ -50,8 +50,19 @@ What stands out is how sensitive the results are to relatively small changes in 
 
 ## What We Need Is An Experiment
 
-To move this discussion forward, we need something more concrete than confident anecdote. When the same tool is reported to produce both dangerous, unmaintainable systems and dramatic productivity gains, opinion alone cannot tell us whether the difference lies in the tool itself, the goals being optimised for, or the way it is being used. The only way to separate those factors is to make the goals explicit and then test, in a controlled way, whether a particular method of using Generative AI can reliably produce outcomes aligned with them.
-What is needed is a repeatable test case against which different approaches can be evaluated. It must be small enough to run repeatedly, representative of real world software, and sufficiently complex to expose meaningful trade offs and failure modes. A URL shortening service meets those criteria.
+To move this discussion forward, we need something more concrete than confident anecdote. When the same tool is reported to produce both dangerous, unmaintainable systems and dramatic productivity gains, opinion alone cannot tell us whether the difference lies in the tool itself, the goals being optimised for, or the way it is being used. The only way to separate those factors is to make the goals explicit and then test, in a controlled way, whether a particular method of using Generative AI can reliably produce outcomes aligned with them. What is needed is a repeatable test case against which different approaches can be evaluated. It must be small enough to run repeatedly, representative of real world software, and sufficiently complex to expose meaningful trade offs and failure modes. A URL shortening service meets those criteria. Here are the stores:
+
+| Story                                                 | Title                          | Description                                                                                            |
+|-------------------------------------------------------|--------------------------------|--------------------------------------------------------------------------------------------------------|
+| [EPIC](https://github.com/cressie176/shorty/issues/1) | URL Shortener Service          | Build a complete URL shortener service with persistence, automatic expiry, and scheduled maintenance . |
+| [1](https://github.com/cressie176/shorty/issues/2)    | Project Initialisation         | Create the project structure and infrastructure.                                                       |
+| [2](https://github.com/cressie176/shorty/issues/3)    | Shorten URL                    | Shortens the given URL.                                                                                |
+| [3](https://github.com/cressie176/shorty/issues/4)    | Get URL                        | Returns a URL for the given short key.                                                                 |
+| [4](https://github.com/cressie176/shorty/issues/5)    | URL Redirection                | Redirect requests for a short key to the canonicalised URL.                                            |
+| [5](https://github.com/cressie176/shorty/issues/6)    | Improve Duplicate Key Handling | Detect and handle the extremely rare case where the same short key is generated for different URLs.    |
+| [6](https://github.com/cressie176/shorty/issues/7)    | Expire Redirects               | Automatically expire the redirects when they have not been accessed for a configurable period of time. |
+| [7](https://github.com/cressie176/shorty/issues/8)    | Delete Expired Redirects       | Automatically delete expired redirects.                                                                |
+| [8](https://github.com/cressie176/shorty/issues/9)    | Schedule VACUUM ANALYZE        | Schedule daily VACUUM ANALYZE to maintain query planner statistics.                                    |
 
 ### Hypothesis
 
