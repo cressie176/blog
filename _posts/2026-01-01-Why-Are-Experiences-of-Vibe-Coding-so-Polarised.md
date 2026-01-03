@@ -64,7 +64,7 @@ To move this discussion forward, we need something more concrete than confident 
 
 | Story                                                 | Title                          | Description                                                                                            |
 |-------------------------------------------------------|--------------------------------|--------------------------------------------------------------------------------------------------------|
-| [EPIC](https://github.com/cressie176/shorty/issues/1) | URL Shortener Service          | Build a complete URL shortener service with persistence, automatic expiry, and scheduled maintenance . |
+| [EPIC](https://github.com/cressie176/shorty/issues/1) | URL Shortener Service          | Build a complete URL shortener service with persistence, automatic expiry, and scheduled maintenance.  |
 | [1](https://github.com/cressie176/shorty/issues/2)    | Project Initialisation         | Create the project structure and infrastructure.                                                       |
 | [2](https://github.com/cressie176/shorty/issues/3)    | Shorten URL                    | Shortens the given URL.                                                                                |
 | [3](https://github.com/cressie176/shorty/issues/4)    | Get URL                        | Returns a URL for the given short key.                                                                 |
