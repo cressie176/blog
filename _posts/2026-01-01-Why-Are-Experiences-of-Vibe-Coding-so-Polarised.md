@@ -225,24 +225,24 @@ Claude completed all eight stories in 30 minutes and 34 seconds. On the surface,
 
 
 The guided version produced 158 lines of code with no comments. The unattended version produced 271 lines with seven (pointless) comments. **That's 72% more code and 104% more TypeScript for the same behaviour!**.
-The extra code did not add capability, it only added complexity.
+The extra code did not add capability, it only added complexity and the odd bug.
 
 Furthermore, the unattended implementation introduced substantial technical and operational debt:
 
 * Unnecesary new services for key generation and expiry management.
 * Redirects retrieved from the API were not expired.
-* Consecutive database queries were performed using separate client calls, so they were not part of the same transaction despite the Unit of Work pattern being described in the [TypeScript Service Cookbook](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/typescript-service-cookbook/skills/typescript-service-cookbook/SKILL.md#unit-of-work-pattern-with-asynclocalstorage) skill.
-* Errors polluted the logs during test runs despite being covered in the [TypeScript TDD Cookbook](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/typescript-tdd-cookbook/skills/typescript-tdd-cookbook/SKILL.md#suppressing-expected-error-logs) skill.
+* Consecutive database queries were performed using separate client calls, so they were not part of the same transaction, in disregard of the [Unit of Work](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/typescript-service-cookbook/skills/typescript-service-cookbook/SKILL.md#unit-of-work-pattern-with-asynclocalstorage) pattern.
+* Errors polluted the logs during test runs in disregard of the [Suppress Expected Error in Logs](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/typescript-tdd-cookbook/skills/typescript-tdd-cookbook/SKILL.md#suppressing-expected-error-logs) guidance.
 * It implemented an explicit rude word filter rather than removing vowels, increasing maintenance burden.
 * setInterval was used for the maintenance tasks without unref(), which can prevent the process from exiting and does not scale horizontally.
-* Functions were far larger, with SQL and JSX inlined making the code harder to follow, despite function size being discussed in the [TypeScript Clean Code Cookbook](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/typescript-clean-code-cookbook/skills/typescript-clean-code-cookbook/SKILL.md#function-design) skill.
+* Functions were far larger, with SQL and JSX inlined making the code harder to follow, in disregard of the [Function Design](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/typescript-clean-code-cookbook/skills/typescript-clean-code-cookbook/SKILL.md#function-design) guidance.
 * PostgreSQL was used poorly, with application code compensating for weak queries, e.g.
   - Expiry logic was checked in application code rather than expressed directly in a query.
   - Duplicate urls were inserted rather than being upserted.
-  - Scheduling was done in application code despite an entry for pg_cron in the [PostgreSQL Cookbook](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/postgresql-cookbook/skills/postgresql-cookbook/SKILL.md#scheduled-deletion-of-old-records-with-pg_cron) skill.
-* The codebase was littered with low value comments that narrated rather than clarified. This is despite being discussesd in thte [TypeScript Clean Clode Cookbook](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/typescript-clean-code-cookbook/skills/typescript-clean-code-cookbook/SKILL.md#comments) skill.
+  - Scheduling was done in application code in disgregard of the [pg_cron](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/postgresql-cookbook/skills/postgresql-cookbook/SKILL.md#scheduled-deletion-of-old-records-with-pg_cron) guidance.
+* The codebase was littered with low value comments that narrated rather than clarified, in disregard of the [Comments](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/typescript-clean-code-cookbook/skills/typescript-clean-code-cookbook/SKILL.md#comments) guidance.
 * Tests used Monkey patching instead of dependency injection to fake behaviour.
-* Fetch was used in tests directly increasing duplication, reducing readability, and making them brittle. This is despite being discussed in the [TypeScript TDD Cookbook](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/typescript-tdd-cookbook/skills/typescript-tdd-cookbook/SKILL.md#test-client-pattern) skill.
+* Fetch was used in tests directly increasing duplication, reducing readability, making them brittle. and in disregard of the [Test Client](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/typescript-tdd-cookbook/skills/typescript-tdd-cookbook/SKILL.md#test-client-pattern) pattern.
 
 Clearly, Claude is not yet something you can leave to its own devices and expect consistently good outcomes. Without strong constraints, it reliably drifts towards verbosity, duplication, and accidental complexity, even when it is functionally correct. That gap between apparent success and long term maintainability likely explains much of the current pushback.
 
