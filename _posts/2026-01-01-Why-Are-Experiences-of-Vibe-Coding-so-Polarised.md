@@ -87,7 +87,7 @@ The vast variation of experience comes from how Generative AI is being used, not
 * **Claude version:** 2.0.76
 * **Editor:** [Zed](https://zed.dev) (barely used)
 * **Generative AI execution:** Separate terminal window running in plan mode, with safe GitHub and Bash commands pre-allowed
-* **CLI tooling:** GitHub CLI and faster command line alternatives
+* **CLI tooling:** [GitHub CLI](https://cli.github.com) and other [macos-tools](https://github.com/cressie176/cressie176-claude-marketplace/blob/main/plugins/macos-tools/commands/install-macos-tools.md)
 * **Claude Marketplace**: [cressie176-claude-marketplace](https://github.com/cressie176/cressie176-claude-marketplace)
 * **Node.js Templates:** [node-templates](https://github.com/cressie176/node-templates)
 * **Stories:** [shorty/issues](https://github.com/cressie176/shorty/issues)
