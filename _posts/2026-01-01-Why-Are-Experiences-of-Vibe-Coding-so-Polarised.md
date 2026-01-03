@@ -85,7 +85,7 @@ The vast variation of experience comes from how Generative AI is being used, not
 * **Model:** Claude Sonnet 4.5 via AWS Bedrock
 * **Context window:** 1MB
 * **Claude version:** 2.0.76
-* **Editor:** [Zed](https://zed.dev)
+* **Editor:** [Zed](https://zed.dev) (barely used)
 * **Generative AI execution:** Separate terminal window running in plan mode, with safe GitHub and Bash commands pre-allowed
 * **CLI tooling:** GitHub CLI and faster command line alternatives
 * **Claude Marketplace**: [cressie176-claude-marketplace](https://github.com/cressie176/cressie176-claude-marketplace)
