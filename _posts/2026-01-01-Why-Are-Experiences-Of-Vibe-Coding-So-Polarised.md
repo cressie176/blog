@@ -127,7 +127,7 @@ Claude was instructed to install the required templates before implementing any 
 ```
 One deliberate adjustment was made around test-driven development. I allowed Claude to generate tests and production code for a story in a single pass, rather than enforcing a strict red, green, refactor cycle. My assumption was that the model does not benefit from incremental test feedback in the same way a human does, although this remains an open question.
 
-Almost all of my interaction during this phase took place using Claude via the terminal. I reviewed diffs and observed Claude’s workflow there, intervening only when necessary. I deliberately avoided continuous editing in an IDE. Instead, I switched to zed only once Claude had completed each story, in order to review the changes as a coherent logical unit and to scan through the tests.
+Almost all of my interaction during this phase took place using Claude via the terminal. I reviewed diffs and observed Claude’s workflow there, intervening only when necessary. I didn't avoid editing in an IDE, I just never felt the need. I only switched to zed once Claude had completed each story, in order to review the changes as a coherent logical unit and to scan through the tests.
 
 I reran the experiment multiple times from the same starting point and received approximately similar results.
 
