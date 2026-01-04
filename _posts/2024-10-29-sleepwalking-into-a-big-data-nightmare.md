@@ -1,6 +1,7 @@
 ---
 title: "Sleepwalking into a Big Data Nightmare"
 date: 2024-10-29
+excerpt: "Tightly coupling data lakes to operational databases creates a maintenance nightmare. Decoupling through an anti-corruption layer preserves agility without breaking downstream analytics."
 tags:
 - Big Data
 - Snowflake

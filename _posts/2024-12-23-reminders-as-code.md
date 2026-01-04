@@ -1,6 +1,7 @@
 ---
 title: "Reminders as Code"
 date: 2024-12-23
+excerpt: "Store critical reminders in version control to avoid costly outages from expired API keys and certificates - a reliable, long-term solution that doesn't depend on third parties."
 tags:
 - Reminders
 - Calendar

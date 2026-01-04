@@ -1,6 +1,7 @@
 ---
 title: "Turn The Team Around!"
 date: 2024-12-24
+excerpt: "How a single unconventional target - 'make Portal a destination team' - transformed a struggling, siloed team into one where engineers wanted to work."
 tags:
 - Team
 - Rescue

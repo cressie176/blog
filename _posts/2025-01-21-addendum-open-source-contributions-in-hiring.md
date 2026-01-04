@@ -1,6 +1,7 @@
 ---
 title: "Addendum: Open Source Contributions in Hiring"
 date: 2025-01-21
+excerpt: "Why open source contributions can reveal valuable insights about candidates - not as a requirement, but as a window into passion, problem-solving, and communication skills."
 tags:
 - Software Engineering
 - Hiring

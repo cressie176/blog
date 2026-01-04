@@ -1,6 +1,7 @@
 ---
 title: "In Defence Of Coding Tests"
 date: 2025-01-07
+excerpt: "Why live coding tests remain valuable in hiring, and how to make them fair and effective for both candidates and employers."
 tags:
 - Software Engineering
 - Hiring

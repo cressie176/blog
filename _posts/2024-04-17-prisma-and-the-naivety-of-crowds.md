@@ -1,6 +1,7 @@
 ---
 title: "Prisma and the Naivety of Crowds"
 date: 2024-04-17
+excerpt: "Prisma's popularity masks a dangerous design decision: undefined where clauses delete all rows. A cautionary tale about following the crowd without critical evaluation."
 tags:
 - Prisma
 - Node.js

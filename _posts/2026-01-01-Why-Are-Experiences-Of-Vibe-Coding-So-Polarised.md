@@ -1,6 +1,7 @@
 ---
 title: "Why Are Experiences Of Vibe Coding So Polarised?"
 date: 2026-01-01
+excerpt: "A controlled experiment reveals why developers report vastly different experiences with AI coding tools - and what it takes to achieve reliable, high-quality results."
 redirect_from:
   - /2026/01/01/Why-Are-Experiences-of-Vibe-Coding-so-Polarised.html
 tags:

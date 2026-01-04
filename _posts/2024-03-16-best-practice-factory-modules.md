@@ -1,6 +1,7 @@
 ---
 title: "Best Practice Factory Modules"
 date: 2024-03-16
+excerpt: "A pattern for encapsulating and enforcing organisational best practices through reusable factory modules - making it easy to do the right thing across all your projects."
 tags:
 - Microservices
 - Software Architecture

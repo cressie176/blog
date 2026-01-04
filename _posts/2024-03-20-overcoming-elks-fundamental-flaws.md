@@ -1,6 +1,7 @@
 ---
 title: "Overcoming ELK's Fundamental Flaws"
 date: 2024-03-20
+excerpt: "Practical strategies to prevent Mapping Explosion and Type Conflicts in Elasticsearch - the two fundamental issues that can bring down your logging infrastructure."
 tags:
 - Elasticsearch
 - ELK

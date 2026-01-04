@@ -1,6 +1,7 @@
 ---
 title: "NPM search is broken"
 date: 2024-12-23
+excerpt: "NPM's new search algorithm returns either relevant but unmaintained packages, or popular but irrelevant ones. Neither is useful."
 tags:
 - npm
 - search

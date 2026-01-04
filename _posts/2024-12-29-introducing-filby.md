@@ -1,6 +1,7 @@
 ---
 title: "Introducing Filby: An Open Source Library for Managing Shared Reference Data"
 date: 2024-12-29
+excerpt: "An open-source library that simplifies managing versioned reference data across distributed systems with consistency, reliability, and flexibility."
 tags:
 - Temporal
 - Versioned

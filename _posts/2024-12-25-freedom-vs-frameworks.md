@@ -1,6 +1,7 @@
 ---
 title: "Freedom vs. Frameworks"
 date: 2024-12-25
+excerpt: "Balancing engineering autonomy with organisational standards through eslint-plugin-tech-radar - a mechanism that enforces dependency guidelines without sacrificing developer freedom."
 tags:
 - Autonomy
 - Control

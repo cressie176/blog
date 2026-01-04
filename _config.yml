@@ -1,6 +1,7 @@
 theme: minima
 title: Signal Over Noise
 author: Stephen Cresswell
+show_excerpts: true
 
 github_username: cressie176
 linkedin_username: stephencresswell
