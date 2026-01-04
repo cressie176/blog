@@ -1,6 +1,18 @@
 theme: minima
 author: Stephen Cresswell
 
+minima:
+  social_links:
+    - title: GitHub (cressie176)
+      icon: github
+      url: "https://github.com/cressie176"
+    - title: GitHub (acuminous)
+      icon: github
+      url: "https://github.com/acuminous"
+    - title: LinkedIn Profile
+      icon: linkedin
+      url: "https://www.linkedin.com/in/stephencresswell/"
+
 plugins:
   - jekyll-redirect-from
   - jekyll-default-layout
