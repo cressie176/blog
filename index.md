@@ -1,4 +1,0 @@
----
-title: Signal Over Noise
----
-

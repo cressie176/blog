@@ -6,4 +6,5 @@ gem "minima", "~> 2.5"
 group :jekyll_plugins do
   gem "jekyll-redirect-from"
   gem "jekyll-default-layout"
+  gem "jekyll-paginate"
 end

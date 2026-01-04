@@ -1,12 +1,19 @@
 theme: minima
+title: Signal Over Noise
 author: Stephen Cresswell
 
 github_username: cressie176
 linkedin_username: stephencresswell
 
+paginate: 5
+paginate_path: "/page:num/"
+header_pages:
+  - index.html
+
 plugins:
   - jekyll-redirect-from
   - jekyll-default-layout
+  - jekyll-paginate
 
 defaults:
   - scope:
