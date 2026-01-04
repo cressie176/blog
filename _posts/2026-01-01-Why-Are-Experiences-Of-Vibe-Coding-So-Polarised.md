@@ -12,7 +12,7 @@ tags:
 ---
 
 ## TL;DR
-This post explores why experiences with Generative AI assisted software development vary so dramatically. While some developers report order of magnitude productivity gains, others encounter architectural drift, excessive code, and serious operational risk. The author argues that this gap is not primarily caused by the tools themselves, but by differences in goals, constraints, and methods of use.
+This post explores why experiences with Generative AI assisted software development vary so dramatically. While some developers report order of magnitude productivity gains, others encounter architectural drift, excessive code, and serious operational risk. This gap is not primarily caused by the tools themselves, but by differences in goals, constraints, and methods of use.
 
 Treating Generative AI as a meta tool that operates on intent rather than code mechanics, the post makes explicit its own optimisation goals: negligible operational debt and highly malleable, clean code. A controlled experiment using a small but realistic URL shortener service tests three ways of working with Claude Code.
 
