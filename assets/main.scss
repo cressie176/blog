@@ -1,0 +1,15 @@
+---
+---
+
+@import "minima";
+
+.social-media-list {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 1rem;
+}
+
+.social-media-list li {
+  display: inline-block;
+  padding-top: 0 !important;
+}
