@@ -1,4 +1,4 @@
 ---
-title: Signal Over Noise
+title: "Signal > Noise"
 ---
 
