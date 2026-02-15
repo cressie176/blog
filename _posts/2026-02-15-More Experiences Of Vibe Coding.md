@@ -31,9 +31,7 @@ All but the briefest branching structures are a code smell. They signal decision
 
 <h2>When Claude got everything right</h2>
 
-That said, it would be misleading to suggest the experience is uniformly negative. Recently I built a small utility application for testing single sign on in a single prompt, and Claude produced exactly what I wanted.
-
-The prompt was:
+That said, it would be misleading to suggest the experience is uniformly negative. Recently I built a small utility application for testing single sign on in a single prompt, and Claude produced exactly what I wanted. The prompt was:
 
 ```
 Create a very simple web application for testing authentication with azure.
