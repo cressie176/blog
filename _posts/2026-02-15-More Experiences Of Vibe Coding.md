@@ -9,7 +9,7 @@ tags:
 - Vibe Coding
 ---
 
-Following up on my [previous question](/2026/01/01/Why-Are-Experiences-of-Vibe-Coding-so-Polarised.html) of whether code quality mattered, I am now more convinced that it does. What I have observed in extended use is this: unless guided carefully, Claude produces more code than necessary, with weaker abstractions and noticeable duplication. As the codebase grows, the problem compounds. A bug fixed in one place introduces a bug somewhere else. Fix that, and you either recreate the original defect or produce a new one. It becomes a kind of Dr. Strange vs Dormammu time loop, where you are trapped in an endless cycle of regression; or, alternatively, a maddening game of whack-a-mole.
+One of the outstanding questions from my [previous post](/2026/01/01/Why-Are-Experiences-of-Vibe-Coding-so-Polarised.html) was whether code quality mattered to AI. I am now more convinced that it does. What I have observed in extended use is this: unless guided carefully, Claude produces more code than necessary, with weaker abstractions and noticeable duplication. As the codebase grows, the problem compounds. A bug fixed in one place introduces a bug somewhere else. Fix that, and you either recreate the original defect or produce a new one. It becomes a kind of Dr. Strange vs Dormammu time loop, where you are trapped in an endless cycle of regression; or, alternatively, a maddening game of whack-a-mole.
 
 <figure style="float: right; margin: 0 0 1em 2em; max-width: 400px;">
   <img src="/images/dormammu.png" alt="Dormammu Time Loop" style="width: 100%;" />
