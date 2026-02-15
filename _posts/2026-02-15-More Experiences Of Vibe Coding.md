@@ -49,13 +49,13 @@ And Claude delivered precisely that. Below is the generated interface...
   <figcaption>The Azure AD JWT debugger interface, generated in a single prompt</figcaption>
 </figure>
 
-It signs in with MSAL, retrieves the token, and calls the backend with the bearer token exactly as requested. No over-engineering. No unnecessary abstractions. Just a simple, correct implementation. You can review the source code [here](https://github.com/cressie176/azure-ad-jwt-debugger-web)
-
-Interestingly, it did not just implement the minimum described in the prompt. It also added:
+It signs in with MSAL, retrieves the token, and calls the backend with the bearer token exactly as requested. No over-engineering. No unnecessary abstractions. Just a simple, correct implementation. Interestingly, it did not just implement the minimum described in the prompt. It also added:
 
 - A sign out button
 - A structured JSON response display panel
 
-Neither of these were explicitly requested. Both were appropriate. Sign out is operationally useful when testing authentication flows. A formatted JSON viewer makes token inspection and backend responses materially easier to reason about. These are pragmatic affordances, not speculative over-engineering.
+Neither of these were explicitly requested. Both were appropriate. Sign out is operationally useful when testing authentication flows.
 
-In conclusion, when the intent is crisp and the domain small, vibe coding works extremely well. When the system grows and architectural trade-offs become material, discipline becomes essential.That is not an argument against generative AI. It is an argument for treating it as a powerful amplifier. Code quality matters more, not less, in the age of generative AI. Until models evolve in ways that reason more structurally about long-term design consequences, sustainable AI-assisted development depends on disciplined architecture. If the underlying design is coherent, it accelerates you. If it is messy, it accelerates the mess.
+You can view the source code [here](https://github.com/cressie176/azure-ad-jwt-debugger-web).
+
+In conclusion, when the intent is crisp and the domain small, vibe coding may work extremely well. When the system grows and architectural trade-offs become material, discipline becomes essential. That is not an argument against generative AI. It is an argument for treating it as a powerful amplifier. Code quality matters more, not less, in the age of generative AI. Until models evolve in ways that reason more structurally about long-term design consequences, sustainable AI-assisted development depends on disciplined architecture. If the underlying design is coherent, it accelerates you. If it is messy, it accelerates the mess.
