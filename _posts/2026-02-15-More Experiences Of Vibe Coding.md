@@ -52,8 +52,6 @@ It signs in with MSAL, retrieves the token, and calls the backend with the beare
 - A sign out button
 - A structured JSON response display panel
 
-Neither of these were explicitly requested. Both were appropriate. Sign out is operationally useful when testing authentication flows.
-
-You can view the source code [here](https://github.com/cressie176/azure-ad-jwt-debugger-web). I have not reviewed it, since in this case, I do not envisage needing to modify it. 
+Neither of these were explicitly requested; both were appreciated. You can view the source code [here](https://github.com/cressie176/azure-ad-jwt-debugger-web). I have not reviewed it, since in this case, I do not envisage needing to modify it. 
 
 In conclusion, when the intent is crisp and the domain small, vibe coding may work extremely well. When the system grows and architectural trade-offs become material, discipline becomes essential. That is not an argument against generative AI. It is an argument for treating it as a powerful amplifier. Code quality matters more, not less, in the age of generative AI. Until models evolve in ways that reason more structurally about long-term design consequences, sustainable AI-assisted development depends on disciplined architecture. If the underlying design is coherent, it accelerates you. If it is messy, it accelerates the mess.
