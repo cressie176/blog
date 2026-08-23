@@ -162,7 +162,7 @@ The two libraries solve different problems, but they came from the same observat
 
 ## How I built them
 
-I built both libraries using Claude Code, following almost the same process each time. I first worked through the problem and API design with Claude, then had it write the README before any implementation. That README became the specification and source of truth for the rest of the work.
+I built both libraries using Claude Code (Opus 4.8), following almost the same process each time. I first worked through the problem and API design with Claude, then had it write the README before any implementation. That README became the specification and source of truth for the rest of the work.
 
 Claude then broke the implementation into GitHub issues that could be worked on in parallel using separate worktrees. `CLAUDE.md` and `CONTRIBUTING.md` contained the standing instructions, coding conventions and development rules. I focused mainly on the design and behaviour, then reviewed the implementation in detail towards the end.
 
