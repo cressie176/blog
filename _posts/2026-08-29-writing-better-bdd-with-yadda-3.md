@@ -28,7 +28,7 @@ The guidelines below are the practices I've settled on for making use of Yadda's
 
 ### Rule 1: Simplicity above all
 
-The most important principle is simplicity, in the sense described by John Maeda in *The Laws of Simplicity*:
+The most important principle is simplicity, in the sense described by John Maeda in [The Laws of Simplicity](https://lawsofsimplicity.com):
 
 > “Simplicity is about subtracting the obvious, and adding the meaningful.”
 
